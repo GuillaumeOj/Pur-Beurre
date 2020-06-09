@@ -15,8 +15,10 @@ $font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont,
 $font-family-serif: "Merriweather", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-base: $font-family-serif;
-$headings-font-family: $font-family-sans-serif;
+$font-titles: "Open Sans", sans-serif;
+$font-base: "Scope One", sans-serif;
+$font-family-base: $font-base;
+$headings-font-family: $font-titles;
 
 //- Add custom variables
 $navbar-height: 4.5rem;
