@@ -5,9 +5,13 @@
 $orange: #f4623a;
 $brown: #5c4d42;
 $rooibos: #c45525;
+$rigolo: #86ebe6;
 
 //- Override primary color
 $primary: $rooibos;
+
+//- Override secondary color
+$secondary: $rigolo;
 
 //- Override font system
 $font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont,
