@@ -1,21 +1,24 @@
 // Base styling for the navbar
 #mainNav {
-  box-shadow: $box-shadow;
-  background-color: $white;
+  box-shadow: none;
+  background-color: transparent;
   transition: background-color 0.2s ease;
   .navbar-logo {
-    height: 3.5rem;
-    margin-right: 1rem;
+    height: 2.5rem;
   }
   .navbar-brand {
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-bold;
-    color: $gray-900;
+    color: fade-out($biscuit, 0.3);
+    &:hover,
+    &:active {
+      color: $primary;
+    }
   }
   .navbar-nav {
     .nav-item {
       .nav-link {
-        color: $gray-600;
+        color: fade-out($biscuit, 0.3);
         font-family: $font-family-sans-serif;
         font-weight: $font-weight-bold;
         font-size: 0.9rem;
@@ -30,23 +33,63 @@
       }
     }
   }
-  @include media-breakpoint-up(lg) {
-    // Base styling for the navbar - screen sizes greater than the large breakpoint
-    box-shadow: none;
-    background-color: transparent;
+
+  .navbar-toggler {
+    border: none;
+    color: red;
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28232, 167, 93, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+  // Navbar styling applied when the page is scrolled
+  &.navbar-scrolled {
+    box-shadow: $box-shadow;
+    background-color: $biscuit;
+    .navbar-logo {
+      height: 2rem;
+      transition: height 0.5s;
+    }
     .navbar-brand {
-      color: fade-out($white, 0.3);
+      color: $primary;
       &:hover {
-        color: $white;
+        color: $moules;
       }
     }
     .navbar-nav {
       .nav-item {
         .nav-link {
-          color: fade-out($white, 0.3);
+          color: $primary;
+          &:hover {
+            color: $moules;
+          }
+        }
+      }
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28196, 85, 37, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    // Base styling for the navbar - screen sizes greater than the large breakpoint
+    box-shadow: none;
+    background-color: transparent;
+    .navbar-logo {
+      height: 3.5rem;
+    }
+    .navbar-brand {
+      color: fade-out($biscuit, 0.3);
+      &:hover {
+        color: $primary;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: fade-out($biscuit, 0.3);
+          font-size: 0.8em;
           padding: 0 1rem;
           &:hover {
-            color: $white;
+            color: $primary;
           }
         }
         &:last-child {
@@ -59,19 +102,23 @@
     // Navbar styling applied when the page is scrolled
     &.navbar-scrolled {
       box-shadow: $box-shadow;
-      background-color: $white;
+      background-color: $biscuit;
+      .navbar-logo {
+        height: 2.5rem;
+        transition: height 0.5s;
+      }
       .navbar-brand {
-        color: $gray-900;
+        color: $primary;
         &:hover {
-          color: $primary;
+          color: $moules;
         }
       }
       .navbar-nav {
         .nav-item {
           .nav-link {
-            color: $gray-900;
+            color: $primary;
             &:hover {
-              color: $primary;
+              color: $moules;
             }
           }
         }
