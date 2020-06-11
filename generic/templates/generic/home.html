@@ -4,15 +4,32 @@
 {% block header %}
 <header class="masthead">
 	<div class="container h-100">
-		<div class="row h-100 align-items-center justify-content-center text-center">
-			<div class="col-lg-10 align-self-end">
+		<div class="row h-50 align-items-end text-center">
+			<div class="col">
 				<h1 class="text-uppercase text-white font-weight-bold">Du gras, oui, mais de
 					qualité !</h1>
 				<hr class="divider my-4" />
 			</div>
-			<div class="col-lg-8 align-self-baseline">
-				<p class="text-white-75 font-weight-light mb-5">Trouvez un produit de
-					substitution pour ceux que vous consommez tous les jours.</p>
+		</div>
+		<div class="row text-center">
+			<div class="col">
+				<p class="text-white-75 font-weight-light">
+					Trouvez un produit de substitution pour ceux que vous consommez tous les
+					jours.
+				</p>
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col px-5">
+				<form method="POST" action="">
+					<div class="input-group">
+						<input type="text" class="form-control"
+							placeholder="Chercher un aliment">
+						<div class="input-group-append">
+							<input type="submit" class="btn btn-primary" value="Chercher">
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
