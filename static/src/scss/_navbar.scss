@@ -16,6 +16,9 @@
       color: $moules;
     }
   }
+  .navbar-collapse {
+    flex-grow: 0;
+  }
   .navbar-nav {
     .nav-item {
       .nav-link {
