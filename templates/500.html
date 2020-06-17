@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Problème en cuisine !{% endblock title %}
+{% block header %}
+<header class="masthead">
+	<div class="container h-100">
+		<div class="row h-50 align-items-end text-center">
+			<div class="col">
+				<h1 class="text-uppercase text-white font-weight-bold">Aïe ! Il y a un problème en
+					cuisine !</h1>
+				<hr class="divider my-4" />
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col">
+				<p class="text-white-75 font-weight-light">
+
+					Le chef est prévenu ! En attendant, essayez de retourner <a
+						href="{% url "homepage:home" %}">ici</a> !
+				</p>
+			</div>
+		</div>
+	</div>
+</header>
+{% endblock header %}
