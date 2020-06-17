@@ -3,7 +3,7 @@ Django settings for the local project.
 """
 import os
 
-from . import base
+from .base import *
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
