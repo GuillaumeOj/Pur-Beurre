@@ -16,7 +16,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".ojardias.io"]
+ALLOWED_HOSTS = [".ojardias.io", "fast-shore-25529.herokuapp.com"]
 
 # Heroku database
 DATABASE_URL = os.environ["DATABASE_URL"]
