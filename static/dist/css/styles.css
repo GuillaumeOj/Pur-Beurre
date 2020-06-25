@@ -10239,11 +10239,22 @@ header.masthead h1 {
   color: #86ebe6;
 }
 
+footer {
+  height: 3rem !important;
+}
 footer a {
   color: #c45525;
 }
 footer a:hover {
   color: #345a61;
+}
+footer .container .row {
+  height: 3rem !important;
+}
+
+#signup {
+  padding-top: calc(4.5rem + 1rem) !important;
+  padding-bottom: 1rem;
 }
 
 .text-white-75 {

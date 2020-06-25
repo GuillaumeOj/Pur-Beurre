@@ -5,4 +5,10 @@ footer {
       color: $moules;
     }
   }
+  height: $footer-height !important;
+  .container {
+    .row {
+      height: $footer-height !important;
+    }
+  }
 }
