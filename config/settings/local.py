@@ -14,7 +14,7 @@ SECRET_KEY = "8*osh-h(vxj5o1oi(uc46k=23^%$gt@5-07hevz74n6ee9e*)d"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.1.47", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 DATABASES = {
     "default": {
