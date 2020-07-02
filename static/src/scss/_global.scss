@@ -56,3 +56,8 @@ hr.light {
 .text-caramel {
   color: $caramel;
 }
+
+// - Alert system
+.alerts-container {
+  top: $navbar-height;
+}
