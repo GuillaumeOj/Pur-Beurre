@@ -1,0 +1,8 @@
+#registration {
+  padding-top: calc(#{$navbar-height} + 1rem) !important;
+  padding-bottom: 1rem;
+  min-height: calc(100vh - #{$footer-height});
+  label {
+    color: white;
+  }
+}

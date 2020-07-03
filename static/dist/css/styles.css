@@ -10256,9 +10256,21 @@ footer .container .row {
   height: 3rem !important;
 }
 
-#signup {
+#registration {
   padding-top: calc(4.5rem + 1rem) !important;
   padding-bottom: 1rem;
+  min-height: calc(100vh - 3rem);
+}
+#registration label {
+  color: white;
+}
+
+.invalid-feedback .errorlist {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .text-white-75 {
