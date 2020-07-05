@@ -72,7 +72,7 @@
 			<ul class="navbar-nav ml-auto pr-2 my-2">
 				{% if user.is_authenticated %}
 				<li class="nav-item">
-					<a class="nav-link" title="Mon compte" href="#">
+					<a class="nav-link" title="Mon compte" href="{% url "user:account" %}">
 						<span class="d-lg-none">Mon compte</span>
 						<i class="far fa-user fa-2x ml-1 align-middle"></i>
 					</a>

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Mon compte{% endblock title %}
+{% block header %}
+<header class="masthead reduced">
+	<div class="container pt-4">
+		<div class="row text-center my-0">
+			<h1 class="col text-white font-weight-bold">
+				Bonjour
+				{% if user.first_name %}
+				{{ user.first_name }}
+				{% else %}
+				{{ user.username }}
+				{% endif %}
+			</h1>
+		</div>
+		<hr class="divider my-4" />
+	</div>
+</header>
+{% endblock header %}
+{% block content %}
+<!-- User informations -->
+<div class="page-section bg-primary" id="user_info">
+	<div class="container p-0 text-center font-weight-bold text-white">
+		<h2 class="col-12 mb-5">
+			Mes informations
+		</h2>
+		<div class="col-12 container text-left">
+			<div class="row">
+				{% if user.first_name %}
+				<p class="col-6 text-right">Prénom : </p>
+				<p class="col-6">{{ user.first_name }}</p>
+				{% endif %}
+			</div>
+			<div class="row">
+				{% if user.last_name %}
+				<p class="col-6 text-right">Nom : </p>
+				<p class="col-6">{{ user.last_name }}</p>
+				{% endif %}
+			</div>
+			<div class="row">
+				{% if user.username %}
+				<p class="col-6 text-right">Nom d'utilisateur : </p>
+				<p class="col-6">{{ user.username }}</p>
+				{% endif %}
+			</div>
+			<div class="row">
+				{% if user.email %}
+				<p class="col-6 text-right">Email :</p>
+				<p class="col-6">{{ user.email }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

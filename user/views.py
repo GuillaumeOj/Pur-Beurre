@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.decorators import login_required
 from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import UserRegistrationForm
@@ -13,11 +14,9 @@ class CustomLoginView(SuccessMessageMixin, LoginView):
     success_message = "Bonjour %(username)s !"
 
 
-class CustomLogoutView(LogoutView):
-    def dispatch(self, request, *args, **kwargs):
-        success_message = "À bientôt !"
-        messages.success(request, success_message)
-        return super().dispatch(request, *args, **kwargs)
+class CustomLogoutView(SuccessMessageMixin, LogoutView):
+    success_url = "homepage:index"
+    success_message = "À bientôt !"
 
 
 def registration(request):
@@ -49,3 +48,11 @@ def registration(request):
     else:
         form = UserRegistrationForm()
     return render(request, "user/registration.html", {"form": form})
+
+
+@login_required
+def account(request):
+    """
+    User account details
+    """
+    return render(request, "user/account.html")

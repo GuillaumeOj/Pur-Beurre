@@ -10179,7 +10179,6 @@ header.masthead h1 {
 @media (min-width: 992px) {
   header.masthead {
     height: 100vh;
-    min-height: 40rem;
     padding-top: 4.5rem;
     padding-bottom: 0;
   }
@@ -10194,6 +10193,10 @@ header.masthead h1 {
   header.masthead h1 {
     font-size: 3.5rem;
   }
+}
+
+.masthead.reduced {
+  max-height: 25% !important;
 }
 
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl {
@@ -10273,6 +10276,10 @@ footer .container .row {
   padding-left: 0.3rem;
   font-size: 1rem;
   font-weight: bold;
+}
+
+#user_info {
+  min-height: calc(100vh - 25% - 3rem);
 }
 
 .text-white-75 {
