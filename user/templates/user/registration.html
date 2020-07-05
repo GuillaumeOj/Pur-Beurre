@@ -12,6 +12,13 @@
 		<div class="row justify-content-center">
 			<form method="post" action="{% url "user:registration" %}" class="col-lg" novalidate>
 				{% csrf_token %}
+				<div class="form-group">
+					{{ form.username.label_tag }}
+					{{ form.username|add_css:"form-control" }}
+					<div class="invalid-feedback {% if form.username.errors%}d-inline{% endif%}">
+						{{ form.username.errors }}
+					</div>
+				</div>
 				<div class="form-row">
 					<div class="form-group col-md">
 						{{ form.first_name.label_tag }}

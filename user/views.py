@@ -1,9 +1,23 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .forms import UserRegistrationForm
-from .models import CustomUser
+
+
+class CustomLoginView(SuccessMessageMixin, LoginView):
+    success_url = "homepage:index"
+    success_message = "Bonjour %(username)s !"
+
+
+class CustomLogoutView(LogoutView):
+    def dispatch(self, request, *args, **kwargs):
+        success_message = "À bientôt !"
+        messages.success(request, success_message)
+        return super().dispatch(request, *args, **kwargs)
 
 
 def registration(request):
@@ -13,19 +27,23 @@ def registration(request):
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
+            username = form.cleaned_data["username"]
             email = form.cleaned_data["email"]
             password = form.cleaned_data["password1"]
             first_name = form.cleaned_data["first_name"]
             last_name = form.cleaned_data["last_name"]
-            user = CustomUser.objects.create_user(
-                username=email,
+            user = User.objects.create_user(
+                username=username,
                 email=email,
                 password=password,
                 first_name=first_name,
                 last_name=last_name,
             )
             user.save()
-            success_message = f"Bienvenue parmis nous {first_name} !"
+            if first_name:
+                success_message = f"Bienvenue parmis nous {first_name} !"
+            else:
+                success_message = f"Bienvenue parmis nous {username} !"
             messages.success(request, success_message)
             return redirect(reverse("homepage:index"))
     else:

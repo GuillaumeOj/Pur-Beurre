@@ -10256,12 +10256,14 @@ footer .container .row {
   height: 3rem !important;
 }
 
-#registration {
+#registration,
+#login {
   padding-top: calc(4.5rem + 1rem) !important;
   padding-bottom: 1rem;
   min-height: calc(100vh - 3rem);
 }
-#registration label {
+#registration label,
+#login label {
   color: white;
 }
 

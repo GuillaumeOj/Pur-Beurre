@@ -82,13 +82,13 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="{% url "user:logout" %}">
 						<i class="fas fa-sign-out-alt fa-2x ml-1 align-middle"></i>
 					</a>
 				</li>
 				{% else %}
 				<li class="nav-item">
-					<a class="nav-link" href="#">
+					<a class="nav-link" href="{% url "user:login" %}">
 						<i class="fas fa-sign-in-alt fa-2x ml-1 align-middle"></i>
 					</a>
 				</li>
