@@ -4,7 +4,6 @@ Django settings for the local project.
 import os
 
 import dj_database_url
-import django_heroku
 
 from .base import *
 
@@ -23,5 +22,3 @@ ALLOWED_HOSTS = [".ojardias.io", "fast-shore-25529.herokuapp.com"]
 DATABASE_URL = os.environ["DATABASE_URL"]
 DATABASES = {}
 DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
-
-django_heroku.settings(locals())
