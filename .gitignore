@@ -4,4 +4,3 @@ local_settings.py
 db.sqlite3*
 *pycache*
 node_modules
-*migrations/
