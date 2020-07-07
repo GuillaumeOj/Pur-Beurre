@@ -8,4 +8,3 @@ class HomepageConfig(AppConfig):
     """App name"""
 
     name = "homepage"
-
