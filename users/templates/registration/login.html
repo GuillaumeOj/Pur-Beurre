@@ -10,7 +10,7 @@
 			<h1 class="col text-white text-center">Connexion</h1>
 		</div>
 		<div class="row justify-content-center">
-			<form method="post" action="{% url "user:login" %}" class="col-lg" novalidate>
+			<form method="post" action="{% url "users:login" %}" class="col-lg" novalidate>
 				{% csrf_token %}
 				<div class="form-group">
 					{{ form.username.label_tag }}

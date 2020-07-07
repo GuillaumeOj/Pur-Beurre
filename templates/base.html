@@ -72,7 +72,7 @@
 			<ul class="navbar-nav ml-auto pr-2 my-2">
 				{% if user.is_authenticated %}
 				<li class="nav-item">
-					<a class="nav-link" title="Mon compte" href="{% url "user:account" %}">
+					<a class="nav-link" title="Mon compte" href="{% url "users:account" %}">
 						<span class="d-lg-none">Mon compte</span>
 						<i class="far fa-user fa-2x ml-1 align-middle"></i>
 					</a>
@@ -84,20 +84,20 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" title="Me déconnecter" href="{% url "user:logout" %}">
+					<a class="nav-link" title="Me déconnecter" href="{% url "users:logout" %}">
 						<span class="d-lg-none">Me déconnecter</span>
 						<i class="fas fa-sign-out-alt fa-2x ml-1 align-middle"></i>
 					</a>
 				</li>
 				{% else %}
 				<li class="nav-item">
-					<a class="nav-link" title="Me connecter" href="{% url "user:login" %}">
+					<a class="nav-link" title="Me connecter" href="{% url "users:login" %}">
 						<span class="d-lg-none">Me connecter</span>
 						<i class="fas fa-sign-in-alt fa-2x ml-1 align-middle"></i>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" title="M'enregistrer" href="{% url "user:registration" %}">
+					<a class="nav-link" title="M'enregistrer" href="{% url "users:registration" %}">
 						<span class="d-lg-none">M'enregistrer</span>
 						<i class="fas fa-user-plus fa-2x ml-1 align-middle"></i>
 					</a>

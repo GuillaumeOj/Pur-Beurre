@@ -5,7 +5,7 @@ from django.urls import path
 
 from . import views
 
-app_name = "user"
+app_name = "users"
 urlpatterns = [
     path("registration/", views.registration, name="registration"),
     path("login/", views.CustomLoginView.as_view(), name="login"),
