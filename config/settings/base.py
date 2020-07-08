@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "homepage.apps.HomepageConfig",
     "users.apps.UsersConfig",
     "product.apps.ProductConfig",
+    "openfoodfacts.apps.OpenfoodfactsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
