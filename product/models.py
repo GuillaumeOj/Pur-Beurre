@@ -85,6 +85,12 @@ class Product(models.Model):
     url = models.CharField(
         verbose_name="Url du produit", null=False, blank=False, max_length=250
     )
+    url_image = models.CharField(
+        verbose_name="Url image du produit", blank=True, max_length=250
+    )
+    url_image_small = models.CharField(
+        verbose_name="Url petite image du produit", blank=True, max_length=250,
+    )
 
     categories = models.ManyToManyField(Category)
     stores = models.ManyToManyField(Store)
