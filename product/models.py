@@ -21,7 +21,6 @@ class Category(models.Model):
 
 
 class Store(models.Model):
-
     """
     Store in which a product is sell
     """
@@ -40,7 +39,6 @@ class Store(models.Model):
 
 
 class Brand(models.Model):
-
     """
     Product's brand
     """
@@ -71,13 +69,14 @@ class Product(models.Model):
         verbose_name="Nom du produit", null=False, blank=False, max_length=100,
     )
 
-    common_name = models.CharField(
+    generic_name = models.CharField(
         verbose_name="Nom générique", blank=True, max_length=100,
     )
 
     quantity = models.CharField(verbose_name="Quantité", blank=True, max_length=50)
 
     ingredients_text = models.TextField(verbose_name="Ingrédients", blank=True)
+
     nutriscore_grade = models.CharField(
         verbose_name="Nutriscore", null=False, blank=False, max_length=1
     )
@@ -85,13 +84,16 @@ class Product(models.Model):
     url = models.CharField(
         verbose_name="Url du produit", null=False, blank=False, max_length=250
     )
-    url_image = models.CharField(
+
+    image_url = models.CharField(
         verbose_name="Url image du produit", blank=True, max_length=250
     )
-    url_image_small = models.CharField(
+
+    image_small_url = models.CharField(
         verbose_name="Url petite image du produit", blank=True, max_length=250,
     )
 
+    # Related fields
     categories = models.ManyToManyField(Category)
     stores = models.ManyToManyField(Store)
     brands = models.ManyToManyField(Brand)
