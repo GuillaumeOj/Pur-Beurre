@@ -31,7 +31,7 @@ class Api:
         "image_small_url",
     ]
 
-    def _get_products(self):
+    def get_products(self):
         """
         Get products from OpenFoodFacts
         return a list of raw products
