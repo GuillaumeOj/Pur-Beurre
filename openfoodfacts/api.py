@@ -14,7 +14,7 @@ class Api:
 
     URL_BASE = "https://fr.openfoodfacts.org/cgi/search.pl"
     PAGE_SIZE = 1000
-    PAGES = 5
+    PAGES = 1
     SORT_BY = "unique_scans_n"
     FIELDS = [
         "code",
