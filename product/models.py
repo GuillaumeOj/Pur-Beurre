@@ -57,7 +57,7 @@ class Product(models.Model):
     code = models.CharField(
         max_length=13,
         unique=True,
-        validators=[MinLengthValidator(13), MaxLengthValidator(13)],
+        validators=[MinLengthValidator(13), MaxLengthValidator],
     )
 
     name = models.CharField(
@@ -75,7 +75,7 @@ class Product(models.Model):
     ingredients_text = models.TextField(blank=True)
 
     nutriscore_grade = models.CharField(
-        max_length=1, validators=[MinLengthValidator(1), MaxLengthValidator(1)],
+        max_length=1, validators=[MinLengthValidator(1), MaxLengthValidator],
     )
 
     url = models.URLField(
