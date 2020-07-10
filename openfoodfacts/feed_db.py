@@ -12,6 +12,8 @@ class FeedDb:
 
     def feed_db(self, raw_products):
 
+        self._clear_db()
+
         # Insert each product in the application's database
         for raw_product in raw_products:
             normalized_product = self._normalize_product(raw_product)
@@ -31,30 +33,35 @@ class FeedDb:
                 product.full_clean()
                 product.save()
             except ValidationError:
-                break
+                continue
 
             # Insert associated categories, stores and brands
+            categories = []
             for category in normalized_product["categories"]:
-                obj, created = Category.objects.get_or_create(name=category)
                 try:
-                    obj.full_clean()
-                    product.categories.add(obj)
+                    obj, created = Category.objects.get_or_create(name=category)
+                    categories.append(obj)
                 except ValidationError:
-                    break
+                    continue
+            product.categories.add(*categories)
+
+            stores = []
             for store in normalized_product["stores"]:
-                obj, created = Store.objects.get_or_create(name=store)
                 try:
-                    obj.full_clean()
-                    product.stores.add(obj)
+                    obj, created = Store.objects.get_or_create(name=store)
+                    stores.append(obj)
                 except ValidationError:
-                    break
+                    continue
+            product.stores.add(*stores)
+
+            brands = []
             for brand in normalized_product["brands"]:
-                obj, created = Brand.objects.get_or_create(name=brand)
                 try:
-                    obj.full_clean()
-                    product.brands.add(obj)
+                    obj, created = Brand.objects.get_or_create(name=brand)
+                    brands.append(obj)
                 except ValidationError:
-                    break
+                    continue
+            product.brands.add(*brands)
 
     def _normalize_product(self, raw_product):
         """
@@ -80,3 +87,16 @@ class FeedDb:
         normalized["brands"] = raw_product.get("brands", "").split(",")
 
         return normalized
+
+    def _clear_db(self):
+        product = Product.objects.all()
+        product.delete()
+
+        categories = Category.objects.all()
+        categories.delete()
+
+        stores = Store.objects.all()
+        stores.delete()
+
+        brands = Brand.objects.all()
+        brands.delete()
