@@ -16,20 +16,19 @@ class FeedDb:
         for raw_product in raw_products:
             normalized_product = self._normalize_product(raw_product)
 
-            # product = Product(
-            #     code=normalized_product["code"],
-            #     name=normalized_product["name"],
-            #     url=normalized_product["url"],
-            #     nutriscore_grade=normalized_product["nutriscore_grade"],
-            #     generic_name=normalized_product["generic_name"],
-            #     quantity=normalized_product["quantity"],
-            #     ingredients_text=normalized_product["ingredients_text"],
-            #     image_url=normalized_product["image_url"],
-            #     image_small_url=normalized_product["image_small_url"],
-            # )
-            # product = Product(**normalized_product)
             try:
-                product = Product.objects.create_product(normalized_product)
+                product = Product(
+                    code=normalized_product["code"],
+                    name=normalized_product["name"],
+                    url=normalized_product["url"],
+                    nutriscore_grade=normalized_product["nutriscore_grade"],
+                    generic_name=normalized_product["generic_name"],
+                    quantity=normalized_product["quantity"],
+                    ingredients_text=normalized_product["ingredients_text"],
+                    image_url=normalized_product["image_url"],
+                    image_small_url=normalized_product["image_small_url"],
+                )
+                product.full_clean()
                 product.save()
             except ValidationError:
                 break
@@ -37,13 +36,25 @@ class FeedDb:
             # Insert associated categories, stores and brands
             for category in normalized_product["categories"]:
                 obj, created = Category.objects.get_or_create(name=category)
-                product.categories.add(obj)
+                try:
+                    obj.full_clean()
+                    product.categories.add(obj)
+                except ValidationError:
+                    break
             for store in normalized_product["stores"]:
                 obj, created = Store.objects.get_or_create(name=store)
-                product.stores.add(obj)
+                try:
+                    obj.full_clean()
+                    product.stores.add(obj)
+                except ValidationError:
+                    break
             for brand in normalized_product["brands"]:
                 obj, created = Brand.objects.get_or_create(name=brand)
-                product.brands.add(obj)
+                try:
+                    obj.full_clean()
+                    product.brands.add(obj)
+                except ValidationError:
+                    break
 
     def _normalize_product(self, raw_product):
         """

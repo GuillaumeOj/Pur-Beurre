@@ -63,7 +63,7 @@ class FeedDbModelsTests(TestCase):
 
         self.assertFalse(product)
 
-    def test_insert_product_code_too_long(self):
+    def test_insert_product_nutriscore_too_long(self):
         data = [
             {
                 "nutriscore_grade": "de",
@@ -75,5 +75,35 @@ class FeedDbModelsTests(TestCase):
         feeder = FeedDb()
         feeder.feed_db(data)
         product = Product.objects.filter(code="7622210449283")
+
+        self.assertFalse(product)
+
+    def test_insert_product_code_too_long(self):
+        data = [
+            {
+                "nutriscore_grade": "d",
+                "code": "76222104492834",
+                "url": "https://fr.openfoodfacts.org/produit/chocolat-au-ble-complet-lu",
+                "product_name": "Prince goût chocolat au blé complet",
+            }
+        ]
+        feeder = FeedDb()
+        feeder.feed_db(data)
+        product = Product.objects.filter(code="76222104492834")
+
+        self.assertFalse(product)
+
+    def test_insert_product_code_too_short(self):
+        data = [
+            {
+                "nutriscore_grade": "d",
+                "code": "762221044928",
+                "url": "https://fr.openfoodfacts.org/produit/chocolat-au-ble-complet-lu",
+                "product_name": "Prince goût chocolat au blé complet",
+            }
+        ]
+        feeder = FeedDb()
+        feeder.feed_db(data)
+        product = Product.objects.filter(code="762221044928")
 
         self.assertFalse(product)
