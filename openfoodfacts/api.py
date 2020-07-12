@@ -19,12 +19,7 @@ class Api:
     FIELDS = [
         "code",
         "product_name",
-        "generic_name_fr",
         "url",
-        "ingredients_text",
-        "quantity",
-        "brands",
-        "stores",
         "categories",
         "nutriscore_grade",
         "image_url",

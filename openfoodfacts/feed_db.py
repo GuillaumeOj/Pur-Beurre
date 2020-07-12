@@ -24,9 +24,6 @@ class FeedDb:
                     name=normalized_product["name"],
                     url=normalized_product["url"],
                     nutriscore_grade=normalized_product["nutriscore_grade"],
-                    generic_name=normalized_product["generic_name"],
-                    quantity=normalized_product["quantity"],
-                    ingredients_text=normalized_product["ingredients_text"],
                     image_url=normalized_product["image_url"],
                     image_small_url=normalized_product["image_small_url"],
                 )
@@ -45,24 +42,6 @@ class FeedDb:
                     continue
             product.categories.add(*categories)
 
-            stores = []
-            for store in normalized_product["stores"]:
-                try:
-                    obj, created = Store.objects.get_or_create(name=store)
-                    stores.append(obj)
-                except ValidationError:
-                    continue
-            product.stores.add(*stores)
-
-            brands = []
-            for brand in normalized_product["brands"]:
-                try:
-                    obj, created = Brand.objects.get_or_create(name=brand)
-                    brands.append(obj)
-                except ValidationError:
-                    continue
-            product.brands.add(*brands)
-
     def _normalize_product(self, raw_product):
         """
         Normalize the product data
@@ -75,16 +54,10 @@ class FeedDb:
         normalized["url"] = raw_product.get("url", "").lower()
         normalized["nutriscore_grade"] = raw_product.get("nutriscore_grade", "").upper()
 
-        normalized["generic_name"] = raw_product.get("generic_name_fr", "").capitalize()
-        normalized["quantity"] = raw_product.get("quantity", "")
-        normalized["ingredients_text"] = raw_product.get("ingredients_text", "")
-
         normalized["image_url"] = raw_product.get("image_url", "")
         normalized["image_small_url"] = raw_product.get("image_small_url", "")
 
         normalized["categories"] = raw_product.get("categories", "").split(",")
-        normalized["stores"] = raw_product.get("stores", "").split(",")
-        normalized["brands"] = raw_product.get("brands", "").split(",")
 
         return normalized
 

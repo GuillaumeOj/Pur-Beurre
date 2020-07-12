@@ -19,36 +19,6 @@ class Category(models.Model):
         return self.name
 
 
-class Store(models.Model):
-    """
-    Store in which a product is sell
-    """
-
-    name = models.CharField(
-        unique=True,
-        max_length=100,
-        validators=[MinLengthValidator(1), MaxLengthValidator],
-    )
-
-    def __str__(self):
-        return self.name
-
-
-class Brand(models.Model):
-    """
-    Product's brand
-    """
-
-    name = models.CharField(
-        unique=True,
-        max_length=100,
-        validators=[MinLengthValidator(1), MaxLengthValidator],
-    )
-
-    def __str__(self):
-        return self.name
-
-
 class Product(models.Model):
     """
     Product from openfoodfact
@@ -63,16 +33,6 @@ class Product(models.Model):
     name = models.CharField(
         max_length=100, validators=[MinLengthValidator(1), MaxLengthValidator]
     )
-
-    generic_name = models.CharField(
-        blank=True, max_length=100, validators=[MaxLengthValidator]
-    )
-
-    quantity = models.CharField(
-        blank=True, max_length=50, validators=[MaxLengthValidator]
-    )
-
-    ingredients_text = models.TextField(blank=True)
 
     nutriscore_grade = models.CharField(
         max_length=1, validators=[MinLengthValidator(1), MaxLengthValidator],
@@ -89,8 +49,6 @@ class Product(models.Model):
 
     # Related fields
     categories = models.ManyToManyField(Category)
-    stores = models.ManyToManyField(Store)
-    brands = models.ManyToManyField(Brand)
 
     # objects = ProductManager()
 
