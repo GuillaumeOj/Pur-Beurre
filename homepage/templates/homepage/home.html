@@ -21,9 +21,10 @@
 		</div>
 		<div class="row text-center">
 			<div class="col px-5">
-				<form method="POST" action="">
+				<form method="post" action="{% url "search:find" %}">
+					{% csrf_token %}
 					<div class="input-group">
-						<input type="text" class="form-control"
+						<input type="text" name="name" class="form-control"
 							placeholder="Chercher un aliment">
 						<div class="input-group-append">
 							<input type="submit" class="btn btn-primary" value="Chercher">

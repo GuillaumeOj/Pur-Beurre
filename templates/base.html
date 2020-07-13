@@ -59,8 +59,9 @@
 				src="{% static "dist/assets/img/logo_pur_beurre.svg" %}" alt="Logo Pur Beurre">
 			Pur Beurre
 		</a>
-		<form method="post" action="">
-			<input type="text" name="search" class="form-control d-none d-lg-block"
+		<form method="post" action="{% url "search:find" %}">
+			{% csrf_token %}
+			<input type="text" name="name" class="form-control d-none d-lg-block"
 				placeholder="Chercher un aliment">
 		</form>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
