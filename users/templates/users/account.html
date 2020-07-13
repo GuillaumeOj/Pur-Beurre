@@ -3,8 +3,8 @@
 {% block title %}Mon compte{% endblock title %}
 {% block header %}
 <header class="masthead reduced">
-	<div class="container pt-4">
-		<div class="row text-center my-0">
+	<div class="container">
+		<div class="row text-center">
 			<h1 class="col text-white font-weight-bold">
 				Bonjour
 				{% if user.first_name %}
@@ -14,7 +14,6 @@
 				{% endif %}
 			</h1>
 		</div>
-		<hr class="divider my-4" />
 	</div>
 </header>
 {% endblock header %}

@@ -10027,6 +10027,10 @@ hr.light {
   border-radius: 10rem;
 }
 
+.btn-biscuit {
+  background-color: #e8a75d;
+}
+
 .page-section {
   padding: 8rem 0;
 }
@@ -10196,7 +10200,17 @@ header.masthead h1 {
 }
 
 .masthead.reduced {
+  padding-top: 4.5rem;
   max-height: 25% !important;
+}
+.masthead.reduced .container {
+  min-height: 100%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.masthead.reduced .row h1 {
+  font-size: 2rem !important;
 }
 
 #user_info,
@@ -10288,9 +10302,7 @@ footer .container .row {
 }
 
 .card.product .card-body img {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
+  width: 80%;
 }
 
 .text-white-75 {

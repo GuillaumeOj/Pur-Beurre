@@ -3,13 +3,12 @@
 {% block title %}Mon compte{% endblock title %}
 {% block header %}
 <header class="masthead reduced">
-	<div class="container pt-4">
-		<div class="row text-center my-0">
+	<div class="container">
+		<div class="row text-center">
 			<h1 class="col text-white font-weight-bold">
 				Quel produit remplacer ?
 			</h1>
 		</div>
-		<hr class="divider my-4" />
 	</div>
 </header>
 {% endblock header %}
@@ -17,15 +16,17 @@
 <!-- Search result -->
 <div class="page-section bg-primary p-0" id="search_result">
 	<div class="container py-3">
-		<div class="row row-cols-3">
-			{% if products %}
+		{% if products %}
+		<div class="row row-cols-1 row-cols-sm-3">
 			{% for product in products %}
 			{% include "search/_product_card.html" %}
 			{% endfor %}
-			{% else %}
-			<p>Aucun produit n'a était trouvé.</p>
-			{% endif %}
 		</div>
+		{% else %}
+		<h5 class="text-center text-white">Aucun produit n'a était trouvé.</h5>
+		<p class="text-center text-white">Revenir à l'accueil <a class="btn btn-sm btn-secondary btn-biscuit"
+				href="{% url "homepage:index" %}" title="Accueil">par ici</a></p>
+		{% endif %}
 	</div>
 </div>
 {% endblock content %}
