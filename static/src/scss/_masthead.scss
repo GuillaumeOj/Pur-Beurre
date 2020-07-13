@@ -41,3 +41,8 @@ header.masthead {
 .masthead.reduced {
   max-height: $reduced-header-height !important;
 }
+
+#user_info,
+#search_result {
+  min-height: calc(100vh - #{$reduced-header-height} - #{$footer-height});
+}

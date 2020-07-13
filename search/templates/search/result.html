@@ -14,13 +14,13 @@
 </header>
 {% endblock header %}
 {% block content %}
-<!-- User informations -->
-<div class="page-section bg-primary" id="user_info">
-	<div class="container p-0 text-center font-weight-bold text-white">
-		<div class="col-12 container text-left">
+<!-- Search result -->
+<div class="page-section bg-primary p-0" id="search_result">
+	<div class="container p-0">
+		<div class="row row-cols-3">
 			{% if products %}
 			{% for product in products %}
-			<p>{{ product.name }}</p>
+			{% include "search/_product_card.html" %}
 			{% endfor %}
 			{% else %}
 			<p>Aucun produit n'a était trouvé.</p>

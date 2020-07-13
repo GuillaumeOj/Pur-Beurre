@@ -10199,6 +10199,11 @@ header.masthead h1 {
   max-height: 25% !important;
 }
 
+#user_info,
+#search_result {
+  min-height: calc(100vh - 25% - 3rem);
+}
+
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl {
   max-width: 1920px;
 }
@@ -10280,6 +10285,12 @@ footer .container .row {
 
 #user_info {
   min-height: calc(100vh - 25% - 3rem);
+}
+
+.card.product .card-body img {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .text-white-75 {
