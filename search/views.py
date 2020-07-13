@@ -17,3 +17,10 @@ def find(request):
             return render(request, "search/result.html", context=context)
     else:
         return redirect(reverse("homepage:index"))
+
+
+def substitutes(request):
+    """
+    Find substitutes for a product
+    """
+    pass
