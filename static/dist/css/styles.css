@@ -10302,7 +10302,10 @@ footer .container .row {
 }
 
 .card.product .card-body img {
-  width: 80%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  max-width: 80%;
+  max-height: 10rem;
 }
 
 .text-white-75 {

@@ -1,7 +1,9 @@
 .card.product {
   .card-body {
     img {
-      width: 80%;
+      object-fit: scale-down;
+      max-width: 80%;
+      max-height: 10rem;
     }
   }
 }
