@@ -9,7 +9,11 @@
 			{% endif %}
 		</div>
 		<div class="card-footer">
+			{% if products %}
 			<a href="{% url "search:substitutes" product.code %}" class="btn btn-primary">Choisir</a>
+			{% else %}
+			<a href="#" class="btn btn-primary">Voir fiche</a>
+			{% endif %}
 		</div>
 	</div>
 </div>
