@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Choisir un substitut{% endblock title %}
+{% block header %}
+<header class="masthead reduced">
+	<div class="container">
+		<div class="row text-center">
+			<h1 class="col text-white font-weight-bold">
+				Quel substitut choisir ?
+			</h1>
+		</div>
+	</div>
+</header>
+{% endblock header %}
+{% block content %}
+<!-- Choose a substitute -->
+<div class="page-section bg-primary p-0" id="choose_substitute">
+	<div class="container py-3">
+		{% if substitutes %}
+		<div class="row row-cols-1 row-cols-sm-3">
+			{% for product in substitutes %}
+			{% include "search/_product_card.html" %}
+			{% endfor %}
+		</div>
+		{% else %}
+		<h5 class="text-center text-white">Aucun substitut n'a était trouvé.</h5>
+		<p class="text-center text-white">Revenir à l'accueil <a class="btn btn-sm btn-secondary btn-biscuit"
+				href="{% url "homepage:index" %}" title="Accueil">par ici</a></p>
+		{% endif %}
+	</div>
+</div>
+{% endblock content %}

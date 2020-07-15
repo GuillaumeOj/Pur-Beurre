@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.db.models import Count, Q
 
 from product.models import Product
 
@@ -19,8 +20,23 @@ def find(request):
         return redirect(reverse("homepage:index"))
 
 
-def substitutes(request):
+def substitutes(request, product_code):
     """
     Find substitutes for a product
     """
-    pass
+    if product_code:
+        product = Product.objects.get(code=product_code)
+        print(type(product_code))
+        if product:
+            q = Q(categories__in=product.categories.all()) & Q(
+                nutriscore_grade__lte=product.nutriscore_grade
+            )
+            substitutes = (
+                Product.objects.annotate(common_categories=Count("categories", filter=q))
+                .order_by("-common_categories", "nutriscore_grade")
+                .exclude(code=product.code)
+            )
+            context = {"substitutes": substitutes}
+            return render(request, "search/substitutes.html", context=context)
+    else:
+        return redirect(reverse("homepage:index"))
