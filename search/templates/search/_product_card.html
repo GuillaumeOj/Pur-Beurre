@@ -1,6 +1,11 @@
 <div class="col my-3">
 	<div class="card product bg-biscuit text-center">
-		<h5 class="card-header font-weight-bold text-white">{{ product.name }}</h5>
+		<div class="nutriscore-grade score-{{ product.nutriscore_grade|lower }}">
+			{{ product.nutriscore_grade }}
+		</div>
+		<h5 class="card-header font-weight-bold text-white">
+			{{ product.name }}
+		</h5>
 		<div class="card-body">
 			{% if product.image_url %}
 			<img src="{{ product.image_small_url }}" alt="{{ product.name }}" class="card-img-top">
