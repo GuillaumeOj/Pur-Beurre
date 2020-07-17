@@ -24,6 +24,13 @@
 <div class="page-section bg-moules p-0" id="choose_substitute">
 	<div class="container py-3">
 		{% if substitutes %}
+		<div class="row h-50 align-items-end text-center">
+			<div class="col">
+				<h2 class="text-white font-weight-bold">Vous pouvez remplacer cet aliment
+					par :</h2>
+				<hr class="divider my-4" />
+			</div>
+		</div>
 		<div class="row row-cols-1 row-cols-sm-3 mx-2 mx-sm-0">
 			{% for product in substitutes %}
 			{% include "search/_product_card.html" %}
