@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load user_extras %}
 {% block title %}Choisir un substitut{% endblock title %}
 {% block header %}
 <header class="masthead reduced"
@@ -9,9 +10,9 @@
 		<div class="row text-center">
 			<h1 class="col text-white font-weight-bold">
 				{% if product %}
-				Quel substitut choisir pour "{{ product.name }}" ?
+				Résultats pour "{{ product.name }}"
 				{% else %}
-				Quel substitut choisir ?
+				Pas de résultat
 				{% endif %}
 			</h1>
 		</div>
@@ -20,7 +21,7 @@
 {% endblock header %}
 {% block content %}
 <!-- Choose a substitute -->
-<div class="page-section bg-primary p-0" id="choose_substitute">
+<div class="page-section bg-moules p-0" id="choose_substitute">
 	<div class="container py-3">
 		{% if substitutes %}
 		<div class="row row-cols-1 row-cols-sm-3 mx-2 mx-sm-0">
@@ -30,8 +31,20 @@
 		</div>
 		{% else %}
 		<h5 class="text-center text-white">Aucun substitut n'a était trouvé.</h5>
-		<p class="text-center text-white">Revenir à l'accueil <a class="text-biscuit"
-				href="{% url "homepage:index" %}" title="Accueil">par ici</a></p>
+		<p class="text-center text-white">Faire une nouvelle recherche :</p>
+		<div class="row text-center">
+			<div class="col px-5">
+				<form method="post" action="{% url "search:find" %}">
+					{% csrf_token %}
+					<div class="input-group">
+						{{ product_search_form.name|add_css:"form-control" }}
+						<div class="input-group-append">
+							<input type="submit" class="btn btn-primary" value="Chercher">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 		{% endif %}
 	</div>
 </div>

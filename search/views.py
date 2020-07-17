@@ -20,6 +20,8 @@ def find(request):
                 substitutes = Product.objects.find_substitute(product.code)
                 context["product"] = product
                 context["substitutes"] = substitutes
+            else:
+                context["product"] = {"name": form.cleaned_data["name"]}
 
             return render(request, "search/substitutes.html", context=context)
     return redirect(reverse("homepage:index"))
