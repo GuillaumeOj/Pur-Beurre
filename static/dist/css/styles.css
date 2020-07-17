@@ -10214,7 +10214,8 @@ header.masthead h1 {
 }
 
 #user_info,
-#search_result {
+#search_result,
+#choose_substitute {
   min-height: calc(100vh - 25% - 3rem);
 }
 
