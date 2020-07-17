@@ -31,7 +31,7 @@ class ProductManager(models.Manager):
                 Product.objects.annotate(common_categories=Count("categories", filter=q))
                 .order_by("-common_categories", "nutriscore_grade")
                 .exclude(code=product.code)
-                .exclude(name=product.name)[:9]
+                .exclude(name=product.name)[:30]
             )
             return substitutes
 
