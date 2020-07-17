@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load user_extras %}
 <html lang="fr">
 
 <head>
@@ -61,8 +62,7 @@
 		</a>
 		<form method="post" action="{% url "search:find" %}">
 			{% csrf_token %}
-			<input type="text" name="name" class="form-control d-none d-lg-block"
-				placeholder="Chercher un aliment">
+			{{ product_search_form.name|add_css:"form-control" }}
 		</form>
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
 			data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load user_extras %}
 {% block title %}Accueil{% endblock title %}
 {% block header %}
 <header class="masthead">
@@ -24,8 +25,7 @@
 				<form method="post" action="{% url "search:find" %}">
 					{% csrf_token %}
 					<div class="input-group">
-						<input type="text" name="name" class="form-control"
-							placeholder="Chercher un aliment">
+						{{ product_search_form.name|add_css:"form-control" }}
 						<div class="input-group-append">
 							<input type="submit" class="btn btn-primary" value="Chercher">
 						</div>
