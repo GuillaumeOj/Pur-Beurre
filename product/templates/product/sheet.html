@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% load user_extras %}
+{% block title %}Fiche produit{% endblock title %}
+{% block header %}
+<header class="masthead reduced"
+	style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url({% if product.image_url %}{{ product.image_url }}{% else %}{% static "dist/assets/img/logo_pur_beurre.svg" %}{% endif %}) repeat-x; background-size: contain;">
+
+	<div class="container">
+		<div class="row text-center">
+			<h1 class="col text-white font-weight-bold">
+				{% if product %}
+				Détails pour "{{ product.name }}"
+				{% else %}
+				Pas de résultat
+				{% endif %}
+			</h1>
+		</div>
+	</div>
+</header>
+{% endblock header %}
+{% block content %}
+<!-- Choose a substitute -->
+<div class="page-section bg-moules p-0" id="product_sheet">
+	<div class="container py-3">
+		{% if product %}
+		<div class="row">
+			<div class="col">
+				<div class="btn-group nutriscore">
+					{% for i in "ABCDE"|make_list %}
+					<div
+						class="btn score-{{ i|lower }}{% if product.nutriscore_grade == i %} current{% endif %}">
+						{{ i }}</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		{% else %}
+		<h5 class="text-center text-white">Ce produit n'existe pas.</h5>
+		<p class="text-center text-white">Faire une nouvelle recherche :</p>
+		<div class="row text-center">
+			<div class="col px-5">
+				<form method="post" action="{% url "search:find" %}">
+					{% csrf_token %}
+					<div class="input-group">
+						{{ product_search_form.name|add_css:"form-control" }}
+						<div class="input-group-append">
+							<input type="submit" class="btn btn-primary" value="Chercher">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>
+{% endblock content %}

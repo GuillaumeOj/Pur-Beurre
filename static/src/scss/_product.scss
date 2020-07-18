@@ -37,3 +37,43 @@
     }
   }
 }
+
+#product_sheet {
+  .btn-group.nutriscore {
+    .btn {
+      font-size: 2.5rem;
+    }
+    .btn:first-child {
+      border-radius: 15% 0 0 15%;
+    }
+    .btn:last-child {
+      border-radius: 0 15% 15% 0;
+    }
+    .score-a {
+      background-color: #038141;
+      color: #63ad81;
+    }
+    .score-b {
+      background-color: #85bb2f;
+      color: #bcda8d;
+    }
+    .score-c {
+      background-color: #fecb02;
+      color: #fee171;
+    }
+    .score-d {
+      background-color: #ee8100;
+      color: #e65c07;
+    }
+    .score-e {
+      background-color: #e63e11;
+      color: #f19176;
+    }
+    .current {
+      color: white;
+      box-shadow: 0 0 0 0.5rem white;
+      border-radius: 15% !important;
+      z-index: 7;
+    }
+  }
+}

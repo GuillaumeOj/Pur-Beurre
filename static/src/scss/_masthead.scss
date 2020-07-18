@@ -63,6 +63,7 @@ header.masthead {
 
 #user_info,
 #search_result,
-#choose_substitute {
+#choose_substitute,
+#product_sheet {
   min-height: calc(100vh - #{$reduced-header-height} - #{$footer-height});
 }

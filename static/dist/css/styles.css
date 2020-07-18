@@ -10222,7 +10222,8 @@ header.masthead h1 {
 
 #user_info,
 #search_result,
-#choose_substitute {
+#choose_substitute,
+#product_sheet {
   min-height: calc(100vh - 25% - 3rem);
 }
 
@@ -10344,6 +10345,42 @@ footer .container .row {
      object-fit: scale-down;
   max-width: 80%;
   max-height: 10rem;
+}
+
+#product_sheet .btn-group.nutriscore .btn {
+  font-size: 2.5rem;
+}
+#product_sheet .btn-group.nutriscore .btn:first-child {
+  border-radius: 15% 0 0 15%;
+}
+#product_sheet .btn-group.nutriscore .btn:last-child {
+  border-radius: 0 15% 15% 0;
+}
+#product_sheet .btn-group.nutriscore .score-a {
+  background-color: #038141;
+  color: #63ad81;
+}
+#product_sheet .btn-group.nutriscore .score-b {
+  background-color: #85bb2f;
+  color: #bcda8d;
+}
+#product_sheet .btn-group.nutriscore .score-c {
+  background-color: #fecb02;
+  color: #fee171;
+}
+#product_sheet .btn-group.nutriscore .score-d {
+  background-color: #ee8100;
+  color: #e65c07;
+}
+#product_sheet .btn-group.nutriscore .score-e {
+  background-color: #e63e11;
+  color: #f19176;
+}
+#product_sheet .btn-group.nutriscore .current {
+  color: white;
+  box-shadow: 0 0 0 0.5rem white;
+  border-radius: 15% !important;
+  z-index: 7;
 }
 
 .text-white-75 {
