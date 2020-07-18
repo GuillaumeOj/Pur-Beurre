@@ -13,20 +13,22 @@
 			<form method="post" action="{% url "users:login" %}" class="col-lg" novalidate>
 				{% csrf_token %}
 				<div class="form-group">
-					{{ form.username.label_tag }}
-					{{ form.username|add_css:"form-control" }}
-					<div class="invalid-feedback {% if form.username.errors%}d-inline{% endif%}">
-						{{ form.username.errors }}
+					{{ login_form.username.label_tag }}
+					{{ login_form.username|add_css:"form-control" }}
+					<div
+						class="invalid-feedback {% if login_form.username.errors%}d-inline{% endif%}">
+						{{ login_form.username.errors }}
 					</div>
 				</div>
-				<div class="form-group">
-					{{ form.password.label_tag }}
-					{{ form.password|add_css:"form-control" }}
-					<div class="invalid-feedback {% if form.password.errors%}d-inline{% endif%}">
-						{{ form.password.errors }}
+				<div class="login_form-group">
+					{{ login_form.password.label_tag }}
+					{{ login_form.password|add_css:"form-control" }}
+					<div
+						class="invalid-feedback {% if login_form.password.errors%}d-inline{% endif%}">
+						{{ login_form.password.errors }}
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary">Se connecter</button>
+				<button type="submit" class="btn btn-primary mt-3">Se connecter</button>
 			</form>
 		</div>
 	</div>

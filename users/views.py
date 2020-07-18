@@ -1,30 +1,58 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.contrib import messages
-from django.contrib.auth import get_user_model
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import get_user_model, authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.messages.views import SuccessMessageMixin
 
-from .forms import UserRegistrationForm
+from .forms import UserRegistrationForm, UserLoginForm
+from product.forms import ProductSearchForm
 
 User = get_user_model()
 
 
-class CustomLoginView(SuccessMessageMixin, LoginView):
-    success_url = "homepage:index"
-    success_message = "Bonjour !"
+def custom_login_view(request):
+    product_search_form = ProductSearchForm()
+    context = {"product_search_form": product_search_form}
+
+    if request.method == "POST":
+        login_form = UserLoginForm(request.POST)
+
+        email = request.POST["username"]
+        password = request.POST["password"]
+
+        user = authenticate(request, email=email, password=password)
+        if user is not None:
+            login(request, user)
+            success_message = f"Bonjour {user.first_name} !"
+            messages.success(request, success_message)
+            return redirect(reverse("homepage:index"))
+        else:
+            fail_message = "Vos identifiants sont incorrects."
+            messages.error(request, fail_message)
+            return redirect(reverse("users:login"))
+    else:
+        login_form = UserLoginForm()
+
+    context["login_form"] = login_form
+    return render(request, "users/login.html", context=context)
 
 
-class CustomLogoutView(SuccessMessageMixin, LogoutView):
-    success_url = "homepage:index"
-    success_message = "À bientôt !"
+def custom_logout_view(request):
+    success_message = f"Au revoir {request.user.first_name}"
+    messages.success(request, success_message)
+
+    logout(request)
+
+    return redirect(reverse("homepage:index"))
 
 
 def registration(request):
     """
     Register a user
     """
+    product_search_form = ProductSearchForm()
+    context = {"product_search_form": product_search_form}
+
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
@@ -44,7 +72,9 @@ def registration(request):
             return redirect(reverse("homepage:index"))
     else:
         form = UserRegistrationForm()
-    return render(request, "users/registration.html", {"form": form})
+
+    context["form"] = form
+    return render(request, "users/registration.html", context=context)
 
 
 @login_required
