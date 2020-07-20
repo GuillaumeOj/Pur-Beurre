@@ -16,16 +16,20 @@ class FeedDb:
 
         # Insert each product in the application's database
         for raw_product in raw_products:
-            normalized_product = self._normalize_product(raw_product)
+            serialized_product = self._serialize_product(raw_product)
 
             try:
                 product = Product(
-                    code=normalized_product["code"],
-                    name=normalized_product["name"],
-                    url=normalized_product["url"],
-                    nutriscore_grade=normalized_product["nutriscore_grade"],
-                    image_url=normalized_product["image_url"],
-                    image_small_url=normalized_product["image_small_url"],
+                    code=serialized_product["code"],
+                    name=serialized_product["name"],
+                    url=serialized_product["url"],
+                    nutriscore_grade=serialized_product["nutriscore_grade"],
+                    image_url=serialized_product["image_url"],
+                    image_small_url=serialized_product["image_small_url"],
+                    salt_100=serialized_product["salt_100"],
+                    sugars_100=serialized_product["sugars_100"],
+                    saturated_fat_100=serialized_product["saturated_fat_100"],
+                    fat_100=serialized_product["fat_100"],
                 )
                 product.full_clean()
                 product.save()
@@ -34,7 +38,7 @@ class FeedDb:
 
             # Insert associated categories, stores and brands
             categories = []
-            for category in normalized_product["categories"]:
+            for category in serialized_product["categories"]:
                 try:
                     obj, created = Category.objects.get_or_create(name=category)
                     categories.append(obj)
@@ -42,24 +46,37 @@ class FeedDb:
                     continue
             product.categories.add(*categories)
 
-    def _normalize_product(self, raw_product):
+    def _serialize_product(self, raw_product):
         """
-        Normalize the product data
+        Serialize a product data informations
         """
 
-        normalized = dict()
+        def serialize_nutriment(key):
+            nutriment_value = nutriments.get(key, 0)
+            serialized_nutriment = float(nutriment_value)
+            return serialized_nutriment
 
-        normalized["code"] = raw_product.get("code")
-        normalized["name"] = raw_product.get("product_name", "").title()
-        normalized["url"] = raw_product.get("url", "").lower()
-        normalized["nutriscore_grade"] = raw_product.get("nutriscore_grade", "").upper()
+        serialized = dict()
 
-        normalized["image_url"] = raw_product.get("image_url", "")
-        normalized["image_small_url"] = raw_product.get("image_small_url", "")
+        serialized["code"] = raw_product.get("code")
+        serialized["name"] = raw_product.get("product_name", "").title()
+        serialized["url"] = raw_product.get("url", "").lower()
+        serialized["nutriscore_grade"] = raw_product.get("nutriscore_grade", "").upper()
 
-        normalized["categories"] = raw_product.get("categories", "").split(",")
+        serialized["image_url"] = raw_product.get("image_url", "")
+        serialized["image_small_url"] = raw_product.get("image_small_url", "")
 
-        return normalized
+        serialized["categories"] = raw_product.get("categories", "").split(",")
+
+        nutriments = raw_product.get("nutriments")
+
+        # Transform each nutriment as a float
+        serialized["salt_100"] = serialize_nutriment("salt_100g")
+        serialized["fat_100"] = serialize_nutriment("fat_100g")
+        serialized["saturated_fat_100"] = serialize_nutriment("saturated-fat_100g")
+        serialized["sugars_100"] = serialize_nutriment("sugars_100g")
+
+        return serialized
 
     def _clear_db(self):
         product = Product.objects.all()

@@ -24,6 +24,7 @@ class Api:
         "nutriscore_grade",
         "image_url",
         "image_small_url",
+        "nutriments",
     ]
 
     def get_products(self):

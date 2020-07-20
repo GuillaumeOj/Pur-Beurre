@@ -65,6 +65,10 @@ class Product(models.Model):
     image_small_url = models.URLField(
         blank=True, validators=[MaxLengthValidator, URLValidator]
     )
+    fat_100 = models.FloatField(blank=True, default=0)
+    saturated_fat_100 = models.FloatField(blank=True, default=0)
+    sugars_100 = models.FloatField(blank=True, default=0)
+    salt_100 = models.FloatField(blank=True, default=0)
 
     # Related fields
     categories = models.ManyToManyField(Category)
