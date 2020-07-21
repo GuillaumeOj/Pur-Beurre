@@ -68,7 +68,7 @@ class FeedDb:
 
         serialized["categories"] = raw_product.get("categories", "").split(",")
 
-        nutriments = raw_product.get("nutriments")
+        nutriments = raw_product.get("nutriments", {})
 
         # Transform each nutriment as a float
         serialized["salt_100"] = serialize_nutriment("salt_100g")
