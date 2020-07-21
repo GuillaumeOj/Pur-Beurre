@@ -10,7 +10,7 @@
 		<div class="row text-center">
 			<h1 class="col text-white font-weight-bold">
 				{% if product %}
-				Détails pour "{{ product.name }}"
+				{{ product.name }}
 				{% else %}
 				Pas de résultat
 				{% endif %}
@@ -24,15 +24,34 @@
 <div class="page-section bg-moules p-0" id="product_sheet">
 	<div class="container py-3">
 		{% if product %}
-		<div class="row">
-			<div class="col">
-				<div class="btn-group nutriscore">
+		<div class="row row-cols-1 row-cols-sm-2 my-5">
+			<div class="col text-center mb-5">
+				<div class="row">
+					<h2 class="col">Nutriscore</h2>
+				</div>
+				<div class="row btn-group nutriscore">
 					{% for i in "ABCDE"|make_list %}
 					<div
 						class="btn score-{{ i|lower }}{% if product.nutriscore_grade == i %} current{% endif %}">
 						{{ i }}</div>
 					{% endfor %}
 				</div>
+			</div>
+			<div class="col text-center">
+				<div class="row">
+					<h2>Repères nutritionnels pour 100g</h2>
+				</div>
+				{% include "product/_nutriment.html" with nutriment=product.fat_100 verbose_name="Lipides" floor=3 ceil=20 %}
+				{% include "product/_nutriment.html" with nutriment=product.saturated_fat_100 verbose_name="Acides gras saturés" floor=1.5 ceil=5 %}
+				{% include "product/_nutriment.html" with nutriment=product.sugars_100 verbose_name="Sucres" floor=5 ceil=12.5 %}
+				{% include "product/_nutriment.html" with nutriment=product.salt_100 verbose_name="Sel" floor=0.3 ceil=1.5 %}
+			</div>
+		</div>
+		<div class="row my-5">
+			<div class="col btn btn-primary">
+				<a href="{{ product.url }}" target="_blank" rel="noreferrer" class="text-white">
+					Voir la fiche sur Open Food Facts
+				</a>
 			</div>
 		</div>
 		{% else %}
