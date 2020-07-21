@@ -56,7 +56,7 @@ class User(AbstractUser):
     )
 
     first_name = models.CharField(_("first name"), max_length=150, blank=False)
-    last_name = models.CharField(_("last name"), max_length=150, blank=True, null=True)
+    last_name = models.CharField(_("last name"), max_length=150, blank=True, default="")
 
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
