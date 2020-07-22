@@ -76,6 +76,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Auth settings
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+LOGIN_URL = "/users/login/"
 
 # Custom user model
 AUTH_USER_MODEL = "users.User"
