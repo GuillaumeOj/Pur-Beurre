@@ -82,4 +82,7 @@ def account(request):
     """
     User account details
     """
-    return render(request, "users/account.html")
+    product_search_form = ProductSearchForm()
+    context = {"product_search_form": product_search_form}
+
+    return render(request, "users/account.html", context=context)
