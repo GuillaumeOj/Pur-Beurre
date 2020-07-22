@@ -76,7 +76,21 @@
 		</div>
 		{% endfor %}
 		{% else %}
-		No substitutes
+		<h2 class="text-white font-weight-bold text-center">Vous n'avez pas encore de favoris</h2>
+		<p class="text-center text-white">Faire une recherche :</p>
+		<div class="row text-center">
+			<div class="col px-5">
+				<form method="post" action="{% url "search:find" %}">
+					{% csrf_token %}
+					<div class="input-group">
+						{{ product_search_form.name|add_css:"form-control" }}
+						<div class="input-group-append">
+							<input type="submit" class="btn btn-primary" value="Chercher">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 		{% endif %}
 	</div>
 </div>
