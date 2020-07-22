@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.utils.translation import gettext_lazy as _
 
+from product.models import Product, Favorite
+
 
 # Create your models here.
 
@@ -49,15 +51,21 @@ class User(AbstractUser):
 
     username = None
 
+    # Required fields
     email = models.EmailField(
         _("email address"),
         unique=True,
         error_messages={"unique": _("A user with that email already exists.")},
     )
-
     first_name = models.CharField(_("first name"), max_length=150, blank=False)
+
+    # Optional fields
     last_name = models.CharField(_("last name"), max_length=150, blank=True, default="")
 
+    # ManyToManyField
+    favorites = models.ManyToManyField(Favorite)
+
+    # Permissions
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
