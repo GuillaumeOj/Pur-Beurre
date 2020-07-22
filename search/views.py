@@ -18,9 +18,7 @@ def find(request):
             product = Product.objects.find_product(form.cleaned_data["name"])
 
             if product:
-                return redirect(
-                    reverse("search:find_substitutes", args=[product.code, 1])
-                )
+                return redirect(reverse("search:find_substitutes", args=[product.code]))
             else:
                 context["product"] = {"name": form.cleaned_data["name"]}
 
@@ -28,7 +26,7 @@ def find(request):
     return redirect(reverse("homepage:index"))
 
 
-def find_substitutes(request, product_code, page):
+def find_substitutes(request, product_code, page=1):
     form = ProductSearchForm()
     context = {"product_search_form": form}
 
