@@ -76,5 +76,8 @@ class Product(models.Model):
     # Custom product's manager
     objects = ProductManager()
 
+    class Meta:
+        ordering = ["-name", "code"]
+
     def __str__(self):
         return f"{self.code} - {self.name}"

@@ -9,4 +9,5 @@ urlpatterns = [
         "save/<str:product_code>/<str:substitute_code>/", views.save_favorite, name="save"
     ),
     path("favorites/", views.favorites, name="favorites"),
+    path("favorites/<int:page>/", views.favorites, name="favorites"),
 ]
