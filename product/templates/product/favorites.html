@@ -16,49 +16,8 @@
 {% block content %}
 <!-- My favorites -->
 <div class="page-section bg-moules p-0" id="favorites">
-	<div class="container py-3">
+	<div class="container p-0 py-3">
 		{% if favorites %}
-		<nav class="row" aria-label="Pagination favoris">
-			<ul class="pagination mx-auto">
-				<li class="page-item {% if not favorites.has_previous %}disabled{% endif %}">
-					{% if favorites.has_previous %}
-					<a href="{% url "product:favorites" favorites.previous_page_number %}"
-						title="Page précédente">
-						<span class="page-link">&laquo;</span>
-					</a>
-					{% else %}
-					<span class="page-link">&laquo;</span>
-					{% endif %}
-				</li>
-				{% for i in favorites.paginator.page_range %}
-				{% if favorites.number == i %}
-				<li class="page-item active" aria-current="page">
-					<span class="page-link">
-						{{ i }}
-						<span class="sr-only">(current)</span>
-					</span>
-				</li>
-				{% else %}
-				<li class="page-item">
-					<a class="page-link" href="{% url "product:favorites" i %}">
-						{{ i }}
-					</a>
-				</li>
-				{% endif %}
-				{% endfor %}
-
-				<li class="page-item {% if not favorites.has_next %}disabled{% endif %}">
-					{% if favorites.has_next %}
-					<a href="{% url "product:favorites" favorites.next_page_number %}"
-						title="Page suivante">
-						<span class="page-link">&raquo;</span>
-					</a>
-					{% else %}
-					<span class="page-link">&raquo;</span>
-					{% endif %}
-				</li>
-			</ul>
-		</nav>
 		{% regroup favorites by product as favorites_by_product %}
 		{% for substituted, favorites in favorites_by_product %}
 		<p class="row">
@@ -68,8 +27,7 @@
 				{{ substituted.name }}
 			</button>
 		</p>
-		<div class="row row-cols-1 row-cols-sm-3 mx-2 mx-sm-0 collapse show"
-			id="collapse_{{ substituted.code }}">
+		<div class="row row-cols-1 row-cols-sm-3 p-0 collapse show" id="collapse_{{ substituted.code }}">
 			{% for favorite in favorites %}
 			{% include "search/_product_card.html" with product=favorite.substitute %}
 			{% endfor %}

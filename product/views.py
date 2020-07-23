@@ -44,12 +44,4 @@ def favorites(request, page=1):
     favorites = request.user.favorites.order_by("-product")
     context["favorites"] = favorites
 
-    pagination = Paginator(favorites, 2, orphans=1)
-    try:
-        context["favorites"] = pagination.page(page)
-    except PageNotAnInteger:
-        context["favorites"] = pagination.page(1)
-    except EmptyPage:
-        context["favorites"] = pagination.page(pagination.num_pages)
-
     return render(request, "product/favorites.html", context=context)
