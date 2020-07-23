@@ -1,0 +1,15 @@
+{% load user_extras %}
+<form method="post" action="{% url "search:find" %}">
+	{% csrf_token %}
+	{% if type == "shortcut" %}
+	{{ product_search_form.name|add_css:"form-control d-none d-lg-block" }}
+	{% else %}
+	<div class="input-group">
+		{{ product_search_form.name|add_css:"form-control" }}
+		<div class="input-group-append">
+			<input type="submit" class="btn btn-primary" value="Chercher">
+		</div>
+	</div>
+	{% endif %}
+	<div id="results_{{ type }}"></div>
+</form>

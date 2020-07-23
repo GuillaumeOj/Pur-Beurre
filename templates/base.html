@@ -60,10 +60,7 @@
 				src="{% static "dist/assets/img/logo_pur_beurre.svg" %}" alt="Logo Pur Beurre">
 			Pur Beurre
 		</a>
-		<form method="post" action="{% url "search:find" %}">
-			{% csrf_token %}
-			{{ product_search_form.name|add_css:"form-control d-none d-lg-block" }}
-		</form>
+		{% include "search/_search_form.html" with type="shortcut" %}
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
 			data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
 			aria-label="Toggle navigation">
