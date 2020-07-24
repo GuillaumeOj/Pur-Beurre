@@ -10,3 +10,12 @@ def index(request):
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
     return render(request, "homepage/home.html", context=context)
+
+
+def disclaimer(request):
+    """
+    Display the disclaimer
+    """
+    product_search_form = ProductSearchForm()
+    context = {"product_search_form": product_search_form}
+    return render(request, "homepage/disclaimer.html", context=context)

@@ -10228,6 +10228,10 @@ header.masthead h1 {
   min-height: calc(100vh - 25% - 3rem);
 }
 
+#disclaimer {
+  min-height: calc(100vh - 3rem);
+}
+
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl {
   max-width: 1920px;
 }

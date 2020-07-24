@@ -68,3 +68,7 @@ header.masthead {
 #favorites {
   min-height: calc(100vh - #{$reduced-header-height} - #{$footer-height});
 }
+
+#disclaimer {
+  min-height: calc(100vh - #{$footer-height});
+}

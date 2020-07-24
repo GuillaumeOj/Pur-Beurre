@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% load user_extras %}
+{% block title %}Accueil{% endblock title %}
+{% block content %}
+<!-- Disclaimer -->
+<div class="page-section bg-moules" id="disclaimer">
+	<div class="container p-0">
+		<div class="row p-0">
+			<div class="col-6 p-0 mx-auto">
+				<h2 class="text-white mt-0 text-center">Mentions légales</h2>
+				<hr class="divider light my-4" />
+				<p class="text-white">
+					Site réalisé dans le cadre du projet n°8 du parcours Python <a
+						href="https://openclassrooms.com/fr/paths/68-developpeur-dapplication-python"
+						target="_blank" rel="noreferrer">d'Openclassrooms</a>
+				</p>
+				<hr class="divider light my-4" />
+				<ul class="text-white">
+					<li>
+						<span class="font-weight-bold">Hébergeur :</span> Heroku - The Landmark
+						@ 1
+						Market
+						St. Suite
+						300 San Francisco, CA 94105
+					</li>
+					<li>
+						<span class="font-weight-bold">Thème :</span>
+						<a href="https://startbootstrap.com/themes/creative/" target="_blank"
+							rel="noreferrer">Creative</a> par StartBootstrap
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}
