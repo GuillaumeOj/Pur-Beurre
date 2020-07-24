@@ -16,13 +16,19 @@ class ProductManager(models.Manager):
         """
         Find a product TO substitute
         """
-        return self.get_queryset().filter(name__icontains=query).first()
+        # Try to find the product with the exact name
+        product = self.get_queryset().filter(name=query).first()
+        if product:
+            return product
+        else:
+            # Or with name contains the query
+            return self.get_queryset().filter(name__icontains=query).first()
 
     def find_products(self, query):
         """
         Find products'for auto-completion
         """
-        return self.get_queryset().filter(name__istartswith=query)[:10]
+        return self.get_queryset().filter(name__icontains=query)[:10]
 
     def find_substitute(self, product_code):
         """
