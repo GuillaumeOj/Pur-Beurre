@@ -10402,6 +10402,26 @@ footer .container .row {
   background-color: #cfcffa;
 }
 
+#results_main,
+#results_short {
+  background-color: #c45525;
+  color: #fff;
+  list-style-type: none;
+  text-align: left;
+  position: absolute;
+  margin-top: 5px;
+  padding: 5px;
+}
+#results_main li:hover,
+#results_short li:hover {
+  background-color: #345a61;
+}
+
+#results_main.hidden,
+#results_short.hidden {
+  display: none;
+}
+
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75);
 }

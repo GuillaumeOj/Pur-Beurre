@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, reverse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -5,7 +6,25 @@ from product.models import Product
 from product.forms import ProductSearchForm
 
 
-# Create your views here.
+def auto_find(request):
+    """
+    Return products'names for autocompletion
+    """
+    if request.method == "POST":
+        form = ProductSearchForm(request.POST)
+
+        products = Product.objects.find_products(form["name"].value())
+
+        products_names = [product.name for product in products]
+
+        products_names = list(set(products_names))
+        print(products_names)
+
+        response = {"products_names": products_names}
+
+        return JsonResponse(response)
+
+
 def find(request):
     """
     Find the product, the user want to substitute

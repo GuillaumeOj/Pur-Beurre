@@ -18,6 +18,12 @@ class ProductManager(models.Manager):
         """
         return self.get_queryset().filter(name__icontains=query).first()
 
+    def find_products(self, query):
+        """
+        Find products'for auto-completion
+        """
+        return self.get_queryset().filter(name__istartswith=query)[:10]
+
     def find_substitute(self, product_code):
         """
         Find a substitute to a specific product

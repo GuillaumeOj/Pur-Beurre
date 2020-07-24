@@ -1,0 +1,18 @@
+#results_main,
+#results_short {
+  background-color: $primary;
+  color: $white;
+  list-style-type: none;
+  text-align: left;
+  position: absolute;
+  margin-top: 5px;
+  padding: 5px;
+  li:hover {
+    background-color: $moules;
+  }
+}
+
+#results_main.hidden,
+#results_short.hidden {
+  display: none;
+}

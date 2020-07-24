@@ -1,15 +1,17 @@
 {% load user_extras %}
-<form method="post" action="{% url "search:find" %}">
+<form method="post" action="{% url "search:find" %}" id="search_{{ type }}">
 	{% csrf_token %}
-	{% if type == "shortcut" %}
-	{{ product_search_form.name|add_css:"form-control d-none d-lg-block" }}
+	{% if type == "short" %}
+	<input type="text" name="name" placeholder="Chercher un aliment" maxlength="100"
+		class="form-control d-none d-lg-block" required="" id="id_name" autocomplete="off">
 	{% else %}
 	<div class="input-group">
-		{{ product_search_form.name|add_css:"form-control" }}
+		<input type="text" name="name" placeholder="Chercher un aliment" maxlength="100" class="form-control"
+			required="" id="id_name" autocomplete="off">
 		<div class="input-group-append">
 			<input type="submit" class="btn btn-primary" value="Chercher">
 		</div>
 	</div>
 	{% endif %}
-	<div id="results_{{ type }}"></div>
+	<ul id="results_{{ type }}" class="hidden"></ul>
 </form>

@@ -60,7 +60,7 @@
 				src="{% static "dist/assets/img/logo_pur_beurre.svg" %}" alt="Logo Pur Beurre">
 			Pur Beurre
 		</a>
-		{% include "search/_search_form.html" with type="shortcut" %}
+		{% include "search/_search_form.html" with type="short" %}
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
 			data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
 			aria-label="Toggle navigation">
@@ -147,6 +147,8 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 	<!-- Core theme JS-->
 	<script src="{% static "dist/js/scripts.js" %}"></script>
+	<script>let auto_find_url = "{% url 'search:auto_find' %}"</script>
+	<script src="{% static "dist/js/completion.js" %}"></script>
 </body>
 
 </html>
