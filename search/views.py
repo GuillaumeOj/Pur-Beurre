@@ -53,7 +53,7 @@ def find_substitutes(request, product_code, page=1):
 
     if product:
         context["product"] = product
-        substitutes = Product.objects.find_substitute(product.code)
+        substitutes = Product.objects.find_substitutes(product.code)
 
         if substitutes:
             # Paginate the subsitutes result

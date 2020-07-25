@@ -8,31 +8,31 @@ from .category import Category
 class ProductManager(models.Manager):
     def get_product(self, product_code):
         """
-        Find a specific product
+        Find a specific product with the code
         """
         return self.get_queryset().get(code=product_code)
 
-    def find_product(self, query):
+    def find_product(self, name):
         """
-        Find a product TO substitute
+        Find a specific product with the name
         """
         # Try to find the product with the exact name
-        product = self.get_queryset().filter(name=query).first()
+        product = self.get_queryset().filter(name=name).first()
         if product:
             return product
         else:
-            # Or with name contains the query
-            return self.get_queryset().filter(name__icontains=query).first()
+            # Or with name contains the request name
+            return self.get_queryset().filter(name__icontains=name).first()
 
     def find_products(self, query):
         """
-        Find products'for auto-completion
+        Find products for auto-completion
         """
         return self.get_queryset().filter(name__icontains=query)[:10]
 
-    def find_substitute(self, product_code):
+    def find_substitutes(self, product_code):
         """
-        Find a substitute to a specific product
+        Find substitutes for a specific product
         """
         product = self.get_queryset().get(code=product_code)
         if product:
@@ -50,7 +50,7 @@ class ProductManager(models.Manager):
 
 class Product(models.Model):
     """
-    Product from openfoodfact
+    Model for a product
     """
 
     # Required fields
