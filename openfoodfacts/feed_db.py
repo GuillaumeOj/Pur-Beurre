@@ -4,11 +4,9 @@ from product.models import Category, Product
 
 
 class FeedDb:
-    """
-    Get products from OpenFoodFacts by using the class Api
-    Normalize the data
-    Insert the product and associated categories, brands, stores in the database
-    """
+    """Get products from OpenFoodFacts by using the class Api Normalize the
+    data Insert the product and associated categories, brands, stores in the
+    database."""
 
     def feed_db(self, raw_products):
 
@@ -47,9 +45,7 @@ class FeedDb:
             product.categories.add(*categories)
 
     def _serialize_product(self, raw_product):
-        """
-        Serialize a product data informations
-        """
+        """Serialize a product data informations."""
 
         def serialize_nutriment(key):
             nutriment_value = nutriments.get(key, 0)

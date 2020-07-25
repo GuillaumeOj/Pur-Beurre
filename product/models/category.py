@@ -3,9 +3,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    """
-    Category for a product
-    """
+    """Category for a product."""
 
     name = models.CharField(
         unique=True,

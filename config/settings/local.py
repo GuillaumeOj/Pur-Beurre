@@ -1,6 +1,4 @@
-"""
-Django settings for the local project.
-"""
+"""Django settings for the local project."""
 import os
 
 from .base import *

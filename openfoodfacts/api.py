@@ -1,15 +1,13 @@
-"""
-Interface between the OpenFoodFacts' API and this application
-"""
+"""Interface between the OpenFoodFacts' API and this application."""
 import requests
 
 
 class Api:
-    """
-    Interface beetween OpenFoodFacts and this application:
-        - download data
-        - read data
-        - clear data
+    """Interface beetween OpenFoodFacts and this application:
+
+    - download data
+    - read data
+    - clear data
     """
 
     URL_BASE = "https://fr.openfoodfacts.org/cgi/search.pl"
@@ -28,10 +26,7 @@ class Api:
     ]
 
     def get_products(self):
-        """
-        Get products from OpenFoodFacts
-        return a list of raw products
-        """
+        """Get products from OpenFoodFacts return a list of raw products."""
 
         parameters = {
             "json": True,

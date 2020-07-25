@@ -8,15 +8,11 @@ from .category import Category
 
 class ProductManager(models.Manager):
     def get_product(self, product_code):
-        """
-        Find a specific product with the code
-        """
+        """Find a specific product with the code."""
         return self.get_queryset().get(code=product_code)
 
     def find_product(self, name):
-        """
-        Find a specific product with the name
-        """
+        """Find a specific product with the name."""
         # Try to find the product with the exact name
         product = self.get_queryset().filter(name=name).first()
         if product:
@@ -26,15 +22,11 @@ class ProductManager(models.Manager):
             return self.get_queryset().filter(name__icontains=name).first()
 
     def find_products(self, query):
-        """
-        Find products for auto-completion
-        """
+        """Find products for auto-completion."""
         return self.get_queryset().filter(name__icontains=query)[:10]
 
     def find_substitutes(self, product_code):
-        """
-        Find substitutes for a specific product
-        """
+        """Find substitutes for a specific product."""
         product = self.get_queryset().get(code=product_code)
         if product:
             q = Q(categories__in=product.categories.all()) & Q(
@@ -50,9 +42,7 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-    """
-    Model for a product
-    """
+    """Model for a product."""
 
     # Required fields
     code = models.CharField(

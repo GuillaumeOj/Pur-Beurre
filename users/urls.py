@@ -1,6 +1,4 @@
-"""
-Urls for the user app
-"""
+"""Urls for the user app."""
 from django.urls import path
 
 from . import views

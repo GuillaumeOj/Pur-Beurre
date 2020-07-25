@@ -7,9 +7,7 @@ from product.models import Product
 
 
 def auto_find(request):
-    """
-    Return products'names for autocompletion
-    """
+    """Return products'names for autocompletion."""
     if request.method == "POST":
         form = ProductSearchForm(request.POST)
 
@@ -26,9 +24,7 @@ def auto_find(request):
 
 
 def find(request):
-    """
-    Find the product, the user want to substitute
-    """
+    """Find the product, the user want to substitute."""
     if request.method == "POST":
         form = ProductSearchForm(request.POST)
         context = {"product_search_form": form}

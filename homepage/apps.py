@@ -1,10 +1,8 @@
-"""
-Homepage config file
-"""
+"""Homepage config file."""
 from django.apps import AppConfig
 
 
 class HomepageConfig(AppConfig):
-    """App name"""
+    """App name."""
 
     name = "homepage"

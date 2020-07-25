@@ -48,9 +48,7 @@ def custom_logout_view(request):
 
 
 def registration(request):
-    """
-    Register a user
-    """
+    """Register a user."""
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
 
@@ -80,9 +78,7 @@ def registration(request):
 
 @login_required
 def account(request):
-    """
-    User account details
-    """
+    """User account details."""
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
 

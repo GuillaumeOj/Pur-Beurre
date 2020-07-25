@@ -41,9 +41,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    """
-    Custom user identified by email
-    """
+    """Custom user identified by email."""
 
     # See https://code.djangoproject.com/ticket/25313
     db_table = "auth_user"

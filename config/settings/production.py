@@ -1,6 +1,4 @@
-"""
-Django settings for the local project.
-"""
+"""Django settings for the local project."""
 import os
 
 import dj_database_url
