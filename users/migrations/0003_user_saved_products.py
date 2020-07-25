@@ -6,14 +6,14 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0009_auto_20200721_1053'),
-        ('users', '0002_auto_20200721_1536'),
+        ("product", "0009_auto_20200721_1053"),
+        ("users", "0002_auto_20200721_1536"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='saved_products',
-            field=models.ManyToManyField(to='product.Product'),
+            model_name="user",
+            name="saved_products",
+            field=models.ManyToManyField(to="product.Product"),
         ),
     ]

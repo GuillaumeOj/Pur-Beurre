@@ -8,47 +8,177 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Brand',
+            name="Brand",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, unique=True, validators=[django.core.validators.MinLengthValidator(1), django.core.validators.MaxLengthValidator])),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=100,
+                        unique=True,
+                        validators=[
+                            django.core.validators.MinLengthValidator(1),
+                            django.core.validators.MaxLengthValidator,
+                        ],
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, unique=True, validators=[django.core.validators.MinLengthValidator(1), django.core.validators.MaxLengthValidator])),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=100,
+                        unique=True,
+                        validators=[
+                            django.core.validators.MinLengthValidator(1),
+                            django.core.validators.MaxLengthValidator,
+                        ],
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Store',
+            name="Store",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, unique=True, validators=[django.core.validators.MinLengthValidator(1), django.core.validators.MaxLengthValidator])),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=100,
+                        unique=True,
+                        validators=[
+                            django.core.validators.MinLengthValidator(1),
+                            django.core.validators.MaxLengthValidator,
+                        ],
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('code', models.CharField(max_length=13, unique=True, validators=[django.core.validators.MinLengthValidator(13), django.core.validators.MaxLengthValidator(13)])),
-                ('name', models.CharField(max_length=100, validators=[django.core.validators.MinLengthValidator(1), django.core.validators.MaxLengthValidator])),
-                ('generic_name', models.CharField(blank=True, max_length=100, validators=[django.core.validators.MaxLengthValidator])),
-                ('quantity', models.CharField(blank=True, max_length=50, validators=[django.core.validators.MaxLengthValidator])),
-                ('ingredients_text', models.TextField(blank=True)),
-                ('nutriscore_grade', models.CharField(max_length=1, validators=[django.core.validators.MinLengthValidator(1), django.core.validators.MaxLengthValidator(1)])),
-                ('url', models.URLField(validators=[django.core.validators.MinLengthValidator(1), django.core.validators.MaxLengthValidator, django.core.validators.URLValidator])),
-                ('image_url', models.URLField(blank=True, validators=[django.core.validators.MaxLengthValidator, django.core.validators.URLValidator])),
-                ('image_small_url', models.URLField(blank=True, validators=[django.core.validators.MaxLengthValidator, django.core.validators.URLValidator])),
-                ('brands', models.ManyToManyField(to='product.Brand')),
-                ('categories', models.ManyToManyField(to='product.Category')),
-                ('stores', models.ManyToManyField(to='product.Store')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "code",
+                    models.CharField(
+                        max_length=13,
+                        unique=True,
+                        validators=[
+                            django.core.validators.MinLengthValidator(13),
+                            django.core.validators.MaxLengthValidator(13),
+                        ],
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=100,
+                        validators=[
+                            django.core.validators.MinLengthValidator(1),
+                            django.core.validators.MaxLengthValidator,
+                        ],
+                    ),
+                ),
+                (
+                    "generic_name",
+                    models.CharField(
+                        blank=True,
+                        max_length=100,
+                        validators=[django.core.validators.MaxLengthValidator],
+                    ),
+                ),
+                (
+                    "quantity",
+                    models.CharField(
+                        blank=True,
+                        max_length=50,
+                        validators=[django.core.validators.MaxLengthValidator],
+                    ),
+                ),
+                ("ingredients_text", models.TextField(blank=True)),
+                (
+                    "nutriscore_grade",
+                    models.CharField(
+                        max_length=1,
+                        validators=[
+                            django.core.validators.MinLengthValidator(1),
+                            django.core.validators.MaxLengthValidator(1),
+                        ],
+                    ),
+                ),
+                (
+                    "url",
+                    models.URLField(
+                        validators=[
+                            django.core.validators.MinLengthValidator(1),
+                            django.core.validators.MaxLengthValidator,
+                            django.core.validators.URLValidator,
+                        ]
+                    ),
+                ),
+                (
+                    "image_url",
+                    models.URLField(
+                        blank=True,
+                        validators=[
+                            django.core.validators.MaxLengthValidator,
+                            django.core.validators.URLValidator,
+                        ],
+                    ),
+                ),
+                (
+                    "image_small_url",
+                    models.URLField(
+                        blank=True,
+                        validators=[
+                            django.core.validators.MaxLengthValidator,
+                            django.core.validators.URLValidator,
+                        ],
+                    ),
+                ),
+                ("brands", models.ManyToManyField(to="product.Brand")),
+                ("categories", models.ManyToManyField(to="product.Category")),
+                ("stores", models.ManyToManyField(to="product.Store")),
             ],
         ),
     ]

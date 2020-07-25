@@ -5,6 +5,8 @@ from product.models import Product
 
 
 class Search(forms.ModelForm):
+    """Define the search form"""
+
     class Meta:
         name = forms.CharField(
             min_length=2,

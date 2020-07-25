@@ -6,18 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0010_favorite'),
-        ('users', '0003_user_saved_products'),
+        ("product", "0010_favorite"),
+        ("users", "0003_user_saved_products"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='user',
-            name='saved_products',
-        ),
+        migrations.RemoveField(model_name="user", name="saved_products",),
         migrations.AddField(
-            model_name='user',
-            name='favorites',
-            field=models.ManyToManyField(to='product.Favorite'),
+            model_name="user",
+            name="favorites",
+            field=models.ManyToManyField(to="product.Favorite"),
         ),
     ]

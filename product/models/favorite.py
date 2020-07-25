@@ -4,7 +4,7 @@ from product.models import Product
 
 
 class Favorite(models.Model):
-    """A favorite saved by a user."""
+    """Model for a favorite saved by a user."""
 
     # Required fields
     product = models.ForeignKey(

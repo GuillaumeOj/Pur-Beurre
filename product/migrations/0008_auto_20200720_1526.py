@@ -6,28 +6,30 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0007_auto_20200720_1152'),
+        ("product", "0007_auto_20200720_1152"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='product',
-            name='fat_100',
-            field=models.FloatField(blank=True, default=0, verbose_name='lipides'),
+            model_name="product",
+            name="fat_100",
+            field=models.FloatField(blank=True, default=0, verbose_name="lipides"),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='salt_100',
-            field=models.FloatField(blank=True, default=0, verbose_name='sel'),
+            model_name="product",
+            name="salt_100",
+            field=models.FloatField(blank=True, default=0, verbose_name="sel"),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='saturated_fat_100',
-            field=models.FloatField(blank=True, default=0, verbose_name='acides gras saturés'),
+            model_name="product",
+            name="saturated_fat_100",
+            field=models.FloatField(
+                blank=True, default=0, verbose_name="acides gras saturés"
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='sugars_100',
-            field=models.FloatField(blank=True, default=0, verbose_name='sucres'),
+            model_name="product",
+            name="sugars_100",
+            field=models.FloatField(blank=True, default=0, verbose_name="sucres"),
         ),
     ]

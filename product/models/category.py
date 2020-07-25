@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    """Category for a product."""
+    """Model for a Category for a Product."""
 
     name = models.CharField(
         unique=True,
@@ -13,4 +13,3 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-

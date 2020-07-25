@@ -1,14 +1,19 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from django.shortcuts import redirect, render, reverse
+from django.shortcuts import redirect, render
 
 from .forms import ProductSearchForm
 from .models import Favorite, Product
 
 
-# Create your views here.
 def sheet(request, product_code):
+    """Display the detail sheet for a product.
+
+    :param product_code: the code for the product to display
+    :type product_code: str
+    :return: an HttpResponse with a template and context dictionnary
+    :rtype: HttpResponse
+    """
     product_search_form = ProductSearchForm()
     context = {
         "product_search_form": product_search_form,
@@ -22,6 +27,15 @@ def sheet(request, product_code):
 
 @login_required
 def save_favorite(request, product_code, substitute_code):
+    """Save a substitute in favorites for the current user.
+
+    :param product_code: the code for the substituted product
+    :type product_code: str
+    :param substitute_code: the code for the substitute
+    :type substitute_code: str
+    :return: redirect to the previous page
+    :rtype: HttpResponseRedirect
+    """
     product = Product.objects.get_product(product_code)
     substitute = Product.objects.get_product(substitute_code)
 
@@ -36,7 +50,12 @@ def save_favorite(request, product_code, substitute_code):
 
 
 @login_required
-def favorites(request, page=1):
+def favorites(request):
+    """Display all favorites for the current user.
+
+    :return: an HttpResponse with a template and context dictionnary
+    :rtype: HttpResponse
+    """
     product_search_form = ProductSearchForm()
     context = {
         "product_search_form": product_search_form,

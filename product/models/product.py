@@ -1,5 +1,4 @@
-from django.core.validators import (MaxLengthValidator, MinLengthValidator,
-                                    URLValidator)
+from django.core.validators import MaxLengthValidator, MinLengthValidator, URLValidator
 from django.db import models
 from django.db.models import Count, Q
 
@@ -7,12 +6,29 @@ from .category import Category
 
 
 class ProductManager(models.Manager):
+    """Set custom methods for a product"""
+
     def get_product(self, product_code):
-        """Find a specific product with the code."""
+        """Get a product with the code.
+
+        :param product_code: the code of the product to get
+        :type product_code: str
+        :return: a query set with the product
+        :rtype: QuerySet
+        """
         return self.get_queryset().get(code=product_code)
 
     def find_product(self, name):
-        """Find a specific product with the name."""
+        """Get a product with the name.
+
+        Try to get the product by filtering with the exact name, if the query is
+        empty, then get the product by filtering with the lookup "__icontains".
+
+        :param name: the name of the product to get
+        :type name: str
+        :return: a query set with the product
+        :rtype: QuerySet
+        """
         # Try to find the product with the exact name
         product = self.get_queryset().filter(name=name).first()
         if product:
@@ -21,12 +37,34 @@ class ProductManager(models.Manager):
             # Or with name contains the request name
             return self.get_queryset().filter(name__icontains=name).first()
 
-    def find_products(self, query):
-        """Find products for auto-completion."""
-        return self.get_queryset().filter(name__icontains=query)[:10]
+    def find_products(self, name):
+        """Get products with the name.
+
+        Get products by filtering with the lookup "__icontains" and limit the results to
+        10 products.
+
+        :param name: the name of the product to get
+        :type name: str
+        :return: a query set with 10 products
+        :rtype: QuerySet
+        """
+        return self.get_queryset().filter(name__icontains=name)[:10]
 
     def find_substitutes(self, product_code):
-        """Find substitutes for a specific product."""
+        """Get substitutes for a product.
+
+        Get the product by using his code.
+        Then get substitutes by counting common categories between each products and the
+        substituted product. Keep only products with a nutriscore grade lower than the
+        substituted product.
+        Return a QuerySet order by common categories count (from largest to smallest) and
+        nutriscore grade (from lowest-to-highest).
+
+        :param product_code: the code of the product to get
+        :type product_code: str
+        :return: a query set with 30 substitutes
+        :rtype: QuerySet
+        """
         product = self.get_queryset().get(code=product_code)
         if product:
             q = Q(categories__in=product.categories.all()) & Q(

@@ -6,34 +6,15 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0003_auto_20200710_2226'),
+        ("product", "0003_auto_20200710_2226"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='product',
-            name='brands',
-        ),
-        migrations.RemoveField(
-            model_name='product',
-            name='generic_name',
-        ),
-        migrations.RemoveField(
-            model_name='product',
-            name='ingredients_text',
-        ),
-        migrations.RemoveField(
-            model_name='product',
-            name='quantity',
-        ),
-        migrations.RemoveField(
-            model_name='product',
-            name='stores',
-        ),
-        migrations.DeleteModel(
-            name='Brand',
-        ),
-        migrations.DeleteModel(
-            name='Store',
-        ),
+        migrations.RemoveField(model_name="product", name="brands",),
+        migrations.RemoveField(model_name="product", name="generic_name",),
+        migrations.RemoveField(model_name="product", name="ingredients_text",),
+        migrations.RemoveField(model_name="product", name="quantity",),
+        migrations.RemoveField(model_name="product", name="stores",),
+        migrations.DeleteModel(name="Brand",),
+        migrations.DeleteModel(name="Store",),
     ]

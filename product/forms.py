@@ -4,6 +4,8 @@ from product.models import Product
 
 
 class ProductSearchForm(forms.ModelForm):
+    """Form for searching a product to substituted"""
+
     name = forms.CharField(
         max_length=100,
         required=True,

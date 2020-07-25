@@ -6,28 +6,36 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0004_auto_20200712_1325'),
+        ("product", "0004_auto_20200712_1325"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='fat_100',
-            field=models.DecimalField(blank=True, decimal_places=3, default=0, max_digits=6),
+            model_name="product",
+            name="fat_100",
+            field=models.DecimalField(
+                blank=True, decimal_places=3, default=0, max_digits=6
+            ),
         ),
         migrations.AddField(
-            model_name='product',
-            name='salt_100',
-            field=models.DecimalField(blank=True, decimal_places=3, default=0, max_digits=6),
+            model_name="product",
+            name="salt_100",
+            field=models.DecimalField(
+                blank=True, decimal_places=3, default=0, max_digits=6
+            ),
         ),
         migrations.AddField(
-            model_name='product',
-            name='saturated_fat_100',
-            field=models.DecimalField(blank=True, decimal_places=3, default=0, max_digits=6),
+            model_name="product",
+            name="saturated_fat_100",
+            field=models.DecimalField(
+                blank=True, decimal_places=3, default=0, max_digits=6
+            ),
         ),
         migrations.AddField(
-            model_name='product',
-            name='sugar_100',
-            field=models.DecimalField(blank=True, decimal_places=3, default=0, max_digits=6),
+            model_name="product",
+            name="sugar_100",
+            field=models.DecimalField(
+                blank=True, decimal_places=3, default=0, max_digits=6
+            ),
         ),
     ]

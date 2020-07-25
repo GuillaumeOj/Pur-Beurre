@@ -1,6 +1,7 @@
 """Django settings for the local project."""
 import os
 
+# Import the base settings
 from .base import *
 
 # Quick-start development settings - unsuitable for production

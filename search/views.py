@@ -7,43 +7,54 @@ from product.models import Product
 
 
 def auto_find(request):
-    """Return products'names for autocompletion."""
+    """Get products' names for the autocompletion."""
+
+    # Avoid reach the view by the GET method
     if request.method == "POST":
         form = ProductSearchForm(request.POST)
 
+        # Get a list and product and create a list of names
         products = Product.objects.find_products(form["name"].value())
-
         products_names = [product.name for product in products]
-
         products_names = list(set(products_names))
-        print(products_names)
 
+        # Create a response as a dict for returning a JsonResponse
         response = {"products_names": products_names}
 
         return JsonResponse(response)
 
+    return redirect(reverse("homepage:index"))
+
 
 def find(request):
     """Find the product, the user want to substitute."""
+
+    # Avoid reach the view by the GET method
     if request.method == "POST":
-        form = ProductSearchForm(request.POST)
-        context = {"product_search_form": form}
+        product_search_form = ProductSearchForm(request.POST)
+        context = {"product_search_form": product_search_form}
 
-        if form.is_valid():
-            product = Product.objects.find_product(form.cleaned_data["name"])
+        if product_search_form.is_valid():
+            # Get the product by using the name
+            product = Product.objects.find_product(
+                product_search_form.cleaned_data["name"]
+            )
 
+            # Redirect to the method find_substitutes if the product exist
             if product:
                 return redirect(reverse("search:find_substitutes", args=[product.code]))
             else:
-                context["product"] = {"name": form.cleaned_data["name"]}
+                context["product"] = {"name": product_search_form.cleaned_data["name"]}
 
             return render(request, "search/substitutes.html", context=context)
     return redirect(reverse("homepage:index"))
 
 
 def find_substitutes(request, product_code, page=1):
-    form = ProductSearchForm()
-    context = {"product_search_form": form}
+    """Find substitutes for a product."""
+
+    product_search_form = ProductSearchForm()
+    context = {"product_search_form": product_search_form}
 
     product = Product.objects.get(code=product_code)
 
@@ -61,5 +72,5 @@ def find_substitutes(request, product_code, page=1):
             except EmptyPage:
                 context["substitutes"] = pagination.page(pagination.num_pages)
     else:
-        context["product"] = {"name": form.cleaned_data["name"]}
+        context["product"] = {"name": product_search_form.cleaned_data["name"]}
     return render(request, "search/substitutes.html", context=context)

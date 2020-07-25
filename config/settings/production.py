@@ -3,6 +3,7 @@ import os
 
 import dj_database_url
 
+# Import the base settings
 from .base import *
 
 # Quick-start development settings - unsuitable for production

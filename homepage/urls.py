@@ -1,4 +1,3 @@
-"""Urls for the homepage app."""
 from django.urls import path
 
 from . import views
