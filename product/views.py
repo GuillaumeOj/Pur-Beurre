@@ -32,7 +32,7 @@ def save_favorite(request, product_code, substitute_code):
     success_message = f"{substitute.name} est sauvegardé dans vos favoris"
     messages.success(request, success_message)
 
-    return redirect(reverse("search:find_substitutes", args=[product_code, 1]))
+    return redirect(request.META["HTTP_REFERER"])
 
 
 @login_required
