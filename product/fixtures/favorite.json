@@ -1,0 +1,26 @@
+[
+{
+    "model": "product.favorite",
+    "pk": 1,
+    "fields": {
+        "product": 48,
+        "substitute": 21
+    }
+},
+{
+    "model": "product.favorite",
+    "pk": 2,
+    "fields": {
+        "product": 48,
+        "substitute": 46
+    }
+},
+{
+    "model": "product.favorite",
+    "pk": 3,
+    "fields": {
+        "product": 4,
+        "substitute": 10
+    }
+}
+]

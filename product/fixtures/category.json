@@ -1,0 +1,1192 @@
+[
+{
+    "model": "product.category",
+    "pk": 1,
+    "fields": {
+        "name": "Getr\u00e4nke"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 2,
+    "fields": {
+        "name": "Wasser"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 3,
+    "fields": {
+        "name": "Quellwasser"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 4,
+    "fields": {
+        "name": "Ungezuckerte Getr\u00e4nke"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 5,
+    "fields": {
+        "name": "Snacks"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 6,
+    "fields": {
+        "name": "Snacks sucr\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 7,
+    "fields": {
+        "name": "Biscuits et g\u00e2teaux"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 8,
+    "fields": {
+        "name": "Biscuits"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 9,
+    "fields": {
+        "name": "Biscuits fourr\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 10,
+    "fields": {
+        "name": "Petit-d\u00e9jeuners"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 11,
+    "fields": {
+        "name": "Produits \u00e0 tartiner"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 12,
+    "fields": {
+        "name": "Produits \u00e0 tartiner sucr\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 13,
+    "fields": {
+        "name": "P\u00e2tes \u00e0 tartiner"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 14,
+    "fields": {
+        "name": "P\u00e2tes \u00e0 tartiner aux noisettes"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 15,
+    "fields": {
+        "name": "P\u00e2tes \u00e0 tartiner au chocolat"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 16,
+    "fields": {
+        "name": "P\u00e2tes \u00e0 tartiner aux noisettes et au cacao"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 17,
+    "fields": {
+        "name": "Beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 18,
+    "fields": {
+        "name": " Carbonated drinks"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 19,
+    "fields": {
+        "name": " Artificially sweetened beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 20,
+    "fields": {
+        "name": " Sodas"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 21,
+    "fields": {
+        "name": " Diet beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 22,
+    "fields": {
+        "name": " Non-Alcoholic beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 23,
+    "fields": {
+        "name": " Colas"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 24,
+    "fields": {
+        "name": " Diet sodas"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 25,
+    "fields": {
+        "name": " Diet cola soft drink"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 26,
+    "fields": {
+        "name": " pl:dietetyczna"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 27,
+    "fields": {
+        "name": " pl:gazowany"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 28,
+    "fields": {
+        "name": " pl:napoj"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 29,
+    "fields": {
+        "name": " Snacks sucr\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 30,
+    "fields": {
+        "name": " Biscuits et g\u00e2teaux"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 31,
+    "fields": {
+        "name": " Biscuits"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 32,
+    "fields": {
+        "name": "Boissons"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 33,
+    "fields": {
+        "name": "Eaux"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 34,
+    "fields": {
+        "name": "Eaux de sources"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 35,
+    "fields": {
+        "name": " Boissons gazeuses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 36,
+    "fields": {
+        "name": " Eaux"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 37,
+    "fields": {
+        "name": " Eaux de sources"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 38,
+    "fields": {
+        "name": " Eaux min\u00e9rales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 39,
+    "fields": {
+        "name": " Boissons sans alcool"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 40,
+    "fields": {
+        "name": " Eaux gazeuses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 41,
+    "fields": {
+        "name": " Eaux min\u00e9rales naturelles"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 42,
+    "fields": {
+        "name": " Eaux min\u00e9rales gazeuses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 43,
+    "fields": {
+        "name": " Boissons sans sucre ajout\u00e9"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 44,
+    "fields": {
+        "name": " Produits \u00e0 tartiner"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 45,
+    "fields": {
+        "name": " Produits \u00e0 tartiner sucr\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 46,
+    "fields": {
+        "name": " P\u00e2tes \u00e0 tartiner"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 47,
+    "fields": {
+        "name": " P\u00e2tes \u00e0 tartiner aux noisettes"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 48,
+    "fields": {
+        "name": " P\u00e2tes \u00e0 tartiner au chocolat"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 49,
+    "fields": {
+        "name": " P\u00e2tes \u00e0 tartiner aux noisettes et au cacao"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 50,
+    "fields": {
+        "name": "Plant-based foods and beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 51,
+    "fields": {
+        "name": "Plant-based foods"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 52,
+    "fields": {
+        "name": "Fruits and vegetables based foods"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 53,
+    "fields": {
+        "name": "Meals"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 54,
+    "fields": {
+        "name": "Soups"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 55,
+    "fields": {
+        "name": "Refrigerated foods"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 56,
+    "fields": {
+        "name": "Vegetable soups"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 57,
+    "fields": {
+        "name": "Cold soups"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 58,
+    "fields": {
+        "name": "Refrigerated meals"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 59,
+    "fields": {
+        "name": "Gazpacho"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 60,
+    "fields": {
+        "name": "Refrigerated soups"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 61,
+    "fields": {
+        "name": "Eaux min\u00e9rales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 62,
+    "fields": {
+        "name": "Boissons sans alcool"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 63,
+    "fields": {
+        "name": "Eaux min\u00e9rales naturelles"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 64,
+    "fields": {
+        "name": "Boissons gazeuses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 65,
+    "fields": {
+        "name": "Eaux gazeuses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 66,
+    "fields": {
+        "name": "Eaux min\u00e9rales gazeuses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 67,
+    "fields": {
+        "name": " Waters"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 68,
+    "fields": {
+        "name": " Spring waters"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 69,
+    "fields": {
+        "name": " Mineral waters"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 70,
+    "fields": {
+        "name": " Natural mineral waters"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 71,
+    "fields": {
+        "name": " en:unsweetened-beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 72,
+    "fields": {
+        "name": "Boissons instantan\u00e9es"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 73,
+    "fields": {
+        "name": "Cacaos et chocolats en poudre"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 74,
+    "fields": {
+        "name": "Chocolats en poudre"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 75,
+    "fields": {
+        "name": "Boissons sans sucre ajout\u00e9"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 76,
+    "fields": {
+        "name": " Biscuits au chocolat"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 77,
+    "fields": {
+        "name": " Biscuits au chocolat noir"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 78,
+    "fields": {
+        "name": " Biscuits fourr\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 79,
+    "fields": {
+        "name": "Viennoiseries"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 80,
+    "fields": {
+        "name": "Pains au lait"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 81,
+    "fields": {
+        "name": "Aliments et boissons \u00e0 base de v\u00e9g\u00e9taux"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 82,
+    "fields": {
+        "name": "Aliments d'origine v\u00e9g\u00e9tale"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 83,
+    "fields": {
+        "name": "Pains"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 84,
+    "fields": {
+        "name": "Pains de mie"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 85,
+    "fields": {
+        "name": "Pains de mie sans cro\u00fbte"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 86,
+    "fields": {
+        "name": "Pains de mie complet"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 87,
+    "fields": {
+        "name": "Mati\u00e8res grasses"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 88,
+    "fields": {
+        "name": "P\u00e2tes \u00e0 tartiner v\u00e9g\u00e9tales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 89,
+    "fields": {
+        "name": "Produits \u00e0 tartiner sal\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 90,
+    "fields": {
+        "name": "Mati\u00e8res grasses v\u00e9g\u00e9tales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 91,
+    "fields": {
+        "name": "Mati\u00e8res grasses \u00e0 tartiner"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 92,
+    "fields": {
+        "name": "Margarines"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 93,
+    "fields": {
+        "name": "Margarines all\u00e9g\u00e9es"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 94,
+    "fields": {
+        "name": " Viennoiseries"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 95,
+    "fields": {
+        "name": " Brioches"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 96,
+    "fields": {
+        "name": " Brioches tranch\u00e9es"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 97,
+    "fields": {
+        "name": "C\u00e9r\u00e9ales et pommes de terre"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 98,
+    "fields": {
+        "name": "Flocons de c\u00e9r\u00e9ales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 99,
+    "fields": {
+        "name": "C\u00e9r\u00e9ales pour petit-d\u00e9jeuner"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 100,
+    "fields": {
+        "name": "M\u00e9langes de flocons de c\u00e9r\u00e9ales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 101,
+    "fields": {
+        "name": "C\u00e9r\u00e9ales et d\u00e9riv\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 102,
+    "fields": {
+        "name": "Mueslis"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 103,
+    "fields": {
+        "name": "Flocons"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 104,
+    "fields": {
+        "name": "Mueslis aux fruits"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 105,
+    "fields": {
+        "name": "Cereals and potatoes"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 106,
+    "fields": {
+        "name": "Breads"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 107,
+    "fields": {
+        "name": "Sliced breads"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 108,
+    "fields": {
+        "name": "English bread without crust"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 109,
+    "fields": {
+        "name": "Boissons chaudes"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 110,
+    "fields": {
+        "name": "Chocolats"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 111,
+    "fields": {
+        "name": "Spreads"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 112,
+    "fields": {
+        "name": "Fats"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 113,
+    "fields": {
+        "name": "Plant-based spreads"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 114,
+    "fields": {
+        "name": "Salted spreads"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 115,
+    "fields": {
+        "name": "Vegetable fats"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 116,
+    "fields": {
+        "name": "Spreadable fats"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 117,
+    "fields": {
+        "name": "Light margarines"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 118,
+    "fields": {
+        "name": "Plant-based beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 119,
+    "fields": {
+        "name": "Fruit-based beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 120,
+    "fields": {
+        "name": "Juices and nectars"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 121,
+    "fields": {
+        "name": "Fruit juices"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 122,
+    "fields": {
+        "name": "Non-Alcoholic beverages"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 123,
+    "fields": {
+        "name": "Orange juices"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 124,
+    "fields": {
+        "name": "Squeezed juices"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 125,
+    "fields": {
+        "name": "Squeezed orange juices"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 126,
+    "fields": {
+        "name": "Dairies"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 127,
+    "fields": {
+        "name": " Spreads"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 128,
+    "fields": {
+        "name": " Fats"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 129,
+    "fields": {
+        "name": " Spreadable fats"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 130,
+    "fields": {
+        "name": " Animal fats"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 131,
+    "fields": {
+        "name": " Milkfat"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 132,
+    "fields": {
+        "name": " Dairy spread"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 133,
+    "fields": {
+        "name": " Butters"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 134,
+    "fields": {
+        "name": " Unsalted butters"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 135,
+    "fields": {
+        "name": " Butter 82% fat unsalted easy-to-spread"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 136,
+    "fields": {
+        "name": " en:sweet-cream-butters"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 137,
+    "fields": {
+        "name": "Biscottes"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 138,
+    "fields": {
+        "name": "Biscottes aux c\u00e9r\u00e9ales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 139,
+    "fields": {
+        "name": "Flocons d'avoine"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 140,
+    "fields": {
+        "name": "Sweet snacks"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 141,
+    "fields": {
+        "name": "Chocolates"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 142,
+    "fields": {
+        "name": "Dark chocolates"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 143,
+    "fields": {
+        "name": " Aliments d'origine v\u00e9g\u00e9tale"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 144,
+    "fields": {
+        "name": " Petit-d\u00e9jeuners"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 145,
+    "fields": {
+        "name": " C\u00e9r\u00e9ales et pommes de terre"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 146,
+    "fields": {
+        "name": " C\u00e9r\u00e9ales et d\u00e9riv\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 147,
+    "fields": {
+        "name": " C\u00e9r\u00e9ales pour petit-d\u00e9jeuner"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 148,
+    "fields": {
+        "name": " Flocons"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 149,
+    "fields": {
+        "name": " Flocons de c\u00e9r\u00e9ales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 150,
+    "fields": {
+        "name": " Mueslis"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 151,
+    "fields": {
+        "name": " M\u00e9langes de flocons de c\u00e9r\u00e9ales"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 152,
+    "fields": {
+        "name": " Mueslis aux noix"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 153,
+    "fields": {
+        "name": "Epicerie"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 154,
+    "fields": {
+        "name": "Condiments"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 155,
+    "fields": {
+        "name": "Moutardes"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 156,
+    "fields": {
+        "name": "Sauces"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 157,
+    "fields": {
+        "name": "Moutardes de Dijon"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 158,
+    "fields": {
+        "name": "Sirops"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 159,
+    "fields": {
+        "name": "Biscuits au chocolat"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 160,
+    "fields": {
+        "name": "Biscuits au chocolat noir"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 161,
+    "fields": {
+        "name": "Biscuits sabl\u00e9s"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 162,
+    "fields": {
+        "name": "Biscuits au chocolat au lait"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 163,
+    "fields": {
+        "name": "Botanas"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 164,
+    "fields": {
+        "name": "Snacks dulces"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 165,
+    "fields": {
+        "name": "Chocolates negros"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 166,
+    "fields": {
+        "name": "Chocolates negros extra finos"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 167,
+    "fields": {
+        "name": " C\u00e9r\u00e9ales au chocolat"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 168,
+    "fields": {
+        "name": " Mueslis au chocolat"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 169,
+    "fields": {
+        "name": " Sodas au cola"
+    }
+},
+{
+    "model": "product.category",
+    "pk": 170,
+    "fields": {
+        "name": " Boissons avec sucre ajout\u00e9"
+    }
+}
+]

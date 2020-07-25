@@ -1,0 +1,1217 @@
+[
+{
+    "model": "product.product",
+    "pk": 1,
+    "fields": {
+        "code": "3274080005003",
+        "name": "Eau De Source",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3274080005003/eau-de-source-cristalline",
+        "image_url": "https://static.openfoodfacts.org/images/products/327/408/000/5003/front_fr.556.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/327/408/000/5003/front_fr.556.200.jpg",
+        "fat_100": 4.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.0275,
+        "categories": [
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 2,
+    "fields": {
+        "code": "7622210449283",
+        "name": "Prince Go\u00fbt Chocolat Au Bl\u00e9 Complet",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/7622210449283/prince-gout-chocolat-au-ble-complet-lu",
+        "image_url": "https://static.openfoodfacts.org/images/products/762/221/044/9283/front_fr.286.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/762/221/044/9283/front_fr.286.200.jpg",
+        "fat_100": 17.0,
+        "saturated_fat_100": 5.6,
+        "sugars_100": 32.0,
+        "salt_100": 0.58,
+        "categories": [
+            5,
+            6,
+            7,
+            8,
+            9
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 3,
+    "fields": {
+        "code": "3017620422003",
+        "name": "Nutella",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3017620422003/nutella-ferrero",
+        "image_url": "https://static.openfoodfacts.org/images/products/301/762/042/2003/front_fr.168.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/301/762/042/2003/front_fr.168.200.jpg",
+        "fat_100": 30.9,
+        "saturated_fat_100": 10.6,
+        "sugars_100": 56.3,
+        "salt_100": 0.107,
+        "categories": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 4,
+    "fields": {
+        "code": "5449000131805",
+        "name": "Coca Cola Zero",
+        "nutriscore_grade": "B",
+        "url": "https://fr.openfoodfacts.org/produit/5449000131805/coca-cola-sans-sucres-the-coca-cola-company",
+        "image_url": "https://static.openfoodfacts.org/images/products/544/900/013/1805/front_fr.316.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/544/900/013/1805/front_fr.316.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.02,
+        "categories": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 5,
+    "fields": {
+        "code": "8000500310427",
+        "name": "Nutella Biscuits",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/8000500310427/nutella-biscuits",
+        "image_url": "https://static.openfoodfacts.org/images/products/800/050/031/0427/front_fr.29.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/800/050/031/0427/front_fr.29.200.jpg",
+        "fat_100": 24.5,
+        "saturated_fat_100": 11.8,
+        "sugars_100": 34.7,
+        "salt_100": 0.529,
+        "categories": [
+            5,
+            29,
+            30,
+            31
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 6,
+    "fields": {
+        "code": "3268840001008",
+        "name": "Eau Cristalline",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3268840001008/eau-cristalline-cristaline",
+        "image_url": "https://static.openfoodfacts.org/images/products/326/884/000/1008/front_fr.262.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/326/884/000/1008/front_fr.262.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.0222,
+        "categories": [
+            32,
+            33,
+            34
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 7,
+    "fields": {
+        "code": "3068320115160",
+        "name": "La Salvetat",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3068320115160/la-salvetat",
+        "image_url": "https://static.openfoodfacts.org/images/products/306/832/011/5160/front_fr.131.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/306/832/011/5160/front_fr.131.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.00127,
+        "categories": [
+            32,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 8,
+    "fields": {
+        "code": "3175680011480",
+        "name": "Biscuit S\u00e9same",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/3175680011480/biscuit-sesame-gerble",
+        "image_url": "https://static.openfoodfacts.org/images/products/317/568/001/1480/front_fr.139.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/317/568/001/1480/front_fr.139.200.jpg",
+        "fat_100": 22.0,
+        "saturated_fat_100": 2.2,
+        "sugars_100": 19.0,
+        "salt_100": 0.61,
+        "categories": [
+            5,
+            6,
+            7,
+            8
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 9,
+    "fields": {
+        "code": "3017620420047",
+        "name": "Nutella",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3017620420047/nutella-ferrero",
+        "image_url": "https://static.openfoodfacts.org/images/products/301/762/042/0047/front_fr.140.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/301/762/042/0047/front_fr.140.200.jpg",
+        "fat_100": 30.9,
+        "saturated_fat_100": 10.6,
+        "sugars_100": 56.3,
+        "salt_100": 0.107,
+        "categories": [
+            10,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 10,
+    "fields": {
+        "code": "5410188031072",
+        "name": "Gazpacho",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/5410188031072/gazpacho-alvalle",
+        "image_url": "https://static.openfoodfacts.org/images/products/541/018/803/1072/front_fr.30.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/541/018/803/1072/front_fr.30.200.jpg",
+        "fat_100": 2.6,
+        "saturated_fat_100": 0.4,
+        "sugars_100": 3.1,
+        "salt_100": 0.66,
+        "categories": [
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 11,
+    "fields": {
+        "code": "7613035974685",
+        "name": "H\u00e9par",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/7613035974685/hepar",
+        "image_url": "https://static.openfoodfacts.org/images/products/761/303/597/4685/front_fr.96.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/761/303/597/4685/front_fr.96.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.00361,
+        "categories": [
+            32,
+            33,
+            34,
+            61,
+            62,
+            63
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 12,
+    "fields": {
+        "code": "7613035833272",
+        "name": "Perrier",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/7613035833272/perrier",
+        "image_url": "https://static.openfoodfacts.org/images/products/761/303/583/3272/front_fr.116.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/761/303/583/3272/front_fr.116.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.00241,
+        "categories": [
+            32,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            42,
+            43
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 13,
+    "fields": {
+        "code": "3017620425035",
+        "name": "Nutella",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3017620425035/nutella-ferrero",
+        "image_url": "https://static.openfoodfacts.org/images/products/301/762/042/5035/front_fr.223.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/301/762/042/5035/front_fr.223.200.jpg",
+        "fat_100": 30.9,
+        "saturated_fat_100": 10.6,
+        "sugars_100": 56.3,
+        "salt_100": 0.107,
+        "categories": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 14,
+    "fields": {
+        "code": "8002270014901",
+        "name": "Eau Min\u00e9rale Naturelle Avec Adjonction De Gaz Carbonique",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/8002270014901/eau-minerale-naturelle-avec-adjonction-de-gaz-carbonique-san-pellegrino",
+        "image_url": "https://static.openfoodfacts.org/images/products/800/227/001/4901/front_fr.153.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/800/227/001/4901/front_fr.153.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.0078,
+        "categories": [
+            32,
+            33,
+            34,
+            61,
+            62,
+            64,
+            65,
+            66
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 15,
+    "fields": {
+        "code": "3057640257773",
+        "name": "Volvic Eau Min\u00e9rale Naturelle",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3057640257773/volvic-eau-minerale-naturelle",
+        "image_url": "https://static.openfoodfacts.org/images/products/305/764/025/7773/front_fr.212.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/305/764/025/7773/front_fr.212.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.003,
+        "categories": [
+            17,
+            67,
+            68,
+            69,
+            70,
+            71
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 16,
+    "fields": {
+        "code": "3033710065967",
+        "name": "Nesquik Poudre Cacaot\u00e9e Bo\u00eete",
+        "nutriscore_grade": "B",
+        "url": "https://fr.openfoodfacts.org/produit/3033710065967/nesquik-poudre-cacaotee-boite-nestle",
+        "image_url": "https://static.openfoodfacts.org/images/products/303/371/006/5967/front_fr.266.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/303/371/006/5967/front_fr.266.200.jpg",
+        "fat_100": 3.0,
+        "saturated_fat_100": 1.5,
+        "sugars_100": 75.0,
+        "salt_100": 0.4,
+        "categories": [
+            10,
+            32,
+            72,
+            73,
+            74
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 17,
+    "fields": {
+        "code": "3017620421006",
+        "name": "Nutella",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3017620421006/nutella-ferrero",
+        "image_url": "https://static.openfoodfacts.org/images/products/301/762/042/1006/front_fr.176.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/301/762/042/1006/front_fr.176.200.jpg",
+        "fat_100": 31.6,
+        "saturated_fat_100": 11.0,
+        "sugars_100": 56.8,
+        "salt_100": 0.114,
+        "categories": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 18,
+    "fields": {
+        "code": "7613036249928",
+        "name": "Eau Min\u00e9rale",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/7613036249928/eau-minerale-vittel",
+        "image_url": "https://static.openfoodfacts.org/images/products/761/303/624/9928/front_fr.177.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/761/303/624/9928/front_fr.177.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.0013,
+        "categories": [
+            32,
+            33,
+            34,
+            61,
+            62,
+            63,
+            75
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 19,
+    "fields": {
+        "code": "3229820100234",
+        "name": "Fourr\u00e9s Chocolat Noir Bio",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/3229820100234/fourres-chocolat-noir-bio-bjorg",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/982/010/0234/front_fr.79.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/982/010/0234/front_fr.79.200.jpg",
+        "fat_100": 20.0,
+        "saturated_fat_100": 7.0,
+        "sugars_100": 27.0,
+        "salt_100": 0.5,
+        "categories": [
+            5,
+            29,
+            30,
+            31,
+            76,
+            77,
+            78
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 20,
+    "fields": {
+        "code": "3256540000698",
+        "name": "Pains Au Lait Au Levain",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/3256540000698/pains-au-lait-au-levain-pasquier",
+        "image_url": "https://static.openfoodfacts.org/images/products/325/654/000/0698/front_fr.108.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/325/654/000/0698/front_fr.108.200.jpg",
+        "fat_100": 13.0,
+        "saturated_fat_100": 4.6,
+        "sugars_100": 11.0,
+        "salt_100": 1.1,
+        "categories": [
+            5,
+            6,
+            79,
+            80
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 21,
+    "fields": {
+        "code": "8001505005592",
+        "name": "Nocciolata P\u00e2te \u00c0 Tartiner Au Cacao Et Noisettes",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/8001505005592/nocciolata-pate-a-tartiner-au-cacao-et-noisettes-rigoni-di-asiago",
+        "image_url": "https://static.openfoodfacts.org/images/products/800/150/500/5592/front_fr.102.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/800/150/500/5592/front_fr.102.200.jpg",
+        "fat_100": 32.0,
+        "saturated_fat_100": 5.7,
+        "sugars_100": 51.0,
+        "salt_100": 0.12,
+        "categories": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 22,
+    "fields": {
+        "code": "3228857000166",
+        "name": "Pain 100% Mie Complet",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3228857000166/pain-100-mie-complet-harrys",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/885/700/0166/front_fr.97.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/885/700/0166/front_fr.97.200.jpg",
+        "fat_100": 4.3,
+        "saturated_fat_100": 0.4,
+        "sugars_100": 4.3,
+        "salt_100": 1.09,
+        "categories": [
+            81,
+            82,
+            83,
+            84,
+            85,
+            86
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 23,
+    "fields": {
+        "code": "3155250358788",
+        "name": "Primev\u00e8re Bio Tartine & Cuisson",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/3155250358788/primevere-bio-tartine-cuisson",
+        "image_url": "https://static.openfoodfacts.org/images/products/315/525/035/8788/front_fr.89.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/315/525/035/8788/front_fr.89.200.jpg",
+        "fat_100": 55.0,
+        "saturated_fat_100": 14.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.4,
+        "categories": [
+            11,
+            81,
+            82,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 24,
+    "fields": {
+        "code": "3175680011534",
+        "name": "Biscuit Lait Chocolat",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/3175680011534/biscuit-lait-chocolat-gerble",
+        "image_url": "https://static.openfoodfacts.org/images/products/317/568/001/1534/front_fr.97.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/317/568/001/1534/front_fr.97.200.jpg",
+        "fat_100": 17.0,
+        "saturated_fat_100": 2.7,
+        "sugars_100": 22.0,
+        "salt_100": 0.68,
+        "categories": [
+            5,
+            6,
+            7,
+            8
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 25,
+    "fields": {
+        "code": "3228857000647",
+        "name": "Brioche Tranch\u00e9e Nature",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/3228857000647/brioche-tranchee-nature-harrys",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/885/700/0647/front_fr.86.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/885/700/0647/front_fr.86.200.jpg",
+        "fat_100": 13.1,
+        "saturated_fat_100": 5.3,
+        "sugars_100": 14.0,
+        "salt_100": 1.03,
+        "categories": [
+            5,
+            29,
+            94,
+            95,
+            96
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 26,
+    "fields": {
+        "code": "3175681851849",
+        "name": "Biscuit Pomme Noisette",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3175681851849/biscuit-pomme-noisette-gerble",
+        "image_url": "https://static.openfoodfacts.org/images/products/317/568/185/1849/front_fr.124.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/317/568/185/1849/front_fr.124.200.jpg",
+        "fat_100": 17.0,
+        "saturated_fat_100": 1.5,
+        "sugars_100": 11.0,
+        "salt_100": 0.01,
+        "categories": [
+            5,
+            6,
+            7,
+            8
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 27,
+    "fields": {
+        "code": "3229820129488",
+        "name": "Muesli Sans Sucre Ajout\u00e9* Bio",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3229820129488/muesli-sans-sucre-ajoute-bio-bjorg",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/982/012/9488/front_fr.153.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/982/012/9488/front_fr.153.200.jpg",
+        "fat_100": 6.3,
+        "saturated_fat_100": 1.0,
+        "sugars_100": 13.0,
+        "salt_100": 0.03,
+        "categories": [
+            10,
+            81,
+            82,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 28,
+    "fields": {
+        "code": "3228857000852",
+        "name": "Pain 100% Mie Nature Pt",
+        "nutriscore_grade": "B",
+        "url": "https://fr.openfoodfacts.org/produit/3228857000852/pain-100-mie-nature-pt-harrys",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/885/700/0852/front_fr.111.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/885/700/0852/front_fr.111.200.jpg",
+        "fat_100": 4.3,
+        "saturated_fat_100": 0.4,
+        "sugars_100": 7.7,
+        "salt_100": 1.13,
+        "categories": [
+            50,
+            51,
+            105,
+            106,
+            107,
+            108
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 29,
+    "fields": {
+        "code": "3017620406003",
+        "name": "Nutella",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3017620406003/nutella-ferrero",
+        "image_url": "https://static.openfoodfacts.org/images/products/301/762/040/6003/front_fr.130.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/301/762/040/6003/front_fr.130.200.jpg",
+        "fat_100": 31.6,
+        "saturated_fat_100": 11.0,
+        "sugars_100": 56.8,
+        "salt_100": 0.114,
+        "categories": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 30,
+    "fields": {
+        "code": "3033710065066",
+        "name": "Nesquik Poudre Cacaot\u00e9e Bo\u00eete",
+        "nutriscore_grade": "B",
+        "url": "https://fr.openfoodfacts.org/produit/3033710065066/nesquik-poudre-cacaotee-boite-nestle",
+        "image_url": "https://static.openfoodfacts.org/images/products/303/371/006/5066/front_fr.143.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/303/371/006/5066/front_fr.143.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.0,
+        "categories": [
+            5,
+            6,
+            10,
+            32,
+            72,
+            73,
+            74,
+            109,
+            110
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 31,
+    "fields": {
+        "code": "3366321052331",
+        "name": "St Hubert Bio Doux Pour Tartine Et Cuisine",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/3366321052331/st-hubert-bio-doux-pour-tartine-et-cuisine",
+        "image_url": "https://static.openfoodfacts.org/images/products/336/632/105/2331/front_fr.57.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/336/632/105/2331/front_fr.57.200.jpg",
+        "fat_100": 52.0,
+        "saturated_fat_100": 17.0,
+        "sugars_100": 0.0,
+        "salt_100": 0.45,
+        "categories": [
+            50,
+            51,
+            92,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 32,
+    "fields": {
+        "code": "3502110009449",
+        "name": "Pur Jus D'Orange Sans Pulpe",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/3502110009449/pur-jus-d-orange-sans-pulpe-tropicana",
+        "image_url": "https://static.openfoodfacts.org/images/products/350/211/000/9449/front_fr.112.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/350/211/000/9449/front_fr.112.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 8.9,
+        "salt_100": 0.0,
+        "categories": [
+            17,
+            50,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 33,
+    "fields": {
+        "code": "3451790988677",
+        "name": "Le Beurre Tendre, Doux",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3451790988677/le-beurre-tendre-doux-elle-vire",
+        "image_url": "https://static.openfoodfacts.org/images/products/345/179/098/8677/front_fr.85.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/345/179/098/8677/front_fr.85.200.jpg",
+        "fat_100": 82.0,
+        "saturated_fat_100": 57.0,
+        "sugars_100": 0.8,
+        "salt_100": 0.05,
+        "categories": [
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 34,
+    "fields": {
+        "code": "3392460480827",
+        "name": "Biscottes Heudebert",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/3392460480827/biscottes-6-cereales-heudebert",
+        "image_url": "https://static.openfoodfacts.org/images/products/339/246/048/0827/front_fr.25.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/339/246/048/0827/front_fr.25.200.jpg",
+        "fat_100": 8.0,
+        "saturated_fat_100": 2.4,
+        "sugars_100": 3.2,
+        "salt_100": 1.61,
+        "categories": [
+            81,
+            82,
+            83,
+            97,
+            137,
+            138
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 35,
+    "fields": {
+        "code": "3229820019307",
+        "name": "Flocons D\u2019Avoine Compl\u00e8te",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3229820019307/flocons-d-avoine-complete-bjorg",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/982/001/9307/front_fr.117.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/982/001/9307/front_fr.117.200.jpg",
+        "fat_100": 7.1,
+        "saturated_fat_100": 1.3,
+        "sugars_100": 1.7,
+        "salt_100": 0.02,
+        "categories": [
+            10,
+            81,
+            82,
+            97,
+            98,
+            99,
+            101,
+            103,
+            139
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 36,
+    "fields": {
+        "code": "3046920022651",
+        "name": "Excellence 70% Cacao Noir Intense",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3046920022651/excellence-70-cacao-noir-intense-lindt",
+        "image_url": "https://static.openfoodfacts.org/images/products/304/692/002/2651/front_fr.59.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/304/692/002/2651/front_fr.59.200.jpg",
+        "fat_100": 41.0,
+        "saturated_fat_100": 24.0,
+        "sugars_100": 29.0,
+        "salt_100": 0.1,
+        "categories": [
+            5,
+            140,
+            141,
+            142
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 37,
+    "fields": {
+        "code": "3228857000906",
+        "name": "Pain Ams Complet",
+        "nutriscore_grade": "B",
+        "url": "https://fr.openfoodfacts.org/produit/3228857000906/pain-ams-complet-harrys",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/885/700/0906/front_fr.113.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/885/700/0906/front_fr.113.200.jpg",
+        "fat_100": 4.5,
+        "saturated_fat_100": 0.4,
+        "sugars_100": 4.9,
+        "salt_100": 1.2,
+        "categories": [
+            81,
+            82,
+            83,
+            84,
+            86
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 38,
+    "fields": {
+        "code": "5010477348357",
+        "name": "Country Crisp 4 Noix",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/5010477348357/country-crisp-4-noix-jordans",
+        "image_url": "https://static.openfoodfacts.org/images/products/501/047/734/8357/front_fr.102.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/501/047/734/8357/front_fr.102.200.jpg",
+        "fat_100": 20.8,
+        "saturated_fat_100": 3.9,
+        "sugars_100": 17.4,
+        "salt_100": 0.03,
+        "categories": [
+            81,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 39,
+    "fields": {
+        "code": "8712100325953",
+        "name": "Amora Moutarde De Dijon Fine Et Forte Bocal 440G",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/8712100325953/amora-moutarde-de-dijon-fine-et-forte-bocal-440g",
+        "image_url": "https://static.openfoodfacts.org/images/products/871/210/032/5953/front_fr.108.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/871/210/032/5953/front_fr.108.200.jpg",
+        "fat_100": 12.0,
+        "saturated_fat_100": 0.7,
+        "sugars_100": 2.3,
+        "salt_100": 6.3,
+        "categories": [
+            153,
+            154,
+            155,
+            156,
+            157
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 40,
+    "fields": {
+        "code": "3225350000501",
+        "name": "Pulco Citron \u00c0 Diluer",
+        "nutriscore_grade": "A",
+        "url": "https://fr.openfoodfacts.org/produit/3225350000501/pulco-citron-a-diluer",
+        "image_url": "https://static.openfoodfacts.org/images/products/322/535/000/0501/front_fr.78.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/322/535/000/0501/front_fr.78.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 0.8,
+        "salt_100": 0.01,
+        "categories": [
+            158
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 41,
+    "fields": {
+        "code": "7622210713780",
+        "name": "Belvita Chocolat Et C\u00e9r\u00e9ales Compl\u00e8tes",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/7622210713780/belvita-chocolat-et-cereales-completes-lu",
+        "image_url": "https://static.openfoodfacts.org/images/products/762/221/071/3780/front_fr.66.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/762/221/071/3780/front_fr.66.200.jpg",
+        "fat_100": 14.0,
+        "saturated_fat_100": 3.6,
+        "sugars_100": 26.0,
+        "salt_100": 0.59,
+        "categories": [
+            5,
+            6,
+            7,
+            8,
+            10,
+            159,
+            160
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 42,
+    "fields": {
+        "code": "7622210601988",
+        "name": "Granola L'Original",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/7622210601988/granola-l-original-lu",
+        "image_url": "https://static.openfoodfacts.org/images/products/762/221/060/1988/front_fr.110.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/762/221/060/1988/front_fr.110.200.jpg",
+        "fat_100": 24.0,
+        "saturated_fat_100": 12.0,
+        "sugars_100": 29.0,
+        "salt_100": 1.25,
+        "categories": [
+            5,
+            6,
+            7,
+            8,
+            159,
+            161,
+            162
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 43,
+    "fields": {
+        "code": "3046920022606",
+        "name": "Excellence: 85% Cacao",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3046920022606/chocolat-noir-85-cacao-lindt",
+        "image_url": "https://static.openfoodfacts.org/images/products/304/692/002/2606/front_fr.9.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/304/692/002/2606/front_fr.9.200.jpg",
+        "fat_100": 46.0,
+        "saturated_fat_100": 28.0,
+        "sugars_100": 11.0,
+        "salt_100": 0.02,
+        "categories": [
+            141,
+            163,
+            164,
+            165,
+            166
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 44,
+    "fields": {
+        "code": "3175681066632",
+        "name": "Biscuits Pavot Citron",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/3175681066632/biscuits-pavot-citron-gerble",
+        "image_url": "https://static.openfoodfacts.org/images/products/317/568/106/6632/front_fr.77.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/317/568/106/6632/front_fr.77.200.jpg",
+        "fat_100": 16.0,
+        "saturated_fat_100": 1.5,
+        "sugars_100": 16.0,
+        "salt_100": 0.85,
+        "categories": [
+            5,
+            6,
+            7,
+            8
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 45,
+    "fields": {
+        "code": "5010477348395",
+        "name": "Country Crisp Chocolat Noir",
+        "nutriscore_grade": "C",
+        "url": "https://fr.openfoodfacts.org/produit/5010477348395/country-crisp-chocolat-noir-jordans",
+        "image_url": "https://static.openfoodfacts.org/images/products/501/047/734/8395/front_fr.76.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/501/047/734/8395/front_fr.76.200.jpg",
+        "fat_100": 17.2,
+        "saturated_fat_100": 6.3,
+        "sugars_100": 20.3,
+        "salt_100": 0.03,
+        "categories": [
+            81,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            167,
+            168
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 46,
+    "fields": {
+        "code": "3478820023184",
+        "name": "P\u00e2te \u00c0 Tartiner Chocolat Noisette",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/3478820023184/pate-a-tartiner-chocolat-noisette-jardin-bio",
+        "image_url": "https://static.openfoodfacts.org/images/products/347/882/002/3184/front_fr.143.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/347/882/002/3184/front_fr.143.200.jpg",
+        "fat_100": 34.4,
+        "saturated_fat_100": 5.6,
+        "sugars_100": 51.6,
+        "salt_100": 0.06,
+        "categories": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 47,
+    "fields": {
+        "code": "7622210713889",
+        "name": "Belvita Petit-D\u00e9jeuner / Miel Et P\u00e9pites De Chocolat",
+        "nutriscore_grade": "D",
+        "url": "https://fr.openfoodfacts.org/produit/7622210713889/belvita-petit-dejeuner-miel-et-pepites-de-chocolat-lu",
+        "image_url": "https://static.openfoodfacts.org/images/products/762/221/071/3889/front_fr.77.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/762/221/071/3889/front_fr.77.200.jpg",
+        "fat_100": 15.0,
+        "saturated_fat_100": 2.6,
+        "sugars_100": 29.0,
+        "salt_100": 0.69,
+        "categories": [
+            5,
+            29,
+            30,
+            31
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 48,
+    "fields": {
+        "code": "3017620402678",
+        "name": "Nutella",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/3017620402678/nutella-ferrero",
+        "image_url": "https://static.openfoodfacts.org/images/products/301/762/040/2678/front_fr.77.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/301/762/040/2678/front_fr.77.200.jpg",
+        "fat_100": 31.6,
+        "saturated_fat_100": 11.0,
+        "sugars_100": 56.8,
+        "salt_100": 0.114,
+        "categories": [
+            11,
+            45,
+            46,
+            47,
+            48,
+            49,
+            144
+        ]
+    }
+},
+{
+    "model": "product.product",
+    "pk": 49,
+    "fields": {
+        "code": "5449000267412",
+        "name": "Original",
+        "nutriscore_grade": "E",
+        "url": "https://fr.openfoodfacts.org/produit/5449000267412/original-coca-cola",
+        "image_url": "https://static.openfoodfacts.org/images/products/544/900/026/7412/front_fr.36.400.jpg",
+        "image_small_url": "https://static.openfoodfacts.org/images/products/544/900/026/7412/front_fr.36.200.jpg",
+        "fat_100": 0.0,
+        "saturated_fat_100": 0.0,
+        "sugars_100": 10.6,
+        "salt_100": 0.0,
+        "categories": [
+            20,
+            32,
+            35,
+            39,
+            169,
+            170
+        ]
+    }
+}
+]

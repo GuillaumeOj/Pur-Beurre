@@ -1,0 +1,24 @@
+[
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$T8kUXNMHM8kN$KAz8nokZzv+RPbpeAGPCzLFSNqekarDhaBa6Me+qnVY=",
+        "last_login": "2020-07-25T17:17:46.385Z",
+        "is_active": true,
+        "date_joined": "2020-07-25T17:17:22.818Z",
+        "email": "guillaume.ojardias@gmail.com",
+        "first_name": "Guillaume",
+        "last_name": "",
+        "is_staff": false,
+        "is_superuser": false,
+        "groups": [],
+        "user_permissions": [],
+        "favorites": [
+            1,
+            2,
+            3
+        ]
+    }
+}
+]
