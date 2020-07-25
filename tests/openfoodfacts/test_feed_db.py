@@ -4,7 +4,6 @@ from openfoodfacts.feed_db import FeedDb
 from product.models import Product
 
 
-# Create your tests here.
 class FeedDbModelsTests(TestCase):
     def test_insert_product_with_all_required_fields(self):
         data = [
