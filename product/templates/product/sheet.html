@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load user_extras %}
 {% block title %}Fiche produit{% endblock title %}
 {% block header %}
 <header class="masthead reduced"
@@ -65,15 +64,7 @@
 		<p class="text-center text-white">Faire une nouvelle recherche :</p>
 		<div class="row text-center">
 			<div class="col px-5">
-				<form method="post" action="{% url "search:find" %}">
-					{% csrf_token %}
-					<div class="input-group">
-						{{ product_search_form.name|add_css:"form-control" }}
-						<div class="input-group-append">
-							<input type="submit" class="btn btn-primary" value="Chercher">
-						</div>
-					</div>
-				</form>
+				{% include "search/_search_form.html" with type="main" %}
 			</div>
 		</div>
 		{% endif %}

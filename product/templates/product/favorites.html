@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load user_extras %}
 {% block title %}Mes favoris{% endblock title %}
 {% block header %}
 <header class="masthead reduced">
@@ -29,7 +28,7 @@
 		</p>
 		<div class="row row-cols-1 row-cols-sm-3 p-0 collapse show" id="collapse_{{ substituted.code }}">
 			{% for favorite in favorites %}
-			{% include "search/_product_card.html" with product=favorite.substitute %}
+			{% include "product/_product_card.html" with product=favorite.substitute %}
 			{% endfor %}
 		</div>
 		{% endfor %}

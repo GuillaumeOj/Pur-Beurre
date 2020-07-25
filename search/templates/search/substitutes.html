@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load user_extras %}
 {% block title %}Choisir un substitut{% endblock title %}
 {% block header %}
 <header class="masthead reduced"
@@ -33,7 +32,7 @@
 		</div>
 		<div class="row row-cols-1 row-cols-sm-3 mx-2 mx-sm-0">
 			{% for substitute in substitutes %}
-			{% include "search/_product_card.html" with product=substitute save=True substituted=product %}
+			{% include "product/_product_card.html" with product=substitute save=True substituted=product %}
 			{% endfor %}
 		</div>
 		<nav class="row" aria-label="Pagination substituts">
