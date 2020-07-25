@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect, reverse
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.contrib.auth.decorators import login_required
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.shortcuts import redirect, render, reverse
 
-from .models import Product, Favorite
 from .forms import ProductSearchForm
+from .models import Favorite, Product
 
 
 # Create your views here.

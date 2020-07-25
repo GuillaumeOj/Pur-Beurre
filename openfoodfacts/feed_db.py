@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 
-from product.models import Product, Category
+from product.models import Category, Product
 
 
 class FeedDb:

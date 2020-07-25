@@ -1,9 +1,9 @@
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import JsonResponse
-from django.shortcuts import render, redirect, reverse
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.shortcuts import redirect, render, reverse
 
-from product.models import Product
 from product.forms import ProductSearchForm
+from product.models import Product
 
 
 def auto_find(request):

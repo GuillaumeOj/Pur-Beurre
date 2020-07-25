@@ -1,6 +1,7 @@
+from django.core.validators import (MaxLengthValidator, MinLengthValidator,
+                                    URLValidator)
 from django.db import models
-from django.db.models import Q, Count
-from django.core.validators import MaxLengthValidator, URLValidator, MinLengthValidator
+from django.db.models import Count, Q
 
 from .category import Category
 

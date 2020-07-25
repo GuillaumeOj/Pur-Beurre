@@ -1,9 +1,8 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from product.models import Product, Favorite
-
+from product.models import Favorite, Product
 
 # Create your models here.
 

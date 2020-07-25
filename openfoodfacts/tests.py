@@ -1,7 +1,7 @@
 from django.test import TestCase
 
-from product.models import Product
 from openfoodfacts.feed_db import FeedDb
+from product.models import Product
 
 
 # Create your tests here.
