@@ -47,6 +47,7 @@ class ProductMangerTests(TestCase):
     def test_find_product_with_wrong_name(self):
         product = Product.objects.find_product("qwerty")
 
+        self.assertNotIsInstance(product, Product)
         self.assertFalse(product)
 
     def test_find_products(self):

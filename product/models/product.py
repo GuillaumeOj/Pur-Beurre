@@ -44,6 +44,8 @@ class ProductManager(models.Manager):
         except ObjectDoesNotExist:
             try:
                 product = self.get_queryset().filter(name__icontains=name).first()
+                if not product:
+                    raise ObjectDoesNotExist()
             except ObjectDoesNotExist:
                 product = ""
         return product
