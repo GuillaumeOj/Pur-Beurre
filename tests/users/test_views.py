@@ -70,3 +70,12 @@ class UsersVewsTests(TestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, 200)
+
+    def test_logout_redirect(self):
+        self.client.force_login(self.user)
+
+        url = reverse("users:logout")
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 302)
+
