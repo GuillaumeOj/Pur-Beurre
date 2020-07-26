@@ -1,12 +1,11 @@
+{% load filters %}
 <form method="post" action="{% url "search:find" %}" id="search_{{ type }}">
 	{% csrf_token %}
 	{% if type == "short" %}
-	<input type="text" name="name" placeholder="Chercher un aliment" maxlength="100"
-		class="form-control d-none d-lg-block" required="" id="id_name" autocomplete="off">
+	{{ product_search_form.name|add_attrs:"class=form-control d-none d-lg-block&autocomplete=off" }}
 	{% else %}
 	<div class="input-group">
-		<input type="text" name="name" placeholder="Chercher un aliment" maxlength="100" class="form-control"
-			required="" id="id_name" autocomplete="off">
+		{{ product_search_form.name|add_attrs:"class=form-control&autocomplete=off" }}
 		<div class="input-group-append">
 			<input type="submit" class="btn btn-primary" value="Chercher">
 		</div>
