@@ -15,6 +15,9 @@ def custom_login_view(request):
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
 
+    # Get the next view url
+    redirect_to = request.POST.get("next", request.GET.get("next", "homepage:index"))
+
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)
 
@@ -26,7 +29,7 @@ def custom_login_view(request):
             login(request, user)
             success_message = f"Bonjour {user.first_name} !"
             messages.success(request, success_message)
-            return redirect(reverse("homepage:index"))
+            return redirect(redirect_to)
         else:
             fail_message = "Vos identifiants sont incorrects."
             messages.error(request, fail_message)
