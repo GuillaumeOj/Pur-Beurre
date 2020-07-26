@@ -1,4 +1,5 @@
 from django.core.validators import MaxLengthValidator, MinLengthValidator, URLValidator
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.db.models import Count, Q
 
@@ -16,7 +17,14 @@ class ProductManager(models.Manager):
         :return: a query set with the product
         :rtype: QuerySet
         """
-        return self.get_queryset().get(code=product_code)
+        try:
+            product = self.get_queryset().filter(code=product_code).first()
+            if not product:
+                raise ObjectDoesNotExist()
+        except ObjectDoesNotExist:
+            product = ""
+
+        return product
 
     def find_product(self, name):
         """Get a product with the name.
@@ -29,13 +37,16 @@ class ProductManager(models.Manager):
         :return: a query set with the product
         :rtype: QuerySet
         """
-        # Try to find the product with the exact name
-        product = self.get_queryset().filter(name=name).first()
-        if product:
-            return product
-        else:
-            # Or with name contains the request name
-            return self.get_queryset().filter(name__icontains=name).first()
+        try:
+            product = self.get_queryset().filter(name=name).first()
+            if not product:
+                raise ObjectDoesNotExist()
+        except ObjectDoesNotExist:
+            try:
+                product = self.get_queryset().filter(name__icontains=name).first()
+            except ObjectDoesNotExist:
+                product = ""
+        return product
 
     def find_products(self, name):
         """Get products with the name.
