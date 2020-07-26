@@ -79,3 +79,10 @@ class UsersVewsTests(TestCase):
 
         self.assertEqual(response.status_code, 302)
 
+    def test_account_access(self):
+        self.client.force_login(self.user)
+
+        url = reverse("users:account")
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 200)
