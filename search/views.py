@@ -5,6 +5,8 @@ from django.shortcuts import redirect, render, reverse
 from product.forms import ProductSearchForm
 from product.models import Product
 
+from homepage.custom_http_response import HttpResponseBadRequest
+
 
 def auto_find(request):
     """Get products' names for the autocompletion."""
@@ -13,15 +15,17 @@ def auto_find(request):
     if request.method == "POST":
         form = ProductSearchForm(request.POST)
 
-        # Get a list and product and create a list of names
-        products = Product.objects.find_products(form["name"].value())
-        products_names = [product.name for product in products]
-        products_names = list(set(products_names))
+        if form.is_valid():
+            # Get a list and product and create a list of names
+            products = Product.objects.find_products(form["name"].value())
+            products_names = [product.name for product in products]
+            products_names = list(set(products_names))
 
-        # Create a response as a dict for returning a JsonResponse
-        response = {"products_names": products_names}
-
-        return JsonResponse(response)
+            # Create a response as a dict for returning a JsonResponse
+            response = {"products_names": products_names}
+            return JsonResponse(response)
+        else:
+            return HttpResponseBadRequest()
 
     return redirect(reverse("homepage:index"))
 
