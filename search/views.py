@@ -46,21 +46,22 @@ def find(request):
 
             # Redirect to the method find_substitutes if the product exist
             if product:
-                return redirect(reverse("search:find_substitutes", args=[product.code]))
+                return find_substitutes(request, product_code=product.code)
+            # Else render the substitute page with no substitutes found
             else:
                 context["product"] = {"name": product_search_form.cleaned_data["name"]}
+                return render(request, "search/substitutes.html", context=context)
 
-            return render(request, "search/substitutes.html", context=context)
     return redirect(reverse("homepage:index"))
 
 
-def find_substitutes(request, product_code, page=1):
+def find_substitutes(request, product_code, page=""):
     """Find substitutes for a product."""
 
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
 
-    product = Product.objects.get(code=product_code)
+    product = Product.objects.get_product(product_code)
 
     if product:
         context["product"] = product
@@ -75,6 +76,5 @@ def find_substitutes(request, product_code, page=1):
                 context["substitutes"] = pagination.page(1)
             except EmptyPage:
                 context["substitutes"] = pagination.page(pagination.num_pages)
-    else:
-        context["product"] = {"name": product_search_form.cleaned_data["name"]}
+
     return render(request, "search/substitutes.html", context=context)
