@@ -100,3 +100,9 @@ class UsersVewsTests(TestCase):
         response = self.client.post(url, data=data)
 
         self.assertEqual(response.status_code, 302)
+
+    def test_registration_view_is_displayed(self):
+        url = reverse("users:registration")
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 200)
