@@ -21,6 +21,13 @@ class ProductMangerTests(TestCase):
         self.assertIsInstance(product, Product)
         self.assertEqual(product.code, product_code)
 
+    def test_get_product_with_wrong_code(self):
+        product_code = "qwerty"
+
+        product = Product.objects.get_product(product_code)
+
+        self.assertFalse(product)
+
     def test_find_product_with_exact_name(self):
         nutella = self.get_nutella()
 
@@ -36,6 +43,11 @@ class ProductMangerTests(TestCase):
 
         self.assertIsInstance(product, Product)
         self.assertEqual(product, nutella)
+
+    def test_find_product_with_wrong_name(self):
+        product = Product.objects.find_product("qwerty")
+
+        self.assertFalse(product)
 
     def test_find_products(self):
         products = Product.objects.find_products("nut")
