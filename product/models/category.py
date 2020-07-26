@@ -8,7 +8,7 @@ class Category(models.Model):
     name = models.CharField(
         unique=True,
         max_length=100,
-        validators=[MinLengthValidator(1), MaxLengthValidator],
+        validators=[MinLengthValidator(2), MaxLengthValidator],
     )
 
     def __str__(self):
