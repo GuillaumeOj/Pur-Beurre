@@ -14,7 +14,7 @@
 				{% csrf_token %}
 				<div class="form-group">
 					{{ form.email.label_tag }}
-					{{ form.email|add_css:"form-control" }}
+					{{ form.email|add_attrs:"class=form-control" }}
 					<div class="invalid-feedback {% if form.email.errors%}d-inline{% endif%}">
 						{{ form.email.errors }}
 					</div>
@@ -22,7 +22,7 @@
 				<div class="form-row">
 					<div class="form-group col-md">
 						{{ form.first_name.label_tag }}
-						{{ form.first_name|add_css:"form-control" }}
+						{{ form.first_name|add_attrs:"class=form-control" }}
 						<div
 							class="invalid-feedback {% if form.first_name.errors%}d-inline{% endif%}">
 							{{ form.first_name.errors }}
@@ -30,7 +30,7 @@
 					</div>
 					<div class="form-group col-md">
 						{{ form.last_name.label_tag }}
-						{{ form.last_name|add_css:"form-control" }}
+						{{ form.last_name|add_attrs:"class=form-control" }}
 						<div
 							class="invalid-feedback {% if form.last_name.errors%}d-inline{% endif%}">
 							{{ form.last_name.errors }}
@@ -39,11 +39,11 @@
 				</div>
 				<div class="form-group">
 					{{ form.password1.label_tag }}
-					{{ form.password1|add_css:"form-control" }}
+					{{ form.password1|add_attrs:"class=form-control" }}
 				</div>
 				<div class="form-group">
 					{{ form.password2.label_tag }}
-					{{ form.password2|add_css:"form-control" }}
+					{{ form.password2|add_attrs:"class=form-control" }}
 					<div class="invalid-feedback {% if form.password1.errors%}d-inline{% endif%}">
 						{{ form.password1.errors }}
 					</div>
