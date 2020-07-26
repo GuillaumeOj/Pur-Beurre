@@ -86,3 +86,17 @@ class UsersVewsTests(TestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, 200)
+
+    def test_registration_succeed_redirect(self):
+        data = {
+            "email": "test@test.com",
+            "first_name": "testeur",
+            "last_name": "",
+            "password1": "i-am-a-strong-very-strong-password-5",
+            "password2": "i-am-a-strong-very-strong-password-5",
+        }
+
+        url = reverse("users:registration")
+        response = self.client.post(url, data=data)
+
+        self.assertEqual(response.status_code, 302)
