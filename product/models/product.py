@@ -103,7 +103,7 @@ class Product(models.Model):
     )
 
     name = models.CharField(
-        max_length=100, validators=[MinLengthValidator(1), MaxLengthValidator]
+        max_length=100, validators=[MinLengthValidator(2), MaxLengthValidator]
     )
 
     nutriscore_grade = models.CharField(
