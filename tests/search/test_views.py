@@ -1,15 +1,14 @@
-from django.test import TestCase, override_settings
 from django.shortcuts import reverse
+from django.test import override_settings
 
 from product.models import Product
+from tests.custom import CustomTestCase
 
 
 @override_settings(
     STATICFILES_STORAGE="django.contrib.staticfiles.storage.StaticFilesStorage"
 )
-class SearchViewsAutoFindTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class SearchViewsAutoFindTests(CustomTestCase):
     def get_nutella(self):
         return Product.objects.filter(name="Nutella").first()
 
@@ -35,9 +34,7 @@ class SearchViewsAutoFindTests(TestCase):
 @override_settings(
     STATICFILES_STORAGE="django.contrib.staticfiles.storage.StaticFilesStorage"
 )
-class SearchViewsFindProductTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class SearchViewsFindProductTests(CustomTestCase):
     def get_nutella(self):
         return Product.objects.filter(name="Nutella").first()
 

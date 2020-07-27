@@ -1,11 +1,8 @@
-from django.test import TestCase
-
 from product.models import Category
+from tests.custom import CustomTestCase
 
 
-class CategoryModelsTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class CategoryModelsTests(CustomTestCase):
     def setUp(self):
         self.category = Category.objects.all().first()
 

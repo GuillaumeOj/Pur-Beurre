@@ -1,11 +1,8 @@
-from django.test import TestCase
-
+from tests.custom import CustomTestCase
 from users.models import User
 
 
-class UserModelsTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class UserModelsTests(CustomTestCase):
     def get_user(self):
         return User.objects.all().first()
 

@@ -1,12 +1,10 @@
-from django.test import TestCase
 from django.db.models import QuerySet
 
 from product.models import Product
+from tests.custom import CustomTestCase
 
 
-class ProductMangerTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class ProductMangerTests(CustomTestCase):
     def setUp(self):
         self.nutella = Product.objects.filter(name="Nutella").first()
         self.nut = Product.objects.filter(name__icontains="nut").first()

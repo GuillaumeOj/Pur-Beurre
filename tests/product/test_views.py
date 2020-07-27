@@ -1,16 +1,15 @@
-from django.test import TestCase, override_settings, Client
 from django.shortcuts import reverse
+from django.test import Client, override_settings
 
 from product.models import Product
+from tests.custom import CustomTestCase
 from users.models import User
 
 
 @override_settings(
     STATICFILES_STORAGE="django.contrib.staticfiles.storage.StaticFilesStorage"
 )
-class ProductViewsTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class ProductViewsTests(CustomTestCase):
     def setUp(self):
         self.client = Client(HTTP_REFERER="http://www.qwant.fr")
         self.user = User.objects.all().first()

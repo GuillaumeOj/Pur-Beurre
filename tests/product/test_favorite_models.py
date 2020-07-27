@@ -1,11 +1,8 @@
-from django.test import TestCase
-
 from product.models import Favorite, Product
+from tests.custom import CustomTestCase
 
 
-class FavoriteModelsTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class FavoriteModelsTests(CustomTestCase):
     def setUp(self):
         self.product = Product.objects.filter(name="Nutella").first()
         self.substitute = Product.objects.filter(

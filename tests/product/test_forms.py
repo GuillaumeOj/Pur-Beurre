@@ -1,11 +1,8 @@
-from django.test import TestCase
-
 from product.forms import ProductSearchForm
+from tests.custom import CustomTestCase
 
 
-class ProductSearchFormsTests(TestCase):
-    fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
-
+class ProductSearchFormsTests(CustomTestCase):
     def test_search_form_with_two_characters_is_valid(self):
         data = {"name": "nu"}
         form = ProductSearchForm(data=data)
