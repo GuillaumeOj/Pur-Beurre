@@ -3,13 +3,9 @@ import requests
 
 
 class Api:
-    """Interface beetween OpenFoodFacts and this application:
+    """Interface beetween OpenFoodFacts and this application:"""
 
-    - download data
-    - read data
-    - clear data
-    """
-
+    # Parameters for the API
     URL_BASE = "https://fr.openfoodfacts.org/cgi/search.pl"
     PAGE_SIZE = 1000
     PAGES = 1
