@@ -92,6 +92,12 @@ class SearchViewsGetSubstitutesTests(CustomTestCase):
 
         self.assertEqual(response.status_code, 200)
 
+    def test_get_substitutes_is_loading_with_no_page_number(self):
+        url = reverse("search:get_substitutes", args=[self.nutella.code])
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 200)
+
     def test_get_substitutes_is_loading_with_wrong_page_number(self):
         url = reverse("search:get_substitutes", args=[self.nutella.code, 150])
         response = self.client.get(url)
