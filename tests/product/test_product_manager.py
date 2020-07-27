@@ -7,42 +7,32 @@ from product.models import Product
 class ProductMangerTests(TestCase):
     fixtures = ["favorite.json", "product.json", "user.json", "category.json"]
 
-    def get_nutella(self):
-        return Product.objects.filter(name="Nutella").first()
-
-    def get_nut(self):
-        return Product.objects.filter(name__icontains="nut").first()
+    def setUp(self):
+        self.nutella = Product.objects.filter(name="Nutella").first()
+        self.nut = Product.objects.filter(name__icontains="nut").first()
 
     def test_get_product(self):
-        product_code = self.get_nutella().code
-
-        product = Product.objects.get_product(product_code)
+        product = Product.objects.get_product(self.nutella.code)
 
         self.assertIsInstance(product, Product)
-        self.assertEqual(product.code, product_code)
+        self.assertEqual(product.code, self.nutella.code)
 
     def test_get_product_with_wrong_code(self):
-        product_code = "qwerty"
-
-        product = Product.objects.get_product(product_code)
+        product = Product.objects.get_product("qwerty")
 
         self.assertFalse(product)
 
     def test_find_product_with_exact_name(self):
-        nutella = self.get_nutella()
-
         product = Product.objects.find_product("Nutella")
 
         self.assertIsInstance(product, Product)
-        self.assertEqual(product, nutella)
+        self.assertEqual(product, self.nutella)
 
     def test_find_product_with_part_of_name(self):
-        nutella = self.get_nut()
-
         product = Product.objects.find_product("nut")
 
         self.assertIsInstance(product, Product)
-        self.assertEqual(product, nutella)
+        self.assertEqual(product, self.nut)
 
     def test_find_product_with_wrong_name(self):
         product = Product.objects.find_product("qwerty")
@@ -59,13 +49,11 @@ class ProductMangerTests(TestCase):
             self.assertIn("nut", product.name.lower())
 
     def test_find_substitutes(self):
-        nutella = self.get_nutella()
-
-        substitutes = Product.objects.find_substitutes(nutella.code)
+        substitutes = Product.objects.find_substitutes(self.nutella.code)
 
         self.assertIsInstance(substitutes, QuerySet)
         self.assertLessEqual(len(substitutes), 30)
         self.assertTrue(substitutes.ordered)
         for substitute in substitutes:
-            self.assertLess(substitute.nutriscore_grade, nutella.nutriscore_grade)
-            self.assertNotEqual(substitute, nutella)
+            self.assertLess(substitute.nutriscore_grade, self.nutella.nutriscore_grade)
+            self.assertNotEqual(substitute, self.nutella)

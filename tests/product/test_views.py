@@ -15,28 +15,24 @@ class ProductViewsTests(TestCase):
         self.client = Client(HTTP_REFERER="http://www.qwant.fr")
         self.user = User.objects.all().first()
 
-    def get_nutella(self):
-        return Product.objects.filter(name__icontains="nut").first()
-
-    def get_pate(self):
-        return Product.objects.filter(name__icontains="Nocciolata").first()
+        self.product = Product.objects.filter(name__icontains="nut").first()
+        self.substitute = Product.objects.filter(name__icontains="Nocciolata").first()
 
     def test_sheet_is_loading(self):
-        nutella = self.get_nutella()
-
-        url = reverse("product:sheet", args=[nutella.code])
+        url = reverse("product:sheet", args=[self.product.code])
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, 200)
 
     def test_save_favorite_is_redirecting(self):
         self.client.force_login(self.user)
-        product = self.get_nutella()
-        substitute = self.get_pate()
 
         url = reverse(
             "product:save",
-            kwargs={"product_code": product.code, "substitute_code": substitute.code},
+            kwargs={
+                "product_code": self.product.code,
+                "substitute_code": self.substitute.code,
+            },
         )
         response = self.client.get(url)
 
