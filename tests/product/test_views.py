@@ -37,6 +37,21 @@ class ProductViewsTests(CustomTestCase):
 
         self.assertEqual(response.status_code, 302)
 
+    def test_save_favorite_is_redirecting_with_favorite_already_saved(self):
+        self.client.force_login(self.user)
+
+        url = reverse(
+            "product:save",
+            kwargs={
+                "product_code": self.product.code,
+                "substitute_code": self.substitute.code,
+            },
+        )
+        response = self.client.get(url)
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 302)
+
     def test_favorites_is_loading(self):
         self.client.force_login(self.user)
         url = reverse("product:favorites")
