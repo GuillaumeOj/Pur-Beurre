@@ -46,13 +46,13 @@ class SearchViewsGetProductTests(CustomTestCase):
     def setUp(self):
         self.nutella = Product.objects.filter(name="Nutella").first()
 
-    def test_get_product_redirect_to_find_substitutes(self):
+    def test_get_product_redirect_to_get_substitutes_if_found_a_product(self):
         url = reverse("search:get_product")
         response = self.client.post(url, data={"name": "Nutella"})
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
-    def test_get_product_render_substites_if_product_not_found(self):
+    def test_get_product_render_page_if_no_product_was_found(self):
         url = reverse("search:get_product")
         response = self.client.post(url, data={"name": "qwerty"})
 

@@ -49,7 +49,7 @@ def get_product(request):
 
             # Redirect to the method find_substitutes if the product exist
             if product:
-                return get_substitutes(request, product_code=product.code)
+                return redirect(reverse("search:get_substitutes", args=[product.code]))
             # Else render the substitute page without substitutes
             else:
                 context["product"] = {"name": product_search_form.cleaned_data["name"]}
