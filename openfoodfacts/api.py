@@ -49,6 +49,10 @@ class Api:
                 response.raise_for_status()
             except requests.HTTPError as err:
                 raise err
+            except requests.ConnectionError as err:
+                raise err
+            except requests.Timeout as err:
+                raise err
 
             result = response.json()
             if result.get("products"):

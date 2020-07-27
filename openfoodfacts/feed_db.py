@@ -32,6 +32,7 @@ class FeedDb:
                 product.full_clean()
                 product.save()
             except ValidationError:
+                # Ignore products with ValidationError
                 continue
 
             # Insert associated categories, stores and brands
@@ -41,8 +42,11 @@ class FeedDb:
                     obj, created = Category.objects.get_or_create(name=category)
                     categories.append(obj)
                 except ValidationError:
+                    # Ignore categories with ValidationError
                     continue
             product.categories.add(*categories)
+
+        return True
 
     def _serialize_product(self, raw_product):
         """Serialize a product data informations."""
