@@ -8,15 +8,17 @@ from product.models import Product
 from homepage.custom_http_response import HttpResponseBadRequest
 
 
-def auto_find(request):
-    """Get products' names for the autocompletion."""
+def auto_completion(request):
+    """Get a list of products' names for the auto-completion.
+    :return: a Json with a list of products' name
+    :rtype: JsonResponse
+    """
 
-    # Avoid reach the view by the GET method
     if request.method == "POST":
         form = ProductSearchForm(request.POST)
 
         if form.is_valid():
-            # Get a list and product and create a list of names
+            # Get a list of products and create a list of names
             products = Product.objects.find_products(form["name"].value())
             products_names = [product.name for product in products]
             products_names = list(set(products_names))
@@ -27,13 +29,14 @@ def auto_find(request):
         else:
             return HttpResponseBadRequest()
 
+    # Avoid reach the view by the GET method and redirect to the index
     return redirect(reverse("homepage:index"))
 
 
-def find(request):
-    """Find the product, the user want to substitute."""
+def get_product(request):
+    """Get a product to substitute based on the user search terms.
+    """
 
-    # Avoid reach the view by the GET method
     if request.method == "POST":
         product_search_form = ProductSearchForm(request.POST)
         context = {"product_search_form": product_search_form}
@@ -46,17 +49,18 @@ def find(request):
 
             # Redirect to the method find_substitutes if the product exist
             if product:
-                return find_substitutes(request, product_code=product.code)
-            # Else render the substitute page with no substitutes found
+                return get_substitutes(request, product_code=product.code)
+            # Else render the substitute page without substitutes
             else:
                 context["product"] = {"name": product_search_form.cleaned_data["name"]}
                 return render(request, "search/substitutes.html", context=context)
 
+    # Avoid reach the view by the GET method and redirect to the index
     return redirect(reverse("homepage:index"))
 
 
-def find_substitutes(request, product_code, page=""):
-    """Find substitutes for a product."""
+def get_substitutes(request, product_code, page=""):
+    """Get a list of substitutes for a product."""
 
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}

@@ -21,7 +21,7 @@ class Search {
 			this.clear_result();
 		} else {
 			let formData = new FormData(this.form);
-			fetch(auto_find_url, {
+			fetch(auto_completion_url, {
 				method: "POST",
 				body: formData,
 				headers: this.HttpHeaders

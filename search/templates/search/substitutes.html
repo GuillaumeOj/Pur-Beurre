@@ -39,7 +39,7 @@
 			<ul class="pagination mx-auto">
 				<li class="page-item {% if not substitutes.has_previous %}disabled{% endif %}">
 					{% if substitutes.has_previous %}
-					<a href="{% url "search:find_substitutes" product.code substitutes.previous_page_number %}"
+					<a href="{% url "search:get_substitutes" product.code substitutes.previous_page_number %}"
 						title="Page précédente">
 						<span class="page-link">&laquo;</span>
 					</a>
@@ -57,7 +57,7 @@
 				</li>
 				{% else %}
 				<li class="page-item">
-					<a class="page-link" href="{% url "search:find_substitutes" product.code i %}">
+					<a class="page-link" href="{% url "search:get_substitutes" product.code i %}">
 						{{ i }}
 					</a>
 				</li>
@@ -66,7 +66,7 @@
 
 				<li class="page-item {% if not substitutes.has_next %}disabled{% endif %}">
 					{% if substitutes.has_next %}
-					<a href="{% url "search:find_substitutes" product.code substitutes.next_page_number %}"
+					<a href="{% url "search:get_substitutes" product.code substitutes.next_page_number %}"
 						title="Page suivante">
 						<span class="page-link">&raquo;</span>
 					</a>

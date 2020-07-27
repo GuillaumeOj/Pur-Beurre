@@ -1,5 +1,5 @@
 {% load filters %}
-<form method="post" action="{% url "search:find" %}" id="search_{{ type }}">
+<form method="post" action="{% url "search:get_product" %}" id="search_{{ type }}">
 	{% csrf_token %}
 	{% if type == "short" %}
 	{{ product_search_form.name|add_attrs:"class=form-control d-none d-lg-block&autocomplete=off" }}
