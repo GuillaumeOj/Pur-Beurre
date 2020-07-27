@@ -38,13 +38,18 @@ class ProductManagerTests(CustomTestCase):
         self.assertNotIsInstance(product, Product)
         self.assertFalse(product)
 
-    def test_find_products(self):
-        products = Product.objects.find_products("nut")
+    def test_get_products_by_name(self):
+        products = Product.objects.get_products_by_name("nut")
 
         self.assertIsInstance(products, QuerySet)
         self.assertLessEqual(len(products), 10)
         for product in products:
             self.assertIn("nut", product.name.lower())
+
+    def test_get_products_by_name_with_wrong_name(self):
+        products = Product.objects.get_products_by_name("qwerty")
+
+        self.assertFalse(products)
 
     def test_find_substitutes(self):
         substitutes = Product.objects.find_substitutes(self.nutella.code)

@@ -22,7 +22,7 @@ def auto_completion(request):
 
         if form.is_valid():
             # Get a list of products and create a list of names
-            products = Product.objects.find_products(form["name"].value())
+            products = Product.objects.get_products_by_name(form["name"].value())
             products_names = [product.name for product in products]
             products_names = list(set(products_names))
 

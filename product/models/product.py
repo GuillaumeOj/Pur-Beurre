@@ -50,7 +50,7 @@ class ProductManager(models.Manager):
                 product = ""
         return product
 
-    def find_products(self, name):
+    def get_products_by_name(self, name):
         """Get products with the name.
 
         Get products by filtering with the lookup "__icontains" and limit the results to
