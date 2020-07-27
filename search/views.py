@@ -10,7 +10,10 @@ from homepage.custom_http_response import HttpResponseBadRequest
 
 def auto_completion(request):
     """Get a list of products' names for the auto-completion.
-    :return: a Json with a list of products' name
+
+    :return: a JsonResponse with a list of products' name, if succed to get products
+    an HttpResponseBadRequest if the form is not valid
+    an HttpResponse with a redirection to home if acces with another method than POST
     :rtype: JsonResponse
     """
 
@@ -35,6 +38,11 @@ def auto_completion(request):
 
 def get_product(request):
     """Get a product to substitute based on the user search terms.
+
+    :return: an HttpResponse with a redirection to substitutes if succeed to get a product
+    an HttpResponse with a template render if fail to get a product
+    an HttpResponse with a redirection to home if acces with another method than POST
+    :rtype: HttpResponse
     """
 
     if request.method == "POST":
@@ -60,7 +68,11 @@ def get_product(request):
 
 
 def get_substitutes(request, product_code, page=""):
-    """Get a list of substitutes for a product."""
+    """Get a list of substitutes for a product.
+
+    :return: an HttpResponse with a template render for displaying the subsitutes
+    :rtype: HttpResponse
+    """
 
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
