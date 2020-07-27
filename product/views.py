@@ -41,10 +41,18 @@ def save_favorite(request, product_code, substitute_code):
 
     current_user = request.user
 
-    obj, created = Favorite.objects.get_or_create(product=product, substitute=substitute)
-    current_user.favorites.add(obj)
-    success_message = f"{substitute.name} est sauvegardé dans vos favoris"
-    messages.success(request, success_message)
+    favorite, created = Favorite.objects.get_or_create(
+        product=product, substitute=substitute
+    )
+    if favorite not in current_user.favorites.all():
+        current_user.favorites.add(favorite)
+        success_message = f"{substitute.name} est sauvegardé dans vos favoris"
+        messages.success(request, success_message)
+    else:
+        error_message = (
+            f"{substitute.name} est déjà dans vos favoris pour substituer {product.name}"
+        )
+        messages.error(request, error_message)
 
     return redirect(request.META["HTTP_REFERER"])
 
