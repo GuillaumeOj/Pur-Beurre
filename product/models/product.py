@@ -61,7 +61,16 @@ class ProductManager(models.Manager):
         :return: a query set with 10 products
         :rtype: QuerySet
         """
-        return self.get_queryset().filter(name__icontains=name)[:10]
+        if name:
+            try:
+                products = self.get_queryset().filter(name__icontains=name)[:10]
+                if not products:
+                    raise ObjectDoesNotExist()
+            except ObjectDoesNotExist:
+                products = ""
+        else:
+            products = ""
+        return products
 
     def find_substitutes(self, product_code):
         """Get substitutes for a product.
