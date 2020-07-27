@@ -18,6 +18,14 @@ class SearchViewsAutoCompletionTests(CustomTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(loads(response.content).get("products_names"))
 
+    def test_auto_completion_return_empty_list_if_there_is_no_matching_product(self):
+        url = reverse("search:auto_completion")
+        response = self.client.post(url, data={"name": "qwerty"})
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("products_names", loads(response.content))
+        self.assertEqual(loads(response.content).get("products_names"), [])
+
     def test_auto_completion_return_no_json_if_the_form_is_invalid(self):
         url = reverse("search:auto_completion")
         response = self.client.post(url, data={"name": ""})
