@@ -1,5 +1,6 @@
-from django.core.validators import MaxLengthValidator, MinLengthValidator, URLValidator
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.validators import (MaxLengthValidator, MinLengthValidator,
+                                    URLValidator)
 from django.db import models
 from django.db.models import Count, Q
 
@@ -7,7 +8,7 @@ from .category import Category
 
 
 class ProductManager(models.Manager):
-    """Set custom methods for a product"""
+    """Set custom methods for a product."""
 
     def get_product_by_code(self, product_code):
         """Get a product with the code.

@@ -7,13 +7,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0013_auto_20200726_2010'),
+        ("product", "0013_auto_20200726_2010"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='product',
-            name='name',
-            field=models.CharField(max_length=100, validators=[django.core.validators.MinLengthValidator(2), django.core.validators.MaxLengthValidator]),
+            model_name="product",
+            name="name",
+            field=models.CharField(
+                max_length=100,
+                validators=[
+                    django.core.validators.MinLengthValidator(2),
+                    django.core.validators.MaxLengthValidator,
+                ],
+            ),
         ),
     ]

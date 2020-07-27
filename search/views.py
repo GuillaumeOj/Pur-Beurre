@@ -2,10 +2,9 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import JsonResponse
 from django.shortcuts import redirect, render, reverse
 
+from homepage.custom_http_response import HttpResponseBadRequest
 from product.forms import ProductSearchForm
 from product.models import Product
-
-from homepage.custom_http_response import HttpResponseBadRequest
 
 
 def auto_completion(request):
