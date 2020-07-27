@@ -7,8 +7,11 @@ author:
   - 'Mentor évaluateur : Babacar SYLLA'
 geometry: margin=1.5cm
 ---
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
 
-# Présentation
+\pagebreak
+# I. Présentation
 
 Ce projet reprend les fondements du projet 5 : utiliser l'API proposé par Open Food Facts pour proposer à l'utilisateur un produit de substitut au produit qu'il recherche dans la base de données.
 
@@ -21,13 +24,13 @@ Les fonctionnalités minimales demandées sont les suivantes :
 - Permettre de sauvegarder un favoris visible dans une catégorie "Mes Aliments"
 - Utiliser un template imposé ainsi qu'une charte graphique
 
-## Liens du projets
+## I.1. Liens du projets
 
 - le code source du projet est disponible sur la plate-forme GitHub à cette adresse : _[https://github.com/GuillaumeOj/Pur-Beurre](https://github.com/GuillaumeOj/Pur-Beurre)_
 - le site est visible en ligne à cette adresse : _[http://projet-8.ojardias.io/](http://projet-8.ojardias.io/)_
 - le Trello du projet est accessible ici : _[https://trello.com/b/TWtodZpE/purbeurre](https://trello.com/b/TWtodZpE/purbeurre)_
 
-# Démarche de création
+# II. Démarche de création
 
 Pour réaliser le projet, j'ai suivi les étapes suivantes :
 
@@ -38,7 +41,7 @@ Pour réaliser le projet, j'ai suivi les étapes suivantes :
 - recherche d'un substitut en fonction du produit rentré par l'utilisateur·rice
 - ajout de la fonctionnalité de favoris
 
-## Algorithme de recherche d'un substitut
+## II.1 Algorithme de recherche d'un substitut
 
 Pour être le plus précis possible et afin de proposer à l'utilisateur·rice un produit meilleur que le produit initial, l'algorithme de recherche se base sur deux critères :
 
@@ -54,7 +57,7 @@ Afin d'avoir de meilleurs résultats, les substituts proposés sont classés com
 
 Ce choix ne permet pas forcément d'obtenir les produits avec un meilleur nutriscore en premier, mais permet de s'assurer que les premiers produits proposés soit le plus proche du produit recherché.
 
-## Découpage du projet
+## II.2. Découpage du projet
 
 Le découpage du projet s'appuie sur le système d'application de Django. Ainsi, nous avons 6 applications :
 
@@ -71,7 +74,7 @@ De plus il y a trois répertoires généraux qui sont :
 2. **`tests`** pour regrouper l'ensemble des tests du projet (reproduit la hiérarchie des application du projet)
 3. **`templates`** pour le template de base et les templates d'erreur
 
-## Plan de tests
+## II.3. Plan de tests
 
 Pour faciliter la mise en place des tests sur le projet, je me suis appuyé sur l'utilisation du package **coverage**. Ce package m'a permis de mettre en relief les parties du code non couvertes par les tests.
 
@@ -82,9 +85,9 @@ Les tests unitaires couvrent principalement deux aspects :
 1. tests des méthodes de modèle
 2. tests des différentes vues
 
-# Bilan
+# III. Bilan
 
-## Découpage du projet
+## III.1. Découpage du projet
 
 Le découpage utilisé sur le projet pourrait être revue sur un point en particulier.
 
@@ -92,7 +95,7 @@ Dans un premier temps, il pourrait être intéressant de trouver un nom plus app
 
 Ensuite les templates aurait pu être regroupés dans un répertoire commun pour faciliter le travail. Étant donné le nombre d'application, il devenait difficile sur la fin du projet de s'y retrouver avec les différents templates disséminés dans chaque application.
 
-## Plan de tests
+## III.2. Plan de tests
 
 Je n'ai pas réalisé mon projet en suivant une méthodologie de travail ***Test Driven Development*** pour une raison particulière.
 
@@ -102,7 +105,7 @@ Hors lors du démarrage de ce projet, je connaissais ni **Django**, ni l'outil d
 
 La pertinence et la fiabilité de mes tests pourrait être améliorée de manière significative, cependant, je reste persuadé que ce genre d'exercice deviendra plus naturel au fur et à mesure de mon expérience de développeur.
 
-## Utilisation de Django
+## III.3. Utilisation de Django
 
 L'une des grosses difficultés pour ma part sur cet exercice aura était l'apprentissage de **Django**.
 
