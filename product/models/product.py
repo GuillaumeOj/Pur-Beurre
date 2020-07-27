@@ -78,7 +78,8 @@ class ProductManager(models.Manager):
         :return: a query set with 30 substitutes
         :rtype: QuerySet
         """
-        product = self.get_queryset().get(code=product_code)
+        product = self.get_product_by_code(product_code)
+
         if product:
             q = Q(categories__in=product.categories.all()) & Q(
                 nutriscore_grade__lt=product.nutriscore_grade
