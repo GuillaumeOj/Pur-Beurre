@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 
-from product.models import Category, Product
+from product.models import Category, Product, Favorite
 
 
 class FeedDb:
@@ -84,3 +84,6 @@ class FeedDb:
 
         categories = Category.objects.all()
         categories.delete()
+
+        favorites = Favorite.objects.all()
+        favorites.delete()
