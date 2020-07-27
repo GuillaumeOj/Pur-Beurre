@@ -1,8 +1,8 @@
 ---
-title: Projet 8 - Créez une plateforme pour amateurs de Nutella
+title: Projet 8 - Créez une plate-forme pour amateurs de Nutella
 subtitle: Parcours OpenClassrooms - Développeur d'application Python
 author:
-  - 'Etudiant : Guillaume OJARDIAS'
+  - 'Étudiant : Guillaume OJARDIAS'
   - 'Mentor : Erwan KERIBIN'
   - 'Mentor évaluateur : Babacar SYLLA'
 geometry: margin=1.5cm
@@ -23,9 +23,9 @@ Les fonctionnalités minimales demandées sont les suivantes :
 
 ## Liens du projets
 
-- le code source du projet est disponible sur la plateforme GitHub à cette adresse : _[https://github.com/GuillaumeOj/Pur-Beurre](https://github.com/GuillaumeOj/Pur-Beurre)_
+- le code source du projet est disponible sur la plate-forme GitHub à cette adresse : _[https://github.com/GuillaumeOj/Pur-Beurre](https://github.com/GuillaumeOj/Pur-Beurre)_
 - le site est visible en ligne à cette adresse : _[http://projet-8.ojardias.io/](http://projet-8.ojardias.io/)_
-- le Trello du projet est accesible ici : _[https://trello.com/b/TWtodZpE/purbeurre](https://trello.com/b/TWtodZpE/purbeurre)_
+- le Trello du projet est accessible ici : _[https://trello.com/b/TWtodZpE/purbeurre](https://trello.com/b/TWtodZpE/purbeurre)_
 
 # Démarche de création
 
@@ -47,7 +47,7 @@ Pour être le plus précis possible et afin de proposer à l'utilisateur·rice u
 
 Le but est d'avoir le plus grand nombre de **catégories en commun** et un **nutriscore** inférieur entre le produit recherché et les substituts.
 
-Afin d'avoir de meilleurs résultats, les subsstitus proposés sont classés comme suit :
+Afin d'avoir de meilleurs résultats, les substituts proposés sont classés comme suit :
 
 - le grand nombre de catégories en commun
 - puis par le nutriscore le plus faible
@@ -58,8 +58,8 @@ Ce choix ne permet pas forcément d'obtenir les produits avec un meilleur nutris
 
 Le découpage du projet s'appuie sur le système d'application de Django. Ainsi, nous avons 6 applications :
 
-1. **`homepage`** regroupe les pages standards du site (acceuil et mentions légales)
-2. **`openfoodfacts`** qui permet la communication avec l'Api d'Open Food Facts et assure le remplissage de la base de données
+1. **`homepage`** regroupe les pages standards du site (accueil et mentions légales)
+2. **`openfoodfacts`** qui permet la communication avec l'API d'Open Food Facts et assure le remplissage de la base de données
 3. **`product`** qui gère les produits de la base de données
 4. **`search`** qui effectue les différentes recherches dans la base de données
 5. **`users`** pour la gestion des utilisateurs
@@ -83,3 +83,29 @@ Les tests unitaires couvrent principalement deux aspects :
 2. tests des différentes vues
 
 # Bilan
+
+## Découpage du projet
+
+Le découpage utilisé sur le projet pourrait être revue sur un point en particulier.
+
+Dans un premier temps, il pourrait être intéressant de trouver un nom plus approprié pour l'application **`homepage`**. Ce nom était logique au démarrage du projet, car elle devait contenir uniquement la page d'accueil. Seulement, elle est plus vouée à contenir l'ensemble des pages "générales" du site, **`general`** serait plus approprié.
+
+Ensuite les templates aurait pu être regroupés dans un répertoire commun pour faciliter le travail. Étant donné le nombre d'application, il devenait difficile sur la fin du projet de s'y retrouver avec les différents templates disséminés dans chaque application.
+
+## Plan de tests
+
+Je n'ai pas réalisé mon projet en suivant une méthodologie de travail ***Test Driven Development*** pour une raison particulière.
+
+Dans ma logique d'apprentissage, j'ai besoin de maîtriser un minimum un sujet pour réussir d'une part à prendre du recul et d'autre part mener une réflexion de construction de projet.
+
+Hors lors du démarrage de ce projet, je connaissais ni **Django**, ni l'outil de test **unittest**. Sur la fin, en revanche, j'ai su surmonter ce blocage, grâce notamment à **coverage**, une meilleur maîtrise de **Django** et une meilleure compréhension d'**unittest**.
+
+La pertinence et la fiabilité de mes tests pourrait être améliorée de manière significative, cependant, je reste persuadé que ce genre d'exercice deviendra plus naturel au fur et à mesure de mon expérience de développeur.
+
+## Utilisation de Django
+
+L'une des grosses difficultés pour ma part sur cet exercice aura était l'apprentissage de **Django**.
+
+J'ai ainsi découvert, un framework très complet permettant la réalisation de projet vaste "facilement". Cependant, la courbe d'apprentissage est plus longue que ce que j'avais pu imaginer en débutant cette application Web.
+
+J'ai aussi découvert un concept qui m'a beaucoup parlé et qui explique une des raisons pour lesquelles j'ai mis beaucoup de temps avant d'avancer significativement dans la réalisation de ce projet. **Django** a, pour un débutant, une part importante de magie. C'est-à-dire qu'il embarque par défaut tout un tas d'outil ne demandant qu'a être utilisés par le développeur **out of the box**. Or je n'arrive pas à utiliser un outil si je ne comprends pas un minimum son fonctionnement. Mais grâce au coup de pouce d'un étudiant de mon parcours, mais aussi bien sûr de mon mentor, j'ai pu débloquer la situation et aller de l'avant.
