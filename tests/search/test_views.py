@@ -9,8 +9,9 @@ from tests.custom import CustomTestCase
 
 
 class MockProductManager:
-    def __init__(self, products):
+    def __init__(self, products, substitutes):
         self.products = products
+        self.substitutes = substitutes
 
     def get_product_by_code(self, *args, **kwargs):
         return self.products
@@ -21,11 +22,13 @@ class MockProductManager:
     def get_products_by_name(self, *args, **kwargs):
         return self.products
 
+    def find_substitutes(self, *args, **kwargs):
+        return self.substitutes
+
 
 class MockProduct:
-    def __init__(self, products):
-        self.products = products
-        self.objects = MockProductManager(products)
+    def __init__(self, products, substitutes=""):
+        self.objects = MockProductManager(products, substitutes)
 
 
 @override_settings(
@@ -107,35 +110,46 @@ class SearchViewsGetProductTests(CustomTestCase):
 class SearchViewsGetSubstitutesTests(CustomTestCase):
     def setUp(self):
         self.nutella = Product.objects.filter(name="Nutella").first()
+        self.substitutes = Product.objects.all().order_by("name")[:30]
 
     def test_get_substitutes_is_loading_with_correct_product(self):
         url = reverse("search:get_substitutes", args=[self.nutella.code])
-        response = self.client.get(url)
+        mock_product = MockProduct(self.nutella, self.substitutes).objects
+        with patch("product.models.Product.objects", mock_product):
+            response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 200)
 
     def test_get_substitutes_is_loading_with_wrong_product_code(self):
         url = reverse("search:get_substitutes", args=["wrong_code"])
-        response = self.client.get(url)
+        mock_product = MockProduct(self.nutella, self.substitutes).objects
+        with patch("product.models.Product.objects", mock_product):
+            response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 200)
 
     def test_get_substitutes_is_loading_with_page_number_is_not_integer(self):
         url = reverse(
             "search:get_substitutes", args=[self.nutella.code, "wrong_page_number"]
         )
-        response = self.client.get(url)
+        mock_product = MockProduct(self.nutella, self.substitutes).objects
+        with patch("product.models.Product.objects", mock_product):
+            response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 200)
 
     def test_get_substitutes_is_loading_with_no_page_number(self):
         url = reverse("search:get_substitutes", args=[self.nutella.code])
-        response = self.client.get(url)
+        mock_product = MockProduct(self.nutella, self.substitutes).objects
+        with patch("product.models.Product.objects", mock_product):
+            response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 200)
 
     def test_get_substitutes_is_loading_with_wrong_page_number(self):
         url = reverse("search:get_substitutes", args=[self.nutella.code, 150])
-        response = self.client.get(url)
+        mock_product = MockProduct(self.nutella, self.substitutes).objects
+        with patch("product.models.Product.objects", mock_product):
+            response = self.client.get(url)
 
-        self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 200)
