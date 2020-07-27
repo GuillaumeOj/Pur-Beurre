@@ -9,13 +9,13 @@ from .category import Category
 class ProductManager(models.Manager):
     """Set custom methods for a product"""
 
-    def get_product(self, product_code):
+    def get_product_by_code(self, product_code):
         """Get a product with the code.
 
         :param product_code: the code of the product to get
         :type product_code: str
-        :return: a query set with the product
-        :rtype: QuerySet
+        :return: a Product if succeed or null
+        :rtype: Product
         """
         try:
             product = self.get_queryset().filter(code=product_code).first()
@@ -26,7 +26,7 @@ class ProductManager(models.Manager):
 
         return product
 
-    def find_product(self, name):
+    def get_product_by_name(self, name):
         """Get a product with the name.
 
         Try to get the product by filtering with the exact name, if the query is
@@ -34,8 +34,8 @@ class ProductManager(models.Manager):
 
         :param name: the name of the product to get
         :type name: str
-        :return: a query set with the product
-        :rtype: QuerySet
+        :return: a Product if succeed or null
+        :rtype: Product
         """
         try:
             product = self.get_queryset().filter(name=name).first()

@@ -51,7 +51,7 @@ def get_product(request):
 
         if product_search_form.is_valid():
             # Get the product by using the name
-            product = Product.objects.find_product(
+            product = Product.objects.get_product_by_name(
                 product_search_form.cleaned_data["name"]
             )
 
@@ -77,7 +77,7 @@ def get_substitutes(request, product_code, page=""):
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
 
-    product = Product.objects.get_product(product_code)
+    product = Product.objects.get_product_by_code(product_code)
 
     if product:
         context["product"] = product

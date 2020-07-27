@@ -4,36 +4,36 @@ from product.models import Product
 from tests.custom import CustomTestCase
 
 
-class ProductMangerTests(CustomTestCase):
+class ProductManagerTests(CustomTestCase):
     def setUp(self):
         self.nutella = Product.objects.filter(name="Nutella").first()
         self.nut = Product.objects.filter(name__icontains="nut").first()
 
-    def test_get_product(self):
-        product = Product.objects.get_product(self.nutella.code)
+    def test_get_product_by_code(self):
+        product = Product.objects.get_product_by_code(self.nutella.code)
 
         self.assertIsInstance(product, Product)
         self.assertEqual(product.code, self.nutella.code)
 
-    def test_get_product_with_wrong_code(self):
-        product = Product.objects.get_product("qwerty")
+    def test_get_product_by_code_with_wrong_code(self):
+        product = Product.objects.get_product_by_code("qwerty")
 
         self.assertFalse(product)
 
-    def test_find_product_with_exact_name(self):
-        product = Product.objects.find_product("Nutella")
+    def test_get_product_by_name_with_exact_name(self):
+        product = Product.objects.get_product_by_name("Nutella")
 
         self.assertIsInstance(product, Product)
         self.assertEqual(product, self.nutella)
 
-    def test_find_product_with_part_of_name(self):
-        product = Product.objects.find_product("nut")
+    def test_get_product_by_name_with_part_of_name(self):
+        product = Product.objects.get_product_by_name("nut")
 
         self.assertIsInstance(product, Product)
         self.assertEqual(product, self.nut)
 
-    def test_find_product_with_wrong_name(self):
-        product = Product.objects.find_product("qwerty")
+    def test_product_by_name_with_wrong_name(self):
+        product = Product.objects.get_product_by_name("qwerty")
 
         self.assertNotIsInstance(product, Product)
         self.assertFalse(product)

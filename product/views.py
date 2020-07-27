@@ -19,7 +19,7 @@ def sheet(request, product_code):
         "product_search_form": product_search_form,
     }
 
-    product = Product.objects.get_product(product_code)
+    product = Product.objects.get_product_by_code(product_code)
     context["product"] = product
 
     return render(request, "product/sheet.html", context=context)
@@ -36,8 +36,8 @@ def save_favorite(request, product_code, substitute_code):
     :return: redirect to the previous page
     :rtype: HttpResponseRedirect
     """
-    product = Product.objects.get_product(product_code)
-    substitute = Product.objects.get_product(substitute_code)
+    product = Product.objects.get_product_by_code(product_code)
+    substitute = Product.objects.get_product_by_code(substitute_code)
 
     current_user = request.user
 
