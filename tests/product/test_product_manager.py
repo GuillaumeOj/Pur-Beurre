@@ -20,6 +20,11 @@ class ProductManagerTests(CustomTestCase):
 
         self.assertFalse(product)
 
+    def test_get_product_by_code_with_no_code(self):
+        product = Product.objects.get_product_by_code("")
+
+        self.assertFalse(product)
+
     def test_get_product_by_name_with_exact_name(self):
         product = Product.objects.get_product_by_name("Nutella")
 
@@ -29,13 +34,16 @@ class ProductManagerTests(CustomTestCase):
     def test_get_product_by_name_with_part_of_name(self):
         product = Product.objects.get_product_by_name("nut")
 
-        self.assertIsInstance(product, Product)
         self.assertEqual(product, self.nut)
 
     def test_get_product_by_name_with_wrong_name(self):
         product = Product.objects.get_product_by_name("qwerty")
 
-        self.assertNotIsInstance(product, Product)
+        self.assertFalse(product)
+
+    def test_get_product_by_name_with_no_name(self):
+        product = Product.objects.get_product_by_name("")
+
         self.assertFalse(product)
 
     def test_get_products_by_name(self):
