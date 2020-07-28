@@ -1,4 +1,4 @@
-from django.test import ValidationError
+from django.core.exceptions import ValidationError
 
 from product.models import Category
 from tests.custom import CustomTestCase
@@ -19,8 +19,7 @@ class CategoryModelsTests(CustomTestCase):
 
         self.assertIsInstance(category, Category)
         self.assertEqual(category.name, "Test")
-        with not self.assertRaises(ValidationError):
-            category.full_clean()
+        self.assertIs(category.full_clean(), None)
 
     def test_create_category_with_name_too_short(self):
         category = Category.objects.create(name="T")
