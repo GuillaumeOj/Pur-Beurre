@@ -23,9 +23,27 @@ class ProductViewsTests(CustomTestCase):
 
         self.assertEqual(response.status_code, 200)
 
+    def test_sheet_is_not_loading_with_wrong_product_code(self):
+        url = reverse("product:sheet", args=["qwerty"])
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 404)
+
     def test_save_favorite_is_redirecting(self):
         self.client.force_login(self.user)
 
+        url = reverse(
+            "product:save",
+            kwargs={
+                "product_code": self.product.code,
+                "substitute_code": self.substitute.code,
+            },
+        )
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_save_favorite_is_redirecting_if_not_logged(self):
         url = reverse(
             "product:save",
             kwargs={
@@ -52,9 +70,37 @@ class ProductViewsTests(CustomTestCase):
 
         self.assertEqual(response.status_code, 302)
 
+    def test_save_favorite_is_not_loading_with_wrong_product_code(self):
+        self.client.force_login(self.user)
+
+        url = reverse(
+            "product:save",
+            kwargs={"product_code": "qwerty", "substitute_code": self.substitute.code},
+        )
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_save_favorite_is_not_loading_with_wrong_substitute_code(self):
+        self.client.force_login(self.user)
+
+        url = reverse(
+            "product:save",
+            kwargs={"product_code": self.product.code, "substitute_code": "qwerty"},
+        )
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 404)
+
     def test_favorites_is_loading(self):
         self.client.force_login(self.user)
         url = reverse("product:favorites")
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, 200)
+
+    def test_favorites_is_redirecting_if_not_logged(self):
+        url = reverse("product:favorites")
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 302)

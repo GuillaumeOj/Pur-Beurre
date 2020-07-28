@@ -43,22 +43,25 @@ def save_favorite(request, product_code, substitute_code):
     product = Product.objects.get_product_by_code(product_code)
     substitute = Product.objects.get_product_by_code(substitute_code)
 
-    current_user = request.user
+    if product and substitute:
+        current_user = request.user
 
-    favorite, created = Favorite.objects.get_or_create(
-        product=product, substitute=substitute
-    )
-    if favorite not in current_user.favorites.all():
-        current_user.favorites.add(favorite)
-        success_message = f"{substitute.name} est sauvegardé dans vos favoris"
-        messages.success(request, success_message)
-    else:
-        error_message = (
-            f"{substitute.name} est déjà dans vos favoris pour substituer {product.name}"
+        favorite, created = Favorite.objects.get_or_create(
+            product=product, substitute=substitute
         )
-        messages.error(request, error_message)
+        if favorite not in current_user.favorites.all():
+            current_user.favorites.add(favorite)
+            success_message = f"{substitute.name} est sauvegardé dans vos favoris"
+            messages.success(request, success_message)
+        else:
+            s_name = substitute.name
+            p_name = product.name
+            error_message = f"{s_name} est déjà dans vos favoris pour substituer {p_name}"
+            messages.error(request, error_message)
 
-    return redirect(request.META["HTTP_REFERER"])
+        return redirect(request.META["HTTP_REFERER"])
+    else:
+        return HttpResponseNotFound()
 
 
 @login_required
