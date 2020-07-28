@@ -38,17 +38,20 @@ class ProductManager(models.Manager):
         :return: a Product if succeed or null
         :rtype: Product
         """
-        try:
-            product = self.get_queryset().filter(name=name).first()
-            if not product:
-                raise ObjectDoesNotExist()
-        except ObjectDoesNotExist:
+        if name:
             try:
-                product = self.get_queryset().filter(name__icontains=name).first()
+                product = self.get_queryset().filter(name=name).first()
                 if not product:
                     raise ObjectDoesNotExist()
             except ObjectDoesNotExist:
-                product = ""
+                try:
+                    product = self.get_queryset().filter(name__icontains=name).first()
+                    if not product:
+                        raise ObjectDoesNotExist()
+                except ObjectDoesNotExist:
+                    product = ""
+        else:
+            product = ""
         return product
 
     def get_products_by_name(self, name):
