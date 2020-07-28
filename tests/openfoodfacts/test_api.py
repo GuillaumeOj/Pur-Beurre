@@ -34,7 +34,7 @@ class MockRequests:
         return MockRequestsResponse(self.data, self.status_code)
 
 
-class FeedDbModelsTests(TestCase):
+class ApiTests(TestCase):
     def test_api_return_products(self):
         data = {
             "products": [
