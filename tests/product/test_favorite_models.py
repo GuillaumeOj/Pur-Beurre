@@ -19,3 +19,21 @@ class FavoriteModelsTests(CustomTestCase):
             favorite.__str__(),
             f"Produit : {favorite.product} / Substitut : {favorite.substitute}",
         )
+
+    def test_create_favorite(self):
+        favorite = Favorite.objects.create(
+            product=self.product, substitute=self.substitute
+        )
+
+        self.assertIsInstance(favorite, Favorite)
+        self.assertEqual(favorite.product, self.product)
+        self.assertEqual(favorite.substitute, self.substitute)
+        self.assertIs(favorite.full_clean(), None)
+
+    def test_create_favorite_with_no_substitute(self):
+        with self.assertRaises(ValueError):
+            Favorite.objects.create(product=self.product, substitute="")
+
+    def test_create_favorite_with_no_product(self):
+        with self.assertRaises(ValueError):
+            Favorite.objects.create(product="", substitute=self.substitute)
