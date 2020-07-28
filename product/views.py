@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseNotFound
 from django.shortcuts import redirect, render
 
 from .forms import ProductSearchForm
@@ -11,7 +12,8 @@ def sheet(request, product_code):
 
     :param product_code: the code for the product to display
     :type product_code: str
-    :return: an HttpResponse with a template and context dictionnary
+    :return: an HttpResponse with a template and context dictionnary the product exist
+    an HttpResponseNotFound if the product doesn't exist
     :rtype: HttpResponse
     """
     product_search_form = ProductSearchForm()
@@ -20,9 +22,11 @@ def sheet(request, product_code):
     }
 
     product = Product.objects.get_product_by_code(product_code)
-    context["product"] = product
+    if product:
+        context["product"] = product
+        return render(request, "product/sheet.html", context=context)
 
-    return render(request, "product/sheet.html", context=context)
+    return HttpResponseNotFound()
 
 
 @login_required
