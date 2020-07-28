@@ -4,7 +4,7 @@ from openfoodfacts.feed_db import FeedDb
 from product.models import Product
 
 
-class FeedDbModelsTests(TestCase):
+class FeedDbTests(TestCase):
     def test_insert_product_with_all_required_fields(self):
         data = [
             {
@@ -62,7 +62,7 @@ class FeedDbModelsTests(TestCase):
 
         self.assertFalse(product)
 
-    def test_insert_product_nutriscore_too_long(self):
+    def test_insert_product_with_a_nutriscore_too_long(self):
         data = [
             {
                 "nutriscore_grade": "de",
@@ -77,7 +77,7 @@ class FeedDbModelsTests(TestCase):
 
         self.assertFalse(product)
 
-    def test_insert_product_code_too_long(self):
+    def test_insert_product_with_a_code_too_long(self):
         data = [
             {
                 "nutriscore_grade": "d",
@@ -92,7 +92,7 @@ class FeedDbModelsTests(TestCase):
 
         self.assertFalse(product)
 
-    def test_insert_product_code_too_short(self):
+    def test_insert_product_with_a_code_too_short(self):
         data = [
             {
                 "nutriscore_grade": "d",
