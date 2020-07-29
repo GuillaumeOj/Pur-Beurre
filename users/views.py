@@ -17,6 +17,8 @@ def custom_login_view(request):
 
     # Get the next view url
     redirect_to = request.POST.get("next", request.GET.get("next", "homepage:index"))
+    if redirect_to:
+        context["next"] = redirect_to
 
     if request.method == "POST":
         login_form = UserLoginForm(request.POST)
@@ -45,15 +47,21 @@ def custom_logout_view(request):
     success_message = f"Au revoir {request.user.first_name}"
     messages.success(request, success_message)
 
+    redirect_to = request.POST.get("next", request.GET.get("next", "homepage:index"))
+
     logout(request)
 
-    return redirect(reverse("homepage:index"))
+    return redirect(redirect_to)
 
 
 def registration(request):
     """Register a user."""
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
+
+    redirect_to = request.POST.get("next", request.GET.get("next", "homepage:index"))
+    if redirect_to:
+        context["next"] = redirect_to
 
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
@@ -71,7 +79,7 @@ def registration(request):
             user.save()
             success_message = f"Bienvenue parmis nous {first_name} !"
             messages.success(request, success_message)
-            return redirect(reverse("homepage:index"))
+            return redirect(redirect_to)
     else:
         form = UserRegistrationForm()
 
@@ -84,5 +92,9 @@ def account(request):
     """User account details."""
     product_search_form = ProductSearchForm()
     context = {"product_search_form": product_search_form}
+
+    redirect_to = request.POST.get("next", request.GET.get("next", "homepage:index"))
+    if redirect_to:
+        context["next"] = redirect_to
 
     return render(request, "users/account.html", context=context)

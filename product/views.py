@@ -43,6 +43,8 @@ def save_favorite(request, product_code, substitute_code):
     product = Product.objects.get_product_by_code(product_code)
     substitute = Product.objects.get_product_by_code(substitute_code)
 
+    redirect_to = request.POST.get("next", request.GET.get("next", "homepage:index"))
+
     if product and substitute:
         current_user = request.user
 
@@ -59,7 +61,7 @@ def save_favorite(request, product_code, substitute_code):
             error_message = f"{s_name} est déjà dans vos favoris pour substituer {p_name}"
             messages.error(request, error_message)
 
-        return redirect(request.META["HTTP_REFERER"])
+        return redirect(redirect_to)
     else:
         return HttpResponseNotFound()
 

@@ -9,9 +9,12 @@
 		<div class="row mb-3">
 			<h1 class="col text-white text-center">Connexion</h1>
 		</div>
-		<div class="row justify-content-center">
+		<div class="row mb-3 justify-content-center">
 			<form method="post" action="{% url "users:login" %}" class="col-lg" novalidate>
 				{% csrf_token %}
+				{% if next %}
+				<input type="hidden" name="next" value="{{ next }}">
+				{% endif %}
 				<div class="form-group">
 					{{ login_form.username.label_tag }}
 					{{ login_form.username|add_attrs:"class=form-control" }}
@@ -30,6 +33,10 @@
 				</div>
 				<button type="submit" class="btn btn-primary mt-3">Se connecter</button>
 			</form>
+		</div>
+		<div class="row text-left mx-1">
+			<a class="text-white" href="{% url "users:registration" %}?next={{ request.get_full_path }}"
+				title="Créer un compte">Créer un compte</a>
 		</div>
 	</div>
 </section>

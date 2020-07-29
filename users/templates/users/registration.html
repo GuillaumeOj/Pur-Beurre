@@ -12,6 +12,9 @@
 		<div class="row justify-content-center">
 			<form method="post" action="{% url "users:registration" %}" class="col-lg" novalidate>
 				{% csrf_token %}
+				{% if next %}
+				<input type="hidden" name="next" value="{{ next }}">
+				{% endif %}
 				<div class="form-group">
 					{{ form.email.label_tag }}
 					{{ form.email|add_attrs:"class=form-control" }}
