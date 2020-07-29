@@ -31,6 +31,8 @@ You're ready to run the application!
 
 # III. How to use?
 [⇧ *Top*](#contents-page)
+
+## III.1. Initialize the application
 At the first start of the application you need to create and populate the database.
 
 For creating the database, run:
@@ -43,10 +45,24 @@ For populating the database, run:
 python manage.py init_db
 ```
 
+## III.2. Run the application
 Now, to start the server, run:
 ```
 python manage.py runserver
 ```
+
+## III.3. Run tests
+For running the test type:
+```
+coverage run manage.py --source='.' --omit="*migrations/*","*config/*" manage.py test
+```
+
+For seeing a full report you can type:
+```
+coverage html
+```
+
+And open `index.html` in the `htmlcov/` directory.
 
 # IV. To do list
 [⇧ *Top*](#contents-page)
