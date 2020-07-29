@@ -21,6 +21,10 @@ def sheet(request, product_code):
         "product_search_form": product_search_form,
     }
 
+    redirect_to = request.POST.get("next", request.GET.get("next", "homepage:index"))
+    if redirect_to:
+        context["next"] = redirect_to
+
     product = Product.objects.get_product_by_code(product_code)
     if product:
         context["product"] = product

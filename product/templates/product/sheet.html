@@ -23,10 +23,12 @@
 <div class="page-section bg-moules p-0" id="product_sheet">
 	<div class="container py-3">
 		<div class="row">
-			<a class="h5 font-weigth-bold" href="{{ request.META.HTTP_REFERER|escape }}">
+			{% if next %}
+			<a class="h5 font-weigth-bold" href="{{ next }}">
 				<i class="fas fa-chevron-left"></i>
 				Retour
 			</a>
+			{% endif %}
 		</div>
 		{% if product %}
 		<div class="row row-cols-1 row-cols-sm-2 my-5">
