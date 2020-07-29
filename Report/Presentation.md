@@ -20,6 +20,10 @@ author:
 - Esquisses de disposition des pages
 - Utilisation du template Creative proposé par StartBootstrap
 
+## Résultat final
+
+- [http://projet-8.ojardias.io](http://projet-8.ojardias.io)
+
 # Démarche de création
 
 ## Étapes du projet
@@ -27,7 +31,7 @@ author:
 - Création du projet Django
 - Mise en place de le gestion des utilisateurs
 - Création des modèles de données (`Product` et `Category`)
-- Insertion des produits depuis la base de données de l'Open Food Facts
+- Insertion des produits depuis la BDD de l'Open Food Facts
 - Mise en place du système de recherche des substituts
 - Ajout de la fonctionnalité de mise en favoris
 
@@ -40,20 +44,20 @@ author:
 ## Arborescence du projet
 
 ```
-|-- config              #--- Configuration du projet
-|-- homepage            ##
-|-- openfoodfacts        #
-|-- product              #-- Applications
-|-- search               #
-|-- users               ##
-|-- static              #--- Fichiers statiques
-|-- templates           #--- Templates généraux
-|-- tests               ##
-    |-- homepage         #
-    |-- openfoodfacts    #
-    |-- product          #-- Tests
-    |-- search           #
-    |-- users           ##
+|- config              #- Configuration du projet
+|- homepage            ##
+|- openfoodfacts        #
+|- product              # Applications
+|- search               #
+|- users               ##
+|- static              #- Fichiers statiques
+|- templates           #- Templates généraux
+|- tests               ##
+    |- homepage         #
+    |- openfoodfacts    #
+    |- product          # Tests
+    |- search           #
+    |- users           ##
 ```
 
 ## Algorithme de recherche d'un substitut
@@ -79,6 +83,7 @@ substitutes = (Product.objects.annotate(
 ### Test sur la classe `Api` de l'application `openfoodfacts` :
 
 - Mock de la class `Response` :
+
 ```python
 class MockRequestsResponse:
     def __init__(self, json_data, status_code):
@@ -94,6 +99,7 @@ class MockRequestsResponse:
 ### Test sur la classe `Api` de l'application `openfoodfacts` :
 
 - Mock de la méthode `get` de la class `requests`
+
 ```python
 class MockRequests:
     def __init__(self, data, status_code):
@@ -111,12 +117,12 @@ class MockRequests:
 ### Test sur la classe `Api` de l'application `openfoodfacts` :
 
 - Utilisation du mock
+
 ```python
 def test_api_return_products(self):
-data = { ... }
+data = { ··· }
 mock_requests_get = MockRequests(data, 200).get
 
-# Patch de la méthode Get
 with patch(
 	"openfoodfacts.api.requests.get", mock_requests_get):
     products = Api().get_products()
@@ -157,3 +163,7 @@ with patch(
 - Part de *magie* appréciée par certains
 \linebreak
 - Très puissant pour une utilisation poussée
+
+# Fin
+
+Merci pour votre attention
