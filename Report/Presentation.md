@@ -6,6 +6,8 @@ author:
   - 'Mentor : Erwan KERIBIN'
   - 'Mentor évaluateur : Babacar SYLLA'
 ---
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
 
 # Présentation
 
@@ -15,10 +17,15 @@ author:
 
 ## Cahier des charges
 
-- Avoir un compte utilisateur
-- Sauvegarder des substituts dans ses favoris
-- Esquisses de disposition des pages
-- Utilisation du template Creative proposé par StartBootstrap
+- Fonctionnalités :
+	- Avoir un compte utilisateur
+	- Sauvegarder des substituts dans ses favoris
+	- Faire une recherche dès la page d'accueil
+\linebreak
+- Design :
+	- Esquisses de disposition des pages
+	- Charte graphique
+	- Utilisation du template Creative proposé par StartBootstrap
 
 ## Résultat final
 
@@ -29,11 +36,16 @@ author:
 ## Étapes du projet
 
 - Création du projet Django
-- Mise en place de le gestion des utilisateurs
+\linebreak
+- Mise en place de le gestion des utilisateurs => `User` personnalisé
+\linebreak
 - Création des modèles de données (`Product` et `Category`)
-- Insertion des produits depuis la BDD de l'Open Food Facts
+- Insertion des produits dans la BDD (commande `init_db`)
+\linebreak
 - Mise en place du système de recherche des substituts
 - Ajout de la fonctionnalité de mise en favoris
+\linebreak
+- Ajout des propositions lors de la recherche
 
 ## Code source
 
@@ -65,69 +77,69 @@ author:
 - Filtre pour le calcul des catégories en commun
 ```python
 q = Q(categories__in=product.categories.all()) & Q(
-      nutriscore_grade__lt=product.nutriscore_grade))
+	nutriscore_grade__lt=product.nutriscore_grade))
 
 ```
 
 - Requête pour obtenir les substituts
 ```python
 substitutes = (Product.objects.annotate(
-    common_categories=Count("categories", filter=q))
-    .order_by("-common_categories", "nutriscore_grade")
-    .exclude(code=product.code)
-    .exclude(name=product.name)[:30])
+	common_categories=Count("categories", filter=q))
+		.order_by("-common_categories", "nutriscore_grade")
+		.exclude(code=product.code)
+		.exclude(name=product.name)[:30])
 ```
 
-## Tests 1/3
+## Tests sur la vue `auto_completion` de l'application `search` (1/3) :
 
-### Test sur la classe `Api` de l'application `openfoodfacts` :
-
-- Mock de la class `Response` :
+- Mock de la class `Product` :
 
 ```python
-class MockRequestsResponse:
-    def __init__(self, json_data, status_code):
-        self.json_data = json_data
-        self.status_code = status_code
-
-    def json(self):
-        return self.json_data
+class MockProduct:
+	def __init__(self, products, substitutes=""):
+		# Mock de l'attribut "objects"
+		self.objects = MockProductManager(
+			products, substitutes
+		)
 ```
 
-## Tests 2/3
+## Tests sur la vue `auto_completion` de l'application `search` (2/3) :
 
-### Test sur la classe `Api` de l'application `openfoodfacts` :
-
-- Mock de la méthode `get` de la class `requests`
+- Mock de la class `ProductManager` :
 
 ```python
-class MockRequests:
-    def __init__(self, data, status_code):
-        self.data = data
-        self.status_code = status_code
 
-    def get(self, *args, **kwargs):
-        return MockRequestsResponse(
-		self.data,
-		self.status_code)
+class MockProductManager:
+	def __init__(self, products, substitutes):
+		self.products = products
+		self.substitutes = substitutes
+
+	{ ··· }
+
+	# Mock la méthode
+	def get_products_by_name(self, *args, **kwargs):
+		return self.products
 ```
 
-## Tests 3/3
+## Tests sur la vue `auto_completion` de l'application `search` (3/3) :
 
-### Test sur la classe `Api` de l'application `openfoodfacts` :
-
-- Utilisation du mock
+- Utilisation de `MockProduct` :
 
 ```python
-def test_api_return_products(self):
-data = { ··· }
-mock_requests_get = MockRequests(data, 200).get
-
-with patch(
-	"openfoodfacts.api.requests.get", mock_requests_get):
-    products = Api().get_products()
-
-    self.assertEqual(products, data["products"])
+def test_auto_completion_return_json(self):
+	# Instantiation du Mock
+	mock_product = MockProduct(self.products)
+		.objects.get_products_by_name
+	# Patch du Mock
+	with patch("product.models.Product", mock_product):
+	# Appel de la vue
+	response = self.client.post(
+		reverse("search:auto_completion"),
+		data={"name": "nut"},
+	)
+	self.assertEqual(response.status_code, 200)
+	self.assertTrue(loads(response.content)
+		.get("products_names"))
 ```
 
 # Bilan du projet
