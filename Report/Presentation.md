@@ -38,8 +38,8 @@ author:
 ## Code source
 
 - Python + Django
+\linebreak
 - GitHub -> [Pur-Beurre](https://github.com/GuillaumeOj/Pur-Beurre)
-- Découpage du projet
 
 ## Arborescence du projet
 
@@ -151,7 +151,7 @@ with patch(
 - Le **Test Driven Development**
 	- Indispensable
 	- Difficile pour un débutant
-	- Vient avec le temps et l'expérience
+	- Viens avec le temps et l'expérience
 
 ## Django
 
@@ -164,6 +164,6 @@ with patch(
 \linebreak
 - Très puissant pour une utilisation poussée
 
-# Fin
+## Fin
 
-Merci pour votre attention
+- Merci pour votre attention
