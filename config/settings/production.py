@@ -8,17 +8,15 @@ from dotenv import load_dotenv, find_dotenv
 from .base import *
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = [".ojardias.io"]
+ALLOWED_HOSTS = ["projet-8.ojardias.io", "pur-beurre.ojardias.io"]
 
 # Heroku database
-if os.environ.get("ENV_HOST") == "HEROKU":
-    SECRET_KEY = os.environ["SECRET_KEY"]
+if os.getenv("ENV_HOST") == "HEROKU":
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    DEBUG = True if os.getenv("DEBUG") == "True" else False
     MIDDLEWARE.append("whitenoise.middleware.WhiteNoiseMiddleware",)
 
-    DATABASE_URL = os.environ["DATABASE_URL"]
+    DATABASE_URL = os.getenv("DATABASE_URL")
     DATABASES = {}
     DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
@@ -27,6 +25,7 @@ if os.environ.get("ENV_HOST") == "HEROKU":
 else:
     load_dotenv(find_dotenv())
     SECRET_KEY = os.getenv("SECRET_KEY")
+    DEBUG = True if os.getenv("DEBUG") == "True" else False
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
