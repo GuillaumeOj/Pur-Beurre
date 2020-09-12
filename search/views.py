@@ -1,6 +1,10 @@
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.core.paginator import EmptyPage
+from django.core.paginator import PageNotAnInteger
+from django.core.paginator import Paginator
 from django.http import JsonResponse
-from django.shortcuts import redirect, render, reverse
+from django.shortcuts import redirect
+from django.shortcuts import render
+from django.shortcuts import reverse
 
 from homepage.custom_http_response import HttpResponseBadRequest
 from product.forms import ProductSearchForm

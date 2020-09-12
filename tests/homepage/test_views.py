@@ -1,5 +1,6 @@
 from django.shortcuts import reverse
-from django.test import TestCase, override_settings
+from django.test import TestCase
+from django.test import override_settings
 
 
 @override_settings(

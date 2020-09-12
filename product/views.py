@@ -1,10 +1,12 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseNotFound
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
+from django.shortcuts import render
 
 from .forms import ProductSearchForm
-from .models import Favorite, Product
+from .models import Favorite
+from .models import Product
 
 
 def sheet(request, product_code):

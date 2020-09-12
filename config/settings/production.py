@@ -2,7 +2,8 @@
 import os
 
 import dj_database_url
-from dotenv import load_dotenv, find_dotenv
+from dotenv import find_dotenv
+from dotenv import load_dotenv
 
 # Import the base settings
 from .base import *

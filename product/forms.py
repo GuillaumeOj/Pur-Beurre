@@ -1,5 +1,6 @@
 from django import forms
-from django.core.validators import MaxLengthValidator, MinLengthValidator
+from django.core.validators import MaxLengthValidator
+from django.core.validators import MinLengthValidator
 
 from product.models import Product
 

@@ -1,5 +1,6 @@
 """Interface between the OpenFoodFacts' API and this application."""
 import os
+
 import requests
 
 
