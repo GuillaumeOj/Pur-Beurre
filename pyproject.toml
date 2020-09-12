@@ -24,6 +24,12 @@ coverage = "^5.2.1"
 
 [tool.black]
 line-length = 90
+
+[tool.isort]
+force_single_line = true
+lines_after_imports = 2
+force_sort_within_sections = true
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
