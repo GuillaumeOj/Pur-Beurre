@@ -1,4 +1,5 @@
 """Interface between the OpenFoodFacts' API and this application."""
+import os
 import requests
 
 
@@ -8,7 +9,10 @@ class Api:
     # Parameters for the API
     URL_BASE = "https://fr.openfoodfacts.org/cgi/search.pl"
     PAGE_SIZE = 1000
-    PAGES = 1
+    if os.getenv("ENV_HOST") == "OCEAN":
+        PAGES = 10
+    else:
+        PAGES = 1
     SORT_BY = "unique_scans_n"
     FIELDS = [
         "code",
