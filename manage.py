@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    if os.environ.get("DATABASE_URL"):
+    if os.environ.get("ENV") == "PRODUCTION":
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
     else:
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
