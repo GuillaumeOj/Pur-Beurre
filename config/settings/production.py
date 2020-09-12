@@ -2,13 +2,11 @@
 import os
 
 import dj_database_url
-import environ
+from dotenv import load_dotenv, find_dotenv
 
 # Import the base settings
 from .base import *
 
-ENV = environ.Env()
-environ.Env.read_env()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -26,15 +24,16 @@ if os.environ.get("ENV_HOST") == "HEROKU":
 
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-elif ENV("ENV_HOST") == "OCEAN":
-    SECRET_KEY = ENV("SECRET_KEY")
+else:
+    load_dotenv(find_dotenv())
+    SECRET_KEY = os.getenv("SECRET_KEY")
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": ENV("DATABASE_NAME"),
-            "USER": ENV("DATABASE_USER"),
-            "PASSWORD": ENV("DATABASE_PASSWORD"),
-            "HOST": ENV("DATABASE_HOST"),
-            "PORT": ENV("DATABASE_PORT"),
+            "NAME": os.getenv("DATABASE_NAME"),
+            "USER": os.getenv("DATABASE_USER"),
+            "PASSWORD": os.getenv("DATABASE_PASSWORD"),
+            "HOST": os.getenv("DATABASE_HOST"),
+            "PORT": os.getenv("DATABASE_PORT"),
         }
     }
