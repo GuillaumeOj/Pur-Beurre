@@ -1,6 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.core.validators import (MaxLengthValidator, MinLengthValidator,
-                                    URLValidator)
+from django.core.validators import MaxLengthValidator, MinLengthValidator, URLValidator
 from django.db import models
 from django.db.models import Count, Q
 
