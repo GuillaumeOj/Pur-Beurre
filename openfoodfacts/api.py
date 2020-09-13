@@ -14,7 +14,7 @@ class Api:
     if os.getenv("ENV_HOST") == "HEROKU":
         PAGES = 10
     else:
-        PAGES = 100
+        PAGES = 50
     SORT_BY = "unique_scans_n"
     FIELDS = [
         "code",
