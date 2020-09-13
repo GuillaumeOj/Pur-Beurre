@@ -1,6 +1,7 @@
 """Interface between the OpenFoodFacts' API and this application."""
 import os
 
+from progress.bar import IncrementalBar
 import requests
 
 
@@ -9,11 +10,11 @@ class Api:
 
     # Parameters for the API
     URL_BASE = "https://fr.openfoodfacts.org/cgi/search.pl"
-    PAGE_SIZE = 1000
+    PAGE_SIZE = 100
     if os.getenv("ENV_HOST") == "OCEAN":
-        PAGES = 10
+        PAGES = 100
     else:
-        PAGES = 1
+        PAGES = 10
     SORT_BY = "unique_scans_n"
     FIELDS = [
         "code",
@@ -43,6 +44,10 @@ class Api:
             "fields": ",".join(self.FIELDS),
         }
         products = list()
+        bar = IncrementalBar(
+            "Downloading products", max=self.PAGES, suffix="%(percent)d%%"
+        )
+        bar.start()
         for page in range(self.PAGES):
             parameters["page"] = page
             try:
@@ -58,5 +63,7 @@ class Api:
             result = response.json()
             if result.get("products"):
                 products.extend(result["products"])
+            bar.next()
+        bar.finish()
 
         return products
