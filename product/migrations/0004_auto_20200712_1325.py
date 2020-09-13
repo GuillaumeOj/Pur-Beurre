@@ -10,11 +10,30 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="product", name="brands",),
-        migrations.RemoveField(model_name="product", name="generic_name",),
-        migrations.RemoveField(model_name="product", name="ingredients_text",),
-        migrations.RemoveField(model_name="product", name="quantity",),
-        migrations.RemoveField(model_name="product", name="stores",),
-        migrations.DeleteModel(name="Brand",),
-        migrations.DeleteModel(name="Store",),
+        migrations.RemoveField(
+            model_name="product",
+            name="brands",
+        ),
+        migrations.RemoveField(
+            model_name="product",
+            name="generic_name",
+        ),
+        migrations.RemoveField(
+            model_name="product",
+            name="ingredients_text",
+        ),
+        migrations.RemoveField(
+            model_name="product",
+            name="quantity",
+        ),
+        migrations.RemoveField(
+            model_name="product",
+            name="stores",
+        ),
+        migrations.DeleteModel(
+            name="Brand",
+        ),
+        migrations.DeleteModel(
+            name="Store",
+        ),
     ]

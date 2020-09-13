@@ -12,7 +12,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="user", name="saved_products",),
+        migrations.RemoveField(
+            model_name="user",
+            name="saved_products",
+        ),
         migrations.AddField(
             model_name="user",
             name="favorites",

@@ -123,7 +123,8 @@ class Product(models.Model):
     )
 
     nutriscore_grade = models.CharField(
-        max_length=1, validators=[MinLengthValidator(1), MaxLengthValidator],
+        max_length=1,
+        validators=[MinLengthValidator(1), MaxLengthValidator],
     )
 
     url = models.URLField(

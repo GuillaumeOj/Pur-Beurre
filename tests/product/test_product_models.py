@@ -83,7 +83,10 @@ class ProductModelsTests(CustomTestCase):
 
     def test_create_product_with_no_code(self):
         product = Product.objects.create(
-            code="", name="Test", nutriscore_grade="a", url="https://www.foo.bar/",
+            code="",
+            name="Test",
+            nutriscore_grade="a",
+            url="https://www.foo.bar/",
         )
 
         with self.assertRaises(ValidationError):
@@ -91,7 +94,10 @@ class ProductModelsTests(CustomTestCase):
 
     def test_create_product_with_wrong_url(self):
         product = Product.objects.create(
-            code="1234567890987", name="Test", nutriscore_grade="a", url="https//wwwfoo",
+            code="1234567890987",
+            name="Test",
+            nutriscore_grade="a",
+            url="https//wwwfoo",
         )
 
         with self.assertRaises(ValidationError):
@@ -99,7 +105,10 @@ class ProductModelsTests(CustomTestCase):
 
     def test_create_product_with_no_url(self):
         product = Product.objects.create(
-            code="1234567890987", name="Test", nutriscore_grade="a", url="",
+            code="1234567890987",
+            name="Test",
+            nutriscore_grade="a",
+            url="",
         )
 
         with self.assertRaises(ValidationError):
