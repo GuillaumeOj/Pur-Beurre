@@ -11,10 +11,10 @@ class Api:
     # Parameters for the API
     URL_BASE = "https://fr.openfoodfacts.org/cgi/search.pl"
     PAGE_SIZE = 100
-    if os.getenv("HOST") == "ubuntu-oc":
-        PAGES = 100
-    else:
+    if os.getenv("ENV_HOST") == "HEROKU":
         PAGES = 10
+    else:
+        PAGES = 100
     SORT_BY = "unique_scans_n"
     FIELDS = [
         "code",
