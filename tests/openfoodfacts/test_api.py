@@ -50,10 +50,13 @@ class ApiTests(TestCase):
         }
         mock_requests_get = MockRequests(data, 200).get
 
-        with patch("openfoodfacts.api.requests.get", mock_requests_get):
-            products = Api().get_products()
+        mock_pages = 1
 
-            self.assertEqual(products, data["products"])
+        with patch("openfoodfacts.api.Api.PAGES", mock_pages):
+            with patch("openfoodfacts.api.requests.get", mock_requests_get):
+                products = Api().get_products()
+
+                self.assertEqual(products, data["products"])
 
     def test_api_with_no_connection(self):
         data = {
