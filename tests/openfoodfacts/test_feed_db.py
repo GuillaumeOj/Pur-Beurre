@@ -1,6 +1,7 @@
 from django.test import TestCase
 
 from openfoodfacts.feed_db import FeedDb
+from product.models import Category
 from product.models import Product
 
 
@@ -106,3 +107,41 @@ class FeedDbTests(TestCase):
         product = Product.objects.filter(code="762221044928")
 
         self.assertFalse(product)
+
+    def test_insert_product_with_a_category_name_too_long(self):
+        data = [
+            {
+                "nutriscore_grade": "d",
+                "code": "7622210449283",
+                "url": "https://fr.openfoodfacts.org/produit/chocolat-au-ble-complet-lu",
+                "product_name": "Prince goût chocolat au blé complet",
+                "categories": 105 * "a",
+            }
+        ]
+        feeder = FeedDb()
+        feeder.feed_db(data)
+        categories = Category.objects.all()
+        product = Product.objects.filter(code="7622210449283")
+
+        self.assertFalse(categories)
+        self.assertTrue(product)
+
+    def test_insert_product_with_categories(self):
+        data = [
+            {
+                "nutriscore_grade": "d",
+                "code": "7622210449283",
+                "url": "https://fr.openfoodfacts.org/produit/chocolat-au-ble-complet-lu",
+                "product_name": "Prince goût chocolat au blé complet",
+                "categories": "foo,bar",
+            }
+        ]
+        feeder = FeedDb()
+        feeder.feed_db(data)
+        categories = Category.objects.all()
+        product = Product.objects.all().first()
+
+        self.assertTrue(categories)
+        self.assertTrue(len(categories) == 2)
+        self.assertTrue(product)
+        self.assertTrue(len(product.categories.all()) == 2)

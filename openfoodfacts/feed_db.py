@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import ValidationError
 
 from product.models import Category
@@ -32,21 +33,25 @@ class FeedDb:
                     fat_100=serialized_product["fat_100"],
                 )
                 product.full_clean()
-                product.save()
             except ValidationError:
                 # Ignore products with ValidationError
                 continue
+            product.save()
 
             # Insert associated categories, stores and brands
-            categories = []
             for category in serialized_product["categories"]:
                 try:
-                    obj, created = Category.objects.get_or_create(name=category)
-                    categories.append(obj)
-                except ValidationError:
-                    # Ignore categories with ValidationError
-                    continue
-            product.categories.add(*categories)
+                    obj = Category.objects.get(name=category)
+                except ObjectDoesNotExist:
+                    try:
+                        obj = Category(name=category)
+                        obj.full_clean()
+                    except ValidationError:
+                        # Ignore categories with ValidationError
+                        continue
+                    obj.save()
+
+                product.categories.add(obj)
 
         return True
 
