@@ -3,6 +3,8 @@ import os
 
 from dotenv import find_dotenv
 from dotenv import load_dotenv
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Import the base settings
 from .base import *
@@ -23,3 +25,13 @@ DATABASES = {
         "PORT": os.getenv("DATABASE_PORT"),
     }
 }
+
+# Enable sentry
+sentry_sdk.init(
+    dsn="https://2961436a457e47b1a2161f7d99c058be@o453278.ingest.sentry.io/5441952",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True,
+)
