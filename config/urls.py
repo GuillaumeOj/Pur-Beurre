@@ -25,3 +25,8 @@ urlpatterns = [
     path("product/", include("product.urls")),
     path("admin/", admin.site.urls),
 ]
+
+handler400 = "config.views.custom_bad_request"
+handler403 = "config.views.custom_permission_denied"
+handler404 = "config.views.custom_page_not_found"
+handler500 = "config.views.custom_server_error"
