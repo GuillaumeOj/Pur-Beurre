@@ -24,8 +24,15 @@ or
 https://github.com/GuillaumeOj/Pur-Beurre.git
 ```
 
-Then create your virtual environnement and install the dependencies.
-You can use **Poetry** or just **virtualenv** and **pip**.
+You will need to use **Poetry** . Go to you working folder and run:
+```
+poetry install
+```
+
+Then, for activating the virtual environnement, type:
+```
+poetry shell
+```
 
 You're ready to run the application!
 
