@@ -7,8 +7,6 @@ import sys
 def main():
     if os.environ.get("ENV") == "PRODUCTION":
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.production")
-    elif os.environ.get("ENV") == "TRAVIS":
-        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.travis")
     else:
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
     try:
