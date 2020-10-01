@@ -8,10 +8,18 @@ branches:
 
 env: DJANGO_SETTINGS_MODULE="config.settings.local"
 
+before_install:
+  - python3 -m pip install --upgrade pip poetry
+
+install:
+  - poetry install
+
 services:
   - postgresql
 
 script:
+  - deactivate
+  - poetry shell
   - ./manage.py test -v 2
   - black . --check
   - isort . --check
