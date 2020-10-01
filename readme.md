@@ -1,4 +1,4 @@
-https://travis-ci.com/GuillaumeOj/Pur-Beurre.svg?branch=master
+![Travis](https://travis-ci.com/GuillaumeOj/Pur-Beurre.svg?branch=master)
 
 # Contents page
 - [I. What is PurBeurre?](#i-what-is-purbeurre)
