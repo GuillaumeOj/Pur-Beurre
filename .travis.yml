@@ -2,10 +2,6 @@ language: python
 python:
   - '3.8'
 
-branches:
-  except:
-    - master
-
 env: DJANGO_SETTINGS_MODULE="config.settings.local"
 
 services:
