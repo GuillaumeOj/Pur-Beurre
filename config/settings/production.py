@@ -10,7 +10,11 @@ from sentry_sdk.integrations.django import DjangoIntegration
 from .base import *
 
 
-ALLOWED_HOSTS = ["projet-8.ojardias.io", "pur-beurre.ojardias.io"]
+ALLOWED_HOSTS = [
+    "projet-8.ojardias.io",
+    "projet-10.ojardias.io",
+    "pur-beurre.ojardias.io",
+]
 
 load_dotenv(find_dotenv())
 SECRET_KEY = os.getenv("SECRET_KEY")
