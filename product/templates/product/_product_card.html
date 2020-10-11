@@ -4,7 +4,7 @@
 		<div class="nutriscore-grade score-{{ product.nutriscore_grade|lower }}">
 			{{ product.nutriscore_grade }}
 		</div>
-		<a href="{% url "product:sheet" product.code %}" title="Voir la fiche">
+		<a href="{% url "product:sheet" product.code %}?next={{ request.get_full_path }}" title="Voir la fiche">
 			<div class="card-body">
 				{% if product.image_url %}
 				<img src="{{ product.image_small_url }}" alt="{{ product.name }}" class="card-img-top">
@@ -17,8 +17,8 @@
 		<div class="card-footer">
 			<p class="text-white font-weight-bold">{{ product.name }}</p>
 			<p>
-				<a href="{% url "product:sheet" product.code %}?next={{ request.get_full_path }}"
-					title="Voir la fiche" class="btn btn-primary">
+				<a href="{% url "product:sheet" product.code %}?next={{ request.get_full_path }}" title="Voir la fiche"
+					class="btn btn-primary">
 					<i class="far fa-sticky-note fa-2x ml-1 align-middle"></i>
 					<span>Voir la fiche</span>
 				</a>
