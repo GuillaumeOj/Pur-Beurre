@@ -1,11 +1,6 @@
 #!/usr/bin/bash
 
-echo "==================================================================="
-echo "$(date): Starting update pur-beurre"
+repo_dir=$(dirname $(realpath $0))
+cd $repo_dir
 
-echo "$(date): $(poetry shell)"
 echo "$(date): $(python manage.py init_db)"
-echo "$(date): $(deactivate)"
-
-echo "$(date): End of update"
-echo "==================================================================="
