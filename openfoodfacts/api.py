@@ -11,10 +11,7 @@ class Api:
     # Parameters for the API
     URL_BASE = "https://fr.openfoodfacts.org/cgi/search.pl"
     PAGE_SIZE = 1000
-    if os.getenv("ENV") == "PRODUCTION":
-        PAGES = 5
-    else:
-        PAGES = 1
+    PAGES = 3
     SORT_BY = "unique_scans_n"
     FIELDS = [
         "code",
