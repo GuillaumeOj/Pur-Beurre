@@ -101,7 +101,7 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "docformatter"
-version = "1.3.1"
+version = "1.4"
 description = "Formats docstrings to follow PEP 257."
 category = "dev"
 optional = false
@@ -365,7 +365,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ff4adbb25ee9141347bb7e5c85cb0628c7dbacf07ccdf8d1670834d9e50a2c8f"
+content-hash = "cb9c5b95379efdb708d9094909bab7a59321ace545b5b41a8353a84626cd48f9"
 
 [metadata.files]
 appdirs = [
@@ -451,7 +451,7 @@ django = [
     {file = "Django-3.1.1.tar.gz", hash = "sha256:59c8125ca873ed3bdae9c12b146fbbd6ed8d0f743e4cf5f5817af50c51f1fc2f"},
 ]
 docformatter = [
-    {file = "docformatter-1.3.1.tar.gz", hash = "sha256:d8db663665becccac75737b2635a06076f2c832bf861322a7bfc512f0a9fa7e3"},
+    {file = "docformatter-1.4.tar.gz", hash = "sha256:064e6d81f04ac96bc0d176cbaae953a0332482b22d3ad70d47c8a7f2732eef6f"},
 ]
 flake8 = [
     {file = "flake8-3.8.3-py2.py3-none-any.whl", hash = "sha256:15e351d19611c887e482fb960eae4d44845013cc142d42896e9862f775d8cf5c"},
