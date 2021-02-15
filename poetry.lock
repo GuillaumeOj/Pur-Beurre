@@ -272,7 +272,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
 name = "sentry-sdk"
-version = "0.20.0"
+version = "0.20.1"
 description = "Python client for Sentry (https://sentry.io)"
 category = "main"
 optional = false
@@ -365,7 +365,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "8194bea28d7ac41d48175fe6347ff4d3dc61c65a1bf0dd6ca9e1e9bdc0cd42d0"
+content-hash = "5ca1c46c61f916a6ed1dddf90f4c4ce173de4798fa1597d0c2955f25192c3d84"
 
 [metadata.files]
 appdirs = [
@@ -549,8 +549,7 @@ requests = [
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
 ]
 sentry-sdk = [
-    {file = "sentry-sdk-0.20.0.tar.gz", hash = "sha256:31871a1c18547cafa7b75064c6391aa517b15468fda7b644ccb149decccb9d44"},
-    {file = "sentry_sdk-0.20.0-py2.py3-none-any.whl", hash = "sha256:012f2c8f40a504e2d68d045f72a2fd63814acb61ea6db5014df75573077b5ceb"},
+    {file = "sentry-sdk-0.20.1.tar.gz", hash = "sha256:3693cb47ba8d90c004ac002425770b32aaf0c83a846ec48e2d1364e7db1d072d"},
 ]
 sqlparse = [
     {file = "sqlparse-0.3.1-py2.py3-none-any.whl", hash = "sha256:022fb9c87b524d1f7862b3037e541f68597a730a8843245c349fc93e1643dc4e"},
