@@ -22,7 +22,7 @@ sentry-sdk = "^0.20.3"
 
 [tool.poetry.dev-dependencies]
 docformatter = "^1.4"
-coverage = "^5.4"
+coverage = "^5.5"
 
 [tool.black]
 line-length = 90
