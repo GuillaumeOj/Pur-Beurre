@@ -1,13 +1,16 @@
+os: [linux]
+dist: xenial
 language: python
-python:
-  - '3.8'
+python: ['3.8']
+
+before_install: python -m install poetry
+install: poetry install
 
 env: DJANGO_SETTINGS_MODULE="config.settings.local"
-
 services:
   - postgresql
 
 script:
-  - ./manage.py test -v 2
+  - poetry run python manage.py test -v 2
   - black . --check
   - isort . --check
