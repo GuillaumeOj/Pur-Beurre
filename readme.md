@@ -1,11 +1,11 @@
-[![Travis Status][travis-status]][travis]
-[![Mergify Status][mergify-status]][mergify]
+[![CI][ci-img]][ci]
+[![Mergify Status][mergify-img]][mergify]
 
-[travis]:https://travis-ci.com/GuillaumeOj/Pur-Beurre
-[travis-status]:https://api.travis-ci.com/GuillaumeOj/Pur-Beurre.svg?branch=master
+[ci-img]: https://github.com/GuillaumeOj/Pur-Beurre/actions/workflows/ci.yml/badge.svg
+[ci]: https://github.com/GuillaumeOj/Pur-Beurre/actions/workflows/ci.yml
 
+[mergify-img]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/GuillaumeOj/Pur-Beurre&style=flat
 [mergify]: https://mergify.io
-[mergify-status]: https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/GuillaumeOj/Pur-Beurre&style=flat
 
 # Contents page
 - [I. What is PurBeurre?](#i-what-is-purbeurre)
