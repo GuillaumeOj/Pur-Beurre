@@ -1,12 +1,13 @@
 language: python
 python:
   - '3.8'
-
 env: DJANGO_SETTINGS_MODULE="config.settings.local"
-
 services:
   - postgresql
-
+before_install:
+  - python -m pip install poetry
+install:
+  - poetry install
 script:
   - ./manage.py test -v 2
   - black . --check
