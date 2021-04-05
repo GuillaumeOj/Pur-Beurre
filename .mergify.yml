@@ -4,7 +4,6 @@ pull_request_rules:
       - "author=GuillaumeOj"
       - "label!=work-in-progress"
       - "label!=manual merge"
-      - check-success~=^security/snyk
       - "status-success=Travis CI - Branch"
     actions:
       merge:
