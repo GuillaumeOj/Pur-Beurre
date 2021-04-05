@@ -12,13 +12,11 @@ pull_request_rules:
         method: rebase
       delete_head_branch:
         force: True
-  - name: Merge Snyk's pull requests
+  - name: Merge Dependabot's pull requests
     conditions:
-      - title~=^\[Snyk\]
-      - head~=^snyk-fix
-      - check-success~=^security/snyk
-      - status-success=pep8
-      - status-success=py39
+      - author~=^dependabot(|-preview)\[bot\]$
+      - check-success=py39
+      - check-success=pep8
     actions:
       merge:
         strict: "smart"
