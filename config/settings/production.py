@@ -14,7 +14,6 @@ ALLOWED_HOSTS = [
     "projet-8.ojardias.io",
     "projet-10.ojardias.io",
     "pur-beurre.ojardias.io",
-    "167.172.169.38",
 ]
 
 load_dotenv(find_dotenv())
